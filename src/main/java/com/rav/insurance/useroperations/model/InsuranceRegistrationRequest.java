@@ -1,5 +1,5 @@
 package com.rav.insurance.useroperations.model;
 
-public class InsuranceForgotCredentialRequest {
+public class InsuranceRegistrationRequest {
 
 }

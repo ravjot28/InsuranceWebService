@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.rav</groupId>
+	<groupId>com.fameden</groupId>
 	<artifactId>InsuranceWebService</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -67,11 +67,11 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.9</version>
 		</dependency>
-		
+
 		<dependency>
-		<groupId>hibernate3</groupId>
-		<artifactId>hibernate3-api</artifactId>
-		<version>3.6.10</version>
+			<groupId>hibernate3</groupId>
+			<artifactId>hibernate3-api</artifactId>
+			<version>3.6.10</version>
 		</dependency>
 
 		<!-- Hibernate framework -->
@@ -199,24 +199,6 @@
 							<resources>
 								<resource>
 									<directory>${project.basedir}/resources/ConfigFiles</directory>
-									<filtering>false</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-					
-					
-					<execution>
-						<id>copy-webapp</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.basedir}/resources/webapp</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
