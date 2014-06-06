@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.fameden</groupId>
-	<artifactId>FameDenRemoteService</artifactId>
+	<groupId>com.rav</groupId>
+	<artifactId>InsuranceWebService</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>FameDenRemoteService Maven Webapp</name>
+	<name>InsuranceWebService Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<repositories><!-- In Project repository -->
 		<repository>
@@ -126,7 +126,7 @@
 	<build>
 		<!-- Set the name of the war, used as the context root when the app is 
 			deployed -->
-		<finalName>FameDenRemoteService</finalName>
+		<finalName>InsuranceWebService</finalName>
 
 		<plugins>
 			<plugin>
@@ -161,7 +161,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/FameDenRemoteService/WEB-INF/classes/com/fameden/emailformats</outputDirectory>
+							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/fameden/emailformats</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${project.basedir}/resources/SupportFiles/EmailFormats</directory>
@@ -178,7 +178,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/FameDenRemoteService/WEB-INF/classes/com/fameden/secureKeys</outputDirectory>
+							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/fameden/secureKeys</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${project.basedir}/resources/SupportFiles/EncryptionKeys</directory>
@@ -196,7 +196,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/FameDenRemoteService/WEB-INF/classes/com/fameden/files</outputDirectory>
+							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/fameden/files</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${project.basedir}/resources/SupportFiles/FameDenDocs</directory>
@@ -214,7 +214,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/FameDenRemoteService/WEB-INF/classes</outputDirectory>
+							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${project.basedir}/resources/ConfigFiles</directory>
