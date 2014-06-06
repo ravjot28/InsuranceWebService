@@ -161,7 +161,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/fameden/emailformats</outputDirectory>
+							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/rav/emailformats</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${project.basedir}/resources/SupportFiles/EmailFormats</directory>
@@ -178,7 +178,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/fameden/secureKeys</outputDirectory>
+							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/rav/secureKeys</outputDirectory>
 							<resources>
 								<resource>
 									<directory>${project.basedir}/resources/SupportFiles/EncryptionKeys</directory>
@@ -187,25 +187,6 @@
 							</resources>
 						</configuration>
 					</execution>
-
-
-					<execution>
-						<id>copy-famedenDocs</id>
-						<phase>compile</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF/classes/com/fameden/files</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${project.basedir}/resources/SupportFiles/FameDenDocs</directory>
-									<filtering>false</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-
 
 					<execution>
 						<id>copy-configFiles</id>
