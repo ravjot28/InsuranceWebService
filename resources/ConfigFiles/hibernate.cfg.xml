@@ -18,7 +18,7 @@
 	
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
     	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    	<property name="hibernate.connection.datasource">jdbc/FAMEDENDB</property>
+    	<property name="hibernate.connection.datasource">jdbc/insurancedb</property>
     	<!--  <property name="hibernate.connection.datasource">java:comp/env/jdbc/FAMEDENDB</property>-->
 		
 		<!-- JDBC connection pool (use the built-in) -->
