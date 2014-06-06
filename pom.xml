@@ -223,6 +223,24 @@
 							</resources>
 						</configuration>
 					</execution>
+					
+					
+					<execution>
+						<id>copy-webapp</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/InsuranceWebService/WEB-INF</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${project.basedir}/resources/webapp</directory>
+									<filtering>false</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
 
 
 				</executions>
