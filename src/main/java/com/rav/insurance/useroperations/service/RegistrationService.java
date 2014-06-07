@@ -78,7 +78,7 @@ public class RegistrationService extends ServiceAbstract {
 
 		if (CommonValidations.isValidEmailAddress(obj.getEmailAddress())) {
 			if (!CommonValidations.isStringEmpty(obj.getFirstName())
-					&& CommonValidations.isStringEmpty(obj.getLastName())) {
+					&& !CommonValidations.isStringEmpty(obj.getLastName())) {
 				if (!CommonValidations.isStringEmpty(obj.getRole())) {
 					if (!CommonValidations.isStringEmpty(obj.getPassword())) {
 						if (CommonValidations.isStringEmpty(obj.getUserId())) {
