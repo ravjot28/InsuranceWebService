@@ -5,8 +5,8 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 
-import com.rav.insurance.model.CommonRequestAttributes;
 import com.rav.insurance.model.CommonResponseAttributes;
+import com.rav.insurance.useroperations.model.InsuranceForgotCredentialRequest;
 import com.rav.insurance.useroperations.model.InsuranceLoginRequest;
 import com.rav.insurance.useroperations.model.InsuranceLoginResponse;
 import com.rav.insurance.useroperations.model.InsuranceRegistrationRequest;
@@ -30,7 +30,7 @@ public interface IUserOperationsWS {
 	@WebMethod(operationName = "ForgotPassword")
 	@WebResult(name = "ForgotPasswordResponse")
 	public CommonResponseAttributes forgotPassword(
-			@WebParam(name = "ForgotPasswordRequest") CommonRequestAttributes request)
+			@WebParam(name = "ForgotPasswordRequest") InsuranceForgotCredentialRequest request)
 			throws Exception;
 
 	@WebMethod(operationName = "UpdatePassword")

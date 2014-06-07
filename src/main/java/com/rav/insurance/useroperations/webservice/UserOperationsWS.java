@@ -4,9 +4,9 @@ import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.xml.ws.WebServiceContext;
 
-import com.rav.insurance.model.CommonRequestAttributes;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.service.ServiceAbstract;
+import com.rav.insurance.useroperations.model.InsuranceForgotCredentialRequest;
 import com.rav.insurance.useroperations.model.InsuranceLoginRequest;
 import com.rav.insurance.useroperations.model.InsuranceLoginResponse;
 import com.rav.insurance.useroperations.model.InsuranceRegistrationRequest;
@@ -41,7 +41,7 @@ public class UserOperationsWS implements IUserOperationsWS {
 
 	@Override
 	public CommonResponseAttributes forgotPassword(
-			CommonRequestAttributes request) throws Exception {
+			InsuranceForgotCredentialRequest request) throws Exception {
 		service = new ForgotCredentialService();
 		return (CommonResponseAttributes) service.processRequest(request, wsContext);
 	}

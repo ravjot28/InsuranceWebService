@@ -31,7 +31,7 @@ public class RegistrationService extends ServiceAbstract {
 			try {
 				validateRequest(dto);
 				UserOperationsDAO dao = new UserOperationsDAO();
-				if (!dao.findUserName(dto.getUserId())) {
+				if (!dao.findUserName(dto.getUserId(),dto.getEmailAddress())) {
 					try {
 						dto.setPassword(SaltAlgorithmImpl.getInstance()
 								.createHash(dto.getPassword()));
@@ -142,7 +142,9 @@ public class RegistrationService extends ServiceAbstract {
 		loginEmail.setAttribute(
 				UserOperationsConstants.EMAIL_TEMPLATE_FULLNAME_PLACE_HOLDER,
 				fullName);
-
+		loginEmail.setAttribute(
+				UserOperationsConstants.EMAIL_TEMPLATE_FROM_PLACE_HOLDER,
+				UserOperationsConstants.ORG_NAME);
 		loginEmail.setAttribute(
 				UserOperationsConstants.EMAIL_TEMPLATE_FROM_PLACE_HOLDER,
 				UserOperationsConstants.ORG_NAME);

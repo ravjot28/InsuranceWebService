@@ -11,7 +11,6 @@ import com.rav.insurance.useroperations.dao.UserOperationsDAO;
 import com.rav.insurance.useroperations.dto.LoginDTO;
 import com.rav.insurance.useroperations.model.InsuranceLoginRequest;
 import com.rav.insurance.useroperations.model.InsuranceLoginResponse;
-import com.rav.insurance.useroperations.model.InsuranceRegistrationRequest;
 import com.rav.insurance.util.CommonValidations;
 
 public class LoginService extends ServiceAbstract {
@@ -27,7 +26,7 @@ public class LoginService extends ServiceAbstract {
 
 				try {
 					UserOperationsDAO dao = new UserOperationsDAO();
-					UserBean bean = dao.getUserBean(dto.getUserId());
+					UserBean bean = dao.getUserBean(dto.getUserId(),null);
 
 					if (bean != null) {
 						if (SaltAlgorithmImpl.getInstance().validateStrings(
@@ -73,7 +72,7 @@ public class LoginService extends ServiceAbstract {
 	public void validateRequest(Object dto) throws Exception {
 		LoginDTO obj = (LoginDTO) dto;
 
-		if (CommonValidations.isStringEmpty(obj.getPassword())) {
+		if (!CommonValidations.isStringEmpty(obj.getPassword())) {
 			if (CommonValidations.isStringEmpty(obj.getUserId())) {
 				throw new Exception("Invalid User Name");
 			}
@@ -89,8 +88,8 @@ public class LoginService extends ServiceAbstract {
 		dto.setIpAddress(getIPAddress(wsContext));
 		dto.setRequestType(UserOperationsConstants.LOGIN_REQUEST_TYPE);
 
-		dto.setUserId(((InsuranceRegistrationRequest) model).getUserId());
-		dto.setPassword(((InsuranceRegistrationRequest) model).getPassword());
+		dto.setUserId(((InsuranceLoginRequest) model).getUserId());
+		dto.setPassword(((InsuranceLoginRequest) model).getPassword());
 		return dto;
 	}
 

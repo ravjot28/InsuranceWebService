@@ -1,5 +1,6 @@
 package com.rav.insurance.useroperations.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -33,8 +34,9 @@ public class UserOperationsDAO {
 		}
 	}
 
-	public boolean findUserName(String userName) {
-		String password = getPasswordByUserId(userName);
+	public boolean findUserName(String userName, String emailAddress)
+			throws Exception {
+		String password = getPasswordByUserId(userName, emailAddress);
 
 		if (password != null && password.trim().length() > 0)
 			return true;
@@ -42,18 +44,19 @@ public class UserOperationsDAO {
 		return false;
 	}
 
-	
-	public String getPasswordByUserId(String userName) {
+	public String getPasswordByUserId(String userName, String emailAddress)
+			throws Exception {
 		String password = null;
-		UserBean bean = getUserBean(userName);
-		if(bean !=null ){
+		UserBean bean = getUserBean(userName, emailAddress);
+		if (bean != null) {
 			password = bean.getPassword();
 		}
 		return password;
 	}
 
 	@SuppressWarnings("unchecked")
-	public UserBean getUserBean(String userName) {
+	public void updatePassword(String userName, String password)
+			throws Exception {
 		UserBean bean = null;
 		Session session;
 		try {
@@ -81,10 +84,65 @@ public class UserOperationsDAO {
 
 			}
 
+			bean.setPassword(password);
+			bean.setUpdatedDate(new Date());
+			session.save(bean);
 			session.getTransaction().commit();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw e;
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public UserBean getUserBean(String userName, String emailAddress)
+			throws Exception {
+		UserBean bean = null;
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			Criteria crit = session.createCriteria(UserBean.class);
+
+			Criterion activeRestriction = Restrictions.eq("active",
+					CommonConstants.ACTIVE);
+
+			Criterion userNameRestriction = null;
+			Criterion emailAddressRestriction = null;
+			if (userName != null) {
+				userNameRestriction = Restrictions.eq("userName", userName);
+			}
+			if (emailAddress != null) {
+				emailAddressRestriction = Restrictions.eq("emailAddress",
+						emailAddress);
+			}
+			LogicalExpression andExp = null;
+			if (emailAddressRestriction != null && userNameRestriction != null) {
+				LogicalExpression andExp1 = Restrictions.and(
+						emailAddressRestriction, userNameRestriction);
+
+				andExp = Restrictions.and(andExp1, activeRestriction);
+			} else if (emailAddressRestriction != null) {
+				andExp = Restrictions.and(emailAddressRestriction,
+						activeRestriction);
+			} else {
+				andExp = Restrictions.and(userNameRestriction,
+						activeRestriction);
+			}
+
+			crit.add(andExp);
+
+			List<UserBean> userList = ((List<UserBean>) crit.list());
+
+			if (userList != null && userList.size() > 0) {
+				bean = userList.get(0);
+
+			}
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
 		}
 		return bean;
 	}
