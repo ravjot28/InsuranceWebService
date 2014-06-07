@@ -10,7 +10,6 @@ import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.useroperations.model.InsuranceLoginRequest;
 import com.rav.insurance.useroperations.model.InsuranceLoginResponse;
 import com.rav.insurance.useroperations.model.InsuranceRegistrationRequest;
-import com.rav.insurance.useroperations.model.InsuranceRegistrationResponse;
 import com.rav.insurance.useroperations.model.InsuranceUpdateCredentialRequest;
 
 @WebService(name = "UserOperationsService")
@@ -18,7 +17,7 @@ public interface IUserOperationsWS {
 
 	@WebMethod(operationName = "RegisterUser")
 	@WebResult(name = "RegistrationResponse")
-	public InsuranceRegistrationResponse registerUser(
+	public CommonResponseAttributes registerUser(
 			@WebParam(name = "RegistrationRequest") InsuranceRegistrationRequest request)
 			throws Exception;
 
