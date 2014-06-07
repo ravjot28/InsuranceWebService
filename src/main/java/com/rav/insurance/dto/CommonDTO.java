@@ -1,8 +1,10 @@
-package com.rav.insurance.model;
+package com.rav.insurance.dto;
 
-public class CommonRequestAttributes {
+public class CommonDTO {
+
 	private String ipAddress;
 	private String userId;
+	private String password;
 	private String requestType;
 
 	public String getIpAddress() {
@@ -19,6 +21,14 @@ public class CommonRequestAttributes {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public String getRequestType() {

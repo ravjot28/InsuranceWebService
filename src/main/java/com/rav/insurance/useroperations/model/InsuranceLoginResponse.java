@@ -2,14 +2,11 @@ package com.rav.insurance.useroperations.model;
 
 import com.rav.insurance.model.CommonResponseAttributes;
 
-
 public class InsuranceLoginResponse extends CommonResponseAttributes {
 
 	private String userEmailAddress;
-	private String userMobileNumber;
-	private String userInterests;
 	private String userFullName;
-	private String userAlternativeEmailAddress;
+	private String role;
 
 	public String getUserEmailAddress() {
 		return userEmailAddress;
@@ -17,22 +14,6 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 
 	public void setUserEmailAddress(String userEmailAddress) {
 		this.userEmailAddress = userEmailAddress;
-	}
-
-	public String getUserMobileNumber() {
-		return userMobileNumber;
-	}
-
-	public void setUserMobileNumber(String userMobileNumber) {
-		this.userMobileNumber = userMobileNumber;
-	}
-
-	public String getUserInterests() {
-		return userInterests;
-	}
-
-	public void setUserInterests(String userInterests) {
-		this.userInterests = userInterests;
 	}
 
 	public String getUserFullName() {
@@ -43,13 +24,12 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 		this.userFullName = userFullName;
 	}
 
-	public String getUserAlternativeEmailAddress() {
-		return userAlternativeEmailAddress;
+	public String getRole() {
+		return role;
 	}
 
-	public void setUserAlternativeEmailAddress(
-			String userAlternativeEmailAddress) {
-		this.userAlternativeEmailAddress = userAlternativeEmailAddress;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }
