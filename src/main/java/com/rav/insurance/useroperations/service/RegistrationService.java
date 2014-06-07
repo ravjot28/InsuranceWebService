@@ -11,6 +11,7 @@ import org.antlr.stringtemplate.StringTemplateGroup;
 
 import com.rav.insurance.constants.CommonConstants;
 import com.rav.insurance.model.CommonResponseAttributes;
+import com.rav.insurance.security.SaltAlgorithmImpl;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.useroperations.bean.UserBean;
 import com.rav.insurance.useroperations.constants.UserOperationsConstants;
@@ -18,7 +19,6 @@ import com.rav.insurance.useroperations.dao.UserOperationsDAO;
 import com.rav.insurance.useroperations.dto.RegistrationDTO;
 import com.rav.insurance.useroperations.model.InsuranceRegistrationRequest;
 import com.rav.insurance.util.CommonValidations;
-import com.rav.insurance.util.InsuranceUtil;
 import com.rav.insurance.util.SendMail;
 
 public class RegistrationService extends ServiceAbstract {
@@ -31,30 +31,28 @@ public class RegistrationService extends ServiceAbstract {
 			try {
 				validateRequest(dto);
 				UserOperationsDAO dao = new UserOperationsDAO();
-				if (dao.findUserName(dto.getUserId())) {
-
+				if (!dao.findUserName(dto.getUserId())) {
+					try {
+						dto.setPassword(SaltAlgorithmImpl.getInstance()
+								.createHash(dto.getPassword()));
+					} catch (Exception e) {
+						throw new Exception("Password not correctly encrypted");
+					}
+					UserBean bean = getBean(dto);
+					try {
+						dao.registerUser(bean);
+						response = new CommonResponseAttributes();
+						response.setStatus(CommonConstants.SUCCESS);
+						sendMailNotification(
+								dto.getEmailAddress(),
+								dto.getTitle() + " " + dto.getFirstName() + " "
+										+ dto.getMiddleName() + " "
+										+ dto.getLastName());
+					} catch (Exception e) {
+						throw new Exception("Not able to register the user");
+					}
 				} else {
 					throw new Exception("The user id already exists");
-				}
-
-				try {
-					dto.setPassword(InsuranceUtil
-							.getRSADecryptSaltEncryptText(dto.getPassword()));
-				} catch (Exception e) {
-					throw new Exception("Password not correctly encrypted");
-				}
-				UserBean bean = getBean(dto);
-				try {
-					dao.registerUser(bean);
-					response = new CommonResponseAttributes();
-					response.setStatus(CommonConstants.SUCCESS);
-					sendMailNotification(
-							dto.getEmailAddress(),
-							dto.getTitle() + " " + dto.getFirstName() + " "
-									+ dto.getMiddleName() + " "
-									+ dto.getLastName());
-				} catch (Exception e) {
-					throw new Exception("Not able to register the user");
 				}
 
 			} catch (Exception e) {
@@ -77,8 +75,8 @@ public class RegistrationService extends ServiceAbstract {
 		RegistrationDTO obj = (RegistrationDTO) dto;
 
 		if (CommonValidations.isValidEmailAddress(obj.getEmailAddress())) {
-			if (!CommonValidations.isStringEmpty(obj.getFirstName())
-					&& !CommonValidations.isStringEmpty(obj.getLastName())) {
+			if (!(CommonValidations.isStringEmpty(obj.getFirstName()) && CommonValidations
+					.isStringEmpty(obj.getLastName()))) {
 				if (!CommonValidations.isStringEmpty(obj.getRole())) {
 					if (!CommonValidations.isStringEmpty(obj.getPassword())) {
 						if (CommonValidations.isStringEmpty(obj.getUserId())) {

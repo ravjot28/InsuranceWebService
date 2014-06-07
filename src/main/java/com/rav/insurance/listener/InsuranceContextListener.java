@@ -4,7 +4,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import com.rav.insurance.constants.CommonConstants;
 import com.rav.insurance.useroperations.constants.UserOperationsConstants;
 
 /**
@@ -25,15 +24,6 @@ public class InsuranceContextListener implements ServletContextListener {
 	 * @see ServletContextListener#contextInitialized(ServletContextEvent)
 	 */
 	public void contextInitialized(ServletContextEvent context) {
-		System.setProperty(
-				CommonConstants.PRIVATE_RSA_KEY,
-				context.getServletContext().getRealPath(
-						CommonConstants.PRIVATE_RSA_KEY_PATH));
-
-		System.setProperty(
-				CommonConstants.PUBLIC_RSA_KEY,
-				context.getServletContext().getRealPath(
-						CommonConstants.PUBLIC_RSA_KEY_PATH));
 
 		System.setProperty(
 				UserOperationsConstants.EMAIL_TEMPLATES_PROPERTY,

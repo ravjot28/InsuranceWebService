@@ -23,6 +23,9 @@ public class UserOperationsDAO {
 			session.save(bean);
 			session.getTransaction().commit();
 		} catch (Exception e) {
+			e.printStackTrace();
+			for (Throwable ex = e; ex != null; ex = e.getCause())
+		        ex.printStackTrace();
 			if (session != null) {
 				session.getTransaction().rollback();
 			}
