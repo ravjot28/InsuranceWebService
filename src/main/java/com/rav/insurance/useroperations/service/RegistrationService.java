@@ -1,19 +1,25 @@
 package com.rav.insurance.useroperations.service;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 
+import javax.crypto.NoSuchPaddingException;
 import javax.xml.ws.WebServiceContext;
+
+import org.antlr.stringtemplate.StringTemplate;
+import org.antlr.stringtemplate.StringTemplateGroup;
 
 import com.rav.insurance.constants.CommonConstants;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.useroperations.bean.UserBean;
-import com.rav.insurance.useroperations.constants.UserOpertationsConstants;
+import com.rav.insurance.useroperations.constants.UserOperationsConstants;
 import com.rav.insurance.useroperations.dao.UserOperationsDAO;
 import com.rav.insurance.useroperations.dto.RegistrationDTO;
 import com.rav.insurance.useroperations.model.InsuranceRegistrationRequest;
 import com.rav.insurance.util.CommonValidations;
 import com.rav.insurance.util.InsuranceUtil;
+import com.rav.insurance.util.SendMail;
 
 public class RegistrationService extends ServiceAbstract {
 
@@ -42,6 +48,11 @@ public class RegistrationService extends ServiceAbstract {
 					dao.registerUser(bean);
 					response = new CommonResponseAttributes();
 					response.setStatus(CommonConstants.SUCCESS);
+					sendMailNotification(
+							dto.getEmailAddress(),
+							dto.getTitle() + " " + dto.getFirstName() + " "
+									+ dto.getMiddleName() + " "
+									+ dto.getLastName());
 				} catch (Exception e) {
 					throw new Exception("Not able to register the user");
 				}
@@ -92,7 +103,7 @@ public class RegistrationService extends ServiceAbstract {
 	public Object createDTO(Object model, WebServiceContext wsContext) {
 		RegistrationDTO dto = new RegistrationDTO();
 		dto.setIpAddress(getIPAddress(wsContext));
-		dto.setRequestType(UserOpertationsConstants.REGISTRATION_REQUEST_TYPE);
+		dto.setRequestType(UserOperationsConstants.REGISTRATION_REQUEST_TYPE);
 
 		dto.setTitle(((InsuranceRegistrationRequest) model).getTitle());
 		dto.setFirstName(((InsuranceRegistrationRequest) model).getFirstName());
@@ -121,6 +132,29 @@ public class RegistrationService extends ServiceAbstract {
 		bean.setTitle(dto.getTitle());
 		bean.setUserName(dto.getUserId());
 		return bean;
+	}
+
+	private void sendMailNotification(String emailAddress, String fullName)
+			throws NoSuchAlgorithmException, NoSuchPaddingException, Exception {
+		StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
+				UserOperationsConstants.EMAIL_VERIFICATION_GROUP,
+				UserOperationsConstants.EMAIL_TEMPLATE_FOLDER_LOCATION);
+		StringTemplate loginEmail = emailTemplateGroup
+				.getInstanceOf(UserOperationsConstants.EMAIL_VERIFICATION_TEMPLATE_FILE);
+		loginEmail.setAttribute(
+				UserOperationsConstants.EMAIL_TEMPLATE_FULLNAME_PLACE_HOLDER,
+				fullName);
+
+		loginEmail.setAttribute(
+				UserOperationsConstants.EMAIL_TEMPLATE_FROM_PLACE_HOLDER,
+				UserOperationsConstants.ORG_NAME);
+		String message = loginEmail.toString();
+
+		String to[] = { emailAddress };
+
+		SendMail sm = new SendMail(UserOperationsConstants.WELCOME_SUBJECT,
+				message, to);
+		sm.send();
 	}
 
 }
