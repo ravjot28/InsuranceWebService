@@ -1,4 +1,0 @@
-InsuranceWebService
-===================
-
-Insurance Web Service
