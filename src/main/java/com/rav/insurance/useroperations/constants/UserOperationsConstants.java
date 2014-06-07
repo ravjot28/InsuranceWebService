@@ -3,6 +3,7 @@ package com.rav.insurance.useroperations.constants;
 public class UserOperationsConstants {
 
 	public static final String REGISTRATION_REQUEST_TYPE = "REGISTRATION_REQUEST";
+	public static final String LOGIN_REQUEST_TYPE = "LOGIN";
 	public static final String EMAIL_TEMPLATES_PROPERTY = "emailTemplates";
 	public static final String EMAIL_TEMPLATES_PATH = "/WEB-INF/classes/com/rav/emailformats";
 

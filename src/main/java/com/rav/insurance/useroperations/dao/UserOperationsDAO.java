@@ -25,7 +25,7 @@ public class UserOperationsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			for (Throwable ex = e; ex != null; ex = e.getCause())
-		        ex.printStackTrace();
+				ex.printStackTrace();
 			if (session != null) {
 				session.getTransaction().rollback();
 			}
@@ -42,9 +42,19 @@ public class UserOperationsDAO {
 		return false;
 	}
 
-	@SuppressWarnings("unchecked")
-	private String getPasswordByUserId(String userName) {
+	
+	public String getPasswordByUserId(String userName) {
 		String password = null;
+		UserBean bean = getUserBean(userName);
+		if(bean !=null ){
+			password = bean.getPassword();
+		}
+		return password;
+	}
+
+	@SuppressWarnings("unchecked")
+	public UserBean getUserBean(String userName) {
+		UserBean bean = null;
 		Session session;
 		try {
 			session = DatabaseConfig.getSessionFactory().openSession();
@@ -67,7 +77,7 @@ public class UserOperationsDAO {
 			List<UserBean> userList = ((List<UserBean>) crit.list());
 
 			if (userList != null && userList.size() > 0) {
-				password = userList.get(0).getPassword();
+				bean = userList.get(0);
 
 			}
 
@@ -76,6 +86,6 @@ public class UserOperationsDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return password;
+		return bean;
 	}
 }
