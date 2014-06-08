@@ -62,10 +62,10 @@ public class ForgotCredentialService extends ServiceAbstract {
 					UserBean bean = dao
 							.getUserBean(null, dto.getEmailAddress());
 
-					
 					if (bean != null) {
 						Base64Encoder encoder = new Base64Encoder(
-								bean.getUserName() +"%"+ new Random().nextInt());
+								bean.getUserName() + "%"
+										+ new Random().nextInt());
 						sendMailNotification(bean.getEmailAddress(),
 								bean.getTitle() + " " + bean.getFirstName()
 										+ " " + bean.getMiddleName() + " "
