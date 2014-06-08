@@ -1,6 +1,7 @@
 package com.rav.insurance.useroperations.service;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Random;
 
 import javax.crypto.NoSuchPaddingException;
 import javax.xml.ws.WebServiceContext;
@@ -61,9 +62,10 @@ public class ForgotCredentialService extends ServiceAbstract {
 					UserBean bean = dao
 							.getUserBean(null, dto.getEmailAddress());
 
+					
 					if (bean != null) {
 						Base64Encoder encoder = new Base64Encoder(
-								bean.getUserName() +"%"+ bean.getUserId());
+								bean.getUserName() +"%"+ new Random().nextInt());
 						sendMailNotification(bean.getEmailAddress(),
 								bean.getTitle() + " " + bean.getFirstName()
 										+ " " + bean.getMiddleName() + " "
