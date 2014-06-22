@@ -41,6 +41,12 @@
 			<version>1.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>net.sf.dozer</groupId>
+			<artifactId>dozer</artifactId>
+			<version>5.4.0</version>
+		</dependency>
+
 		<!--SLF4J -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -62,11 +68,8 @@
 		</dependency>
 
 		<!-- MySQL database driver -->
-		<!-- <dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.9</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			<version>5.1.9</version> </dependency> -->
 
 		<dependency>
 			<groupId>hibernate3</groupId>
