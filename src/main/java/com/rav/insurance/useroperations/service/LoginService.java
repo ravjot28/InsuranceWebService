@@ -26,14 +26,15 @@ public class LoginService extends ServiceAbstract {
 
 				try {
 					UserOperationsDAO dao = new UserOperationsDAO();
-					UserBean bean = dao.getUserBean(dto.getUserId(),null);
+					UserBean bean = dao
+							.getUserBean(dto.getUserId(), null, true);
 
 					if (bean != null) {
 						if (SaltAlgorithmImpl.getInstance().validateStrings(
 								dto.getPassword(), bean.getPassword())) {
 							response = new InsuranceLoginResponse();
-							response.setRole(bean.getRole());
 							response.setStatus(CommonConstants.SUCCESS);
+							response.setFormList(bean.getFormList());
 							response.setUserEmailAddress(bean.getEmailAddress());
 							response.setUserFullName(bean.getTitle() + " "
 									+ bean.getFirstName() + " "

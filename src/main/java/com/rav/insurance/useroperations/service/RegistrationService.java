@@ -126,7 +126,6 @@ public class RegistrationService extends ServiceAbstract {
 		bean.setLastName(dto.getLastName());
 		bean.setMiddleName(dto.getMiddleName());
 		bean.setPassword(dto.getPassword());
-		bean.setRole(dto.getRole());
 		bean.setTitle(dto.getTitle());
 		bean.setUserName(dto.getUserId());
 		return bean;

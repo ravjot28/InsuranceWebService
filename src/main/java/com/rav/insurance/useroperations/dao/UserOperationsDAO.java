@@ -10,7 +10,10 @@ import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Restrictions;
 
 import com.rav.insurance.constants.CommonConstants;
+import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.useroperations.bean.UserBean;
+import com.rav.insurance.useroperations.bean.UserDetails;
+import com.rav.insurance.util.CommonValidations;
 import com.rav.insurance.util.DatabaseConfig;
 
 public class UserOperationsDAO {
@@ -47,7 +50,7 @@ public class UserOperationsDAO {
 	public String getPasswordByUserId(String userName, String emailAddress)
 			throws Exception {
 		String password = null;
-		UserBean bean = getUserBean(userName, emailAddress);
+		UserBean bean = getUserBean(userName, emailAddress, false);
 		if (bean != null) {
 			password = bean.getPassword();
 		}
@@ -94,8 +97,8 @@ public class UserOperationsDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public UserBean getUserBean(String userName, String emailAddress)
-			throws Exception {
+	public UserBean getUserBean(String userName, String emailAddress,
+			boolean isLogin) throws Exception {
 		UserBean bean = null;
 		Session session;
 		try {
@@ -137,6 +140,40 @@ public class UserOperationsDAO {
 
 			if (userList != null && userList.size() > 0) {
 				bean = userList.get(0);
+				if (isLogin) {
+					crit = session.createCriteria(UserDetails.class);
+
+					emailAddressRestriction = Restrictions.eq("emailAddress",
+							bean.getEmailAddress());
+
+					crit.add(emailAddressRestriction);
+
+					List<UserDetails> userDetailsList = ((List<UserDetails>) crit
+							.list());
+
+					if (userDetailsList != null && userDetailsList.size() > 0) {
+						String role = userDetailsList.get(0).getRole();
+
+						if (!CommonValidations.isStringEmpty(role)) {
+							crit = session
+									.createCriteria(InsuranceFormBean.class);
+							Criterion restriction = null;
+							if (role.equals("PRODUCER")) {
+								restriction = Restrictions.eq(
+										"producerUserName", bean.getUserName());
+							} else if (role.equals("MARKETER")) {
+								restriction = Restrictions.eq(
+										"marketerUserName", bean.getUserName());
+							} else if (role.equals("MANAGER")) {
+								restriction = Restrictions.eq("status", "NEW");
+							}
+
+							crit.add(restriction);
+
+							bean.setFormList(crit.list());
+						}
+					}
+				}
 
 			}
 

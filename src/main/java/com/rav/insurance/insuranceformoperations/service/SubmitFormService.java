@@ -37,6 +37,7 @@ public class SubmitFormService extends ServiceAbstract {
 		InsuranceFormBean bean = new InsuranceFormBean();
 		DozerBeanMapper mapper = new DozerBeanMapper();
 		mapper.map(request, bean);
+		bean.setStatus("NEW");
 		return bean;
 	}
 

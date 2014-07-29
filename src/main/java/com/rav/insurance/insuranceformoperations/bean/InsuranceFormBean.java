@@ -309,6 +309,28 @@ public class InsuranceFormBean {
 	private double maxCostValue;
 	private String instructionNotes;
 
+	private String marketerUserName;
+	private String status;
+	private String producerUserName;
+	
+	
+
+	public String getProducerUserName() {
+		return producerUserName;
+	}
+
+	public void setProducerUserName(String producerUserName) {
+		this.producerUserName = producerUserName;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -2527,6 +2549,14 @@ public class InsuranceFormBean {
 
 	public void setInstructionNotes(String instructionNotes) {
 		this.instructionNotes = instructionNotes;
+	}
+
+	public String getMarketerUserName() {
+		return marketerUserName;
+	}
+
+	public void setMarketerUserName(String marketerUserName) {
+		this.marketerUserName = marketerUserName;
 	}
 
 }

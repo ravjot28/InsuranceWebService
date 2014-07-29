@@ -60,7 +60,7 @@ public class ForgotCredentialService extends ServiceAbstract {
 				try {
 					UserOperationsDAO dao = new UserOperationsDAO();
 					UserBean bean = dao
-							.getUserBean(null, dto.getEmailAddress());
+							.getUserBean(null, dto.getEmailAddress(),false);
 
 					if (bean != null) {
 						Base64Encoder encoder = new Base64Encoder(
