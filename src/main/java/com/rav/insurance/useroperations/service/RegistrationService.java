@@ -31,7 +31,7 @@ public class RegistrationService extends ServiceAbstract {
 			try {
 				validateRequest(dto);
 				UserOperationsDAO dao = new UserOperationsDAO();
-				if (!dao.findUserName(dto.getUserId(),dto.getEmailAddress())) {
+				if (!dao.findUserName(dto.getUserId(), dto.getEmailAddress())) {
 					try {
 						dto.setPassword(SaltAlgorithmImpl.getInstance()
 								.createHash(dto.getPassword()));
@@ -77,17 +77,15 @@ public class RegistrationService extends ServiceAbstract {
 		if (CommonValidations.isValidEmailAddress(obj.getEmailAddress())) {
 			if (!(CommonValidations.isStringEmpty(obj.getFirstName()) && CommonValidations
 					.isStringEmpty(obj.getLastName()))) {
-				if (!CommonValidations.isStringEmpty(obj.getRole())) {
-					if (!CommonValidations.isStringEmpty(obj.getPassword())) {
-						if (CommonValidations.isStringEmpty(obj.getUserId())) {
-							throw new Exception("Invalid User Id");
-						}
-					} else {
-						throw new Exception("Invalid Password");
+
+				if (!CommonValidations.isStringEmpty(obj.getPassword())) {
+					if (CommonValidations.isStringEmpty(obj.getUserId())) {
+						throw new Exception("Invalid User Id");
 					}
 				} else {
-					throw new Exception("Invalid Role");
+					throw new Exception("Invalid Password");
 				}
+
 			} else {
 				throw new Exception("Invalid User Name");
 			}
@@ -113,7 +111,6 @@ public class RegistrationService extends ServiceAbstract {
 		dto.setPassword(((InsuranceRegistrationRequest) model).getPassword());
 		dto.setEmailAddress(((InsuranceRegistrationRequest) model)
 				.getEmailAddress());
-		dto.setRole(((InsuranceRegistrationRequest) model).getRole());
 		return dto;
 	}
 

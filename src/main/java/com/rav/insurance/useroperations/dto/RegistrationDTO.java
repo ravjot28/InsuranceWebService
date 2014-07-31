@@ -8,7 +8,6 @@ public class RegistrationDTO extends CommonDTO {
 	private String firstName;
 	private String middleName;
 	private String lastName;
-	private String role;
 	private String emailAddress;
 
 	public String getTitle() {
@@ -41,14 +40,6 @@ public class RegistrationDTO extends CommonDTO {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
 	}
 
 	public String getEmailAddress() {
