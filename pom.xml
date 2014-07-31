@@ -96,7 +96,7 @@
 			</exclusions>
 
 		</dependency>
-
+		<!-- iText PDF -->
 		<dependency>
 			<groupId>com.itextpdf</groupId>
 			<artifactId>itextpdf</artifactId>
@@ -218,8 +218,6 @@
 							</resources>
 						</configuration>
 					</execution>
-
-
 				</executions>
 			</plugin>
 		</plugins>
