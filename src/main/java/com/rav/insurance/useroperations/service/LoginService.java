@@ -34,7 +34,7 @@ public class LoginService extends ServiceAbstract {
 								dto.getPassword(), bean.getPassword())) {
 							response = new InsuranceLoginResponse();
 							response.setStatus(CommonConstants.SUCCESS);
-							response.setFormList(bean.getFormList());
+							response.setRole(bean.getRole());;
 							response.setUserEmailAddress(bean.getEmailAddress());
 							response.setUserFullName(bean.getTitle() + " "
 									+ bean.getFirstName() + " "

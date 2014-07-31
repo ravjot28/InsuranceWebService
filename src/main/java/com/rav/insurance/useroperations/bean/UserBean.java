@@ -1,7 +1,6 @@
 package com.rav.insurance.useroperations.bean;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 
 @Entity
 @Table(name = "UCCICG_USER")
@@ -31,7 +28,7 @@ public class UserBean {
 	private Date creationDate;
 	private Date updatedDate;
 	@Transient
-	private List<InsuranceFormBean> formList;
+	private String role;
 
 	public int getId() {
 		return id;
@@ -121,12 +118,12 @@ public class UserBean {
 		this.active = active;
 	}
 
-	public List<InsuranceFormBean> getFormList() {
-		return formList;
+	public String getRole() {
+		return role;
 	}
 
-	public void setFormList(List<InsuranceFormBean> formList) {
-		this.formList = formList;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }

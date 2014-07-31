@@ -10,10 +10,8 @@ import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Restrictions;
 
 import com.rav.insurance.constants.CommonConstants;
-import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.useroperations.bean.UserBean;
 import com.rav.insurance.useroperations.bean.UserDetails;
-import com.rav.insurance.util.CommonValidations;
 import com.rav.insurance.util.DatabaseConfig;
 
 public class UserOperationsDAO {
@@ -153,25 +151,7 @@ public class UserOperationsDAO {
 
 					if (userDetailsList != null && userDetailsList.size() > 0) {
 						String role = userDetailsList.get(0).getRole();
-
-						if (!CommonValidations.isStringEmpty(role)) {
-							crit = session
-									.createCriteria(InsuranceFormBean.class);
-							Criterion restriction = null;
-							if (role.equals("PRODUCER")) {
-								restriction = Restrictions.eq(
-										"producerUserName", bean.getUserName());
-							} else if (role.equals("MARKETER")) {
-								restriction = Restrictions.eq(
-										"marketerUserName", bean.getUserName());
-							} else if (role.equals("MANAGER")) {
-								restriction = Restrictions.eq("status", "NEW");
-							}
-
-							crit.add(restriction);
-
-							bean.setFormList(crit.list());
-						}
+						bean.setRole(role);
 					}
 				}
 
