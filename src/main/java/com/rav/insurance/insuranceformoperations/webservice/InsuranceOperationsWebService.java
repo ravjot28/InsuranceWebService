@@ -10,6 +10,7 @@ import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRespo
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitRequest;
+import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
 import com.rav.insurance.insuranceformoperations.service.GetFormService;
@@ -26,10 +27,10 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	private ServiceAbstract service;
 
 	@Override
-	public CommonResponseAttributes submitForm(
+	public InsuranceFormSubmitResponse submitForm(
 			InsuranceFormSubmitRequest request) throws Exception {
 		service = new SubmitFormService();
-		return (CommonResponseAttributes) service.processRequest(request,
+		return (InsuranceFormSubmitResponse) service.processRequest(request,
 				wsContext);
 	}
 

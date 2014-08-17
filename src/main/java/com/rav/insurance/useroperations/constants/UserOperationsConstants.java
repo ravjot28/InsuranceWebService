@@ -31,6 +31,6 @@ public class UserOperationsConstants {
 
 	public static final String GMAIL_SMTP_HOST_NAME = "smtp.gmail.com";
 	public static final String GMAIL_SMTP_PORT = "465";
-	public static final String GMAIL_USER_NAME = "fameden.info@gmail.com";
-	public static final String GMAIL_PASSWORD = "apple$3401";
+	public static final String GMAIL_USER_NAME = "uccigtesting@gmail.com";
+	public static final String GMAIL_PASSWORD = "ravjot28";
 }
