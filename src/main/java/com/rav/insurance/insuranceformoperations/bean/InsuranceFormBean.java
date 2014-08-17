@@ -36,18 +36,45 @@ public class InsuranceFormBean {
 	private int numberOfLocations;
 	private int numberOfOwnedAutos;
 	private String entityType;
-	private boolean profit;
-	private boolean nonProfit;
 	private String yearInBusiness;
 	private String relatedExperience;
 
-	private String owners;
-	private String boardOfDirectors;
+	private String profit;
+	private String nonProfit;
+	private String owner1;
+	private String owner2;
+	private String owner3;
+	private String owner4;
+	private String severity;
+	private String boardOfDirector1;
+	private String boardOfDirector2;
+	private String boardOfDirector4;
+	private String boardOfDirector3;
+	private String currency1;
+	private String currency2;
+	private String currency3;
+	private String currency4;
+	private int onpremises;
+	private int offpremises;
+	private int residential;
+	private int commercial;
+	private int subcontracted;
+	private String ecommerce;
+	private String professionalLiability;
+	private String cyberLiability;
+	private String pollutionexposure;
+	private String accidentalBenefits;
+	private String malpracticeExposure;
+	private String abuseExposure;
+	private String bondingOpportunities;
+	private String groupBenefits;
+	private String pensionPlan;
+	private String businessInterruptionSheet;
+	
+	
 	private String financialYearEnd;
 	private int noOfStaff;
 	private double payRoll;
-	private boolean groupBenefits;
-	private boolean pensionPlan;
 	private String descriptionOfOperationsAndRevenue1;
 	private double amount1;
 	private String descriptionOfOperationsAndRevenue2;
@@ -73,13 +100,10 @@ public class InsuranceFormBean {
 	private String largestSuppliers2;
 	private String largestSuppliers3;
 	private String largestSuppliers4;
-
-	private boolean bondingOpportunities;
 	private String futureOpportunitiesOrPlanOfGrowth;
 	private String describeCompetition;
 	private String businessAsset;
 	private String advertising;
-	private boolean businessInterruptionSheet;
 	private String durationIncaseOfSeriousClaims;
 	private String pastClaimCause1;
 	private Date pastClaimDate1;
@@ -100,15 +124,26 @@ public class InsuranceFormBean {
 	private Date pastClaimDate6;
 	private double pastClaimAmount6;
 
+	//new
+	private Date currentInsuranceExpiry1;
+	private Date currentInsuranceExpiry2;
+	private Date currentInsuranceExpiry3;
+	private String addressOfLocationOwnedyes1;
+	private String addressOfLocationOwnedyes2;
+	private String addressOfLocationOwnedyes3;
+	private String addressOfLocationOwnedno1;
+	private String addressOfLocationOwnedno2;
+	private String addressOfLocationOwnedno3;
+	private String producercomments;
+	private String marketercomments;
+	//
+	
 	private String currentInsuranceType1;
 	private String currentInsuranceCarrier1;
-	private String currentInsuranceExpiry1;
 	private String currentInsuranceType2;
 	private String currentInsuranceCarrier2;
-	private String currentInsuranceExpiry2;
 	private String currentInsuranceType3;
 	private String currentInsuranceCarrier3;
-	private String currentInsuranceExpiry3;
 	private String currentInsuranceType4;
 	private String currentInsuranceCarrier4;
 	private String currentInsuranceExpiry4;
@@ -124,19 +159,19 @@ public class InsuranceFormBean {
 
 	private String addressOfLocation1;
 	private String addressOfLocationUse1;
-	private boolean addressOfLocationOwned1;
+	
 	private String addressOfLocation2;
 	private String addressOfLocationUse2;
-	private boolean addressOfLocationOwned2;
+	
 	private String addressOfLocation3;
 	private String addressOfLocationUse3;
-	private boolean addressOfLocationOwned3;
+	
 	private String addressOfLocation4;
 	private String addressOfLocationUse4;
-	private boolean addressOfLocationOwned4;
+	
 	private String addressOfLocation5;
 	private String addressOfLocationUse5;
-	private boolean addressOfLocationOwned5;
+	
 
 	private String locationRentedToOthers1;
 	private String locationRentedToOthers2;
@@ -475,22 +510,6 @@ public class InsuranceFormBean {
 		this.entityType = entityType;
 	}
 
-	public boolean isProfit() {
-		return profit;
-	}
-
-	public void setProfit(boolean profit) {
-		this.profit = profit;
-	}
-
-	public boolean isNonProfit() {
-		return nonProfit;
-	}
-
-	public void setNonProfit(boolean nonProfit) {
-		this.nonProfit = nonProfit;
-	}
-
 	public String getYearInBusiness() {
 		return yearInBusiness;
 	}
@@ -505,22 +524,6 @@ public class InsuranceFormBean {
 
 	public void setRelatedExperience(String relatedExperience) {
 		this.relatedExperience = relatedExperience;
-	}
-
-	public String getOwners() {
-		return owners;
-	}
-
-	public void setOwners(String owners) {
-		this.owners = owners;
-	}
-
-	public String getBoardOfDirectors() {
-		return boardOfDirectors;
-	}
-
-	public void setBoardOfDirectors(String boardOfDirectors) {
-		this.boardOfDirectors = boardOfDirectors;
 	}
 
 	public String getFinancialYearEnd() {
@@ -545,22 +548,6 @@ public class InsuranceFormBean {
 
 	public void setPayRoll(double payRoll) {
 		this.payRoll = payRoll;
-	}
-
-	public boolean isGroupBenefits() {
-		return groupBenefits;
-	}
-
-	public void setGroupBenefits(boolean groupBenefits) {
-		this.groupBenefits = groupBenefits;
-	}
-
-	public boolean isPensionPlan() {
-		return pensionPlan;
-	}
-
-	public void setPensionPlan(boolean pensionPlan) {
-		this.pensionPlan = pensionPlan;
 	}
 
 	public String getDescriptionOfOperationsAndRevenue1() {
@@ -761,14 +748,6 @@ public class InsuranceFormBean {
 		this.largestSuppliers4 = largestSuppliers4;
 	}
 
-	public boolean isBondingOpportunities() {
-		return bondingOpportunities;
-	}
-
-	public void setBondingOpportunities(boolean bondingOpportunities) {
-		this.bondingOpportunities = bondingOpportunities;
-	}
-
 	public String getFutureOpportunitiesOrPlanOfGrowth() {
 		return futureOpportunitiesOrPlanOfGrowth;
 	}
@@ -800,14 +779,6 @@ public class InsuranceFormBean {
 
 	public void setAdvertising(String advertising) {
 		this.advertising = advertising;
-	}
-
-	public boolean isBusinessInterruptionSheet() {
-		return businessInterruptionSheet;
-	}
-
-	public void setBusinessInterruptionSheet(boolean businessInterruptionSheet) {
-		this.businessInterruptionSheet = businessInterruptionSheet;
 	}
 
 	public String getDurationIncaseOfSeriousClaims() {
@@ -979,14 +950,6 @@ public class InsuranceFormBean {
 		this.currentInsuranceCarrier1 = currentInsuranceCarrier1;
 	}
 
-	public String getCurrentInsuranceExpiry1() {
-		return currentInsuranceExpiry1;
-	}
-
-	public void setCurrentInsuranceExpiry1(String currentInsuranceExpiry1) {
-		this.currentInsuranceExpiry1 = currentInsuranceExpiry1;
-	}
-
 	public String getCurrentInsuranceType2() {
 		return currentInsuranceType2;
 	}
@@ -1003,14 +966,6 @@ public class InsuranceFormBean {
 		this.currentInsuranceCarrier2 = currentInsuranceCarrier2;
 	}
 
-	public String getCurrentInsuranceExpiry2() {
-		return currentInsuranceExpiry2;
-	}
-
-	public void setCurrentInsuranceExpiry2(String currentInsuranceExpiry2) {
-		this.currentInsuranceExpiry2 = currentInsuranceExpiry2;
-	}
-
 	public String getCurrentInsuranceType3() {
 		return currentInsuranceType3;
 	}
@@ -1025,14 +980,6 @@ public class InsuranceFormBean {
 
 	public void setCurrentInsuranceCarrier3(String currentInsuranceCarrier3) {
 		this.currentInsuranceCarrier3 = currentInsuranceCarrier3;
-	}
-
-	public String getCurrentInsuranceExpiry3() {
-		return currentInsuranceExpiry3;
-	}
-
-	public void setCurrentInsuranceExpiry3(String currentInsuranceExpiry3) {
-		this.currentInsuranceExpiry3 = currentInsuranceExpiry3;
 	}
 
 	public String getCurrentInsuranceType4() {
@@ -1139,14 +1086,6 @@ public class InsuranceFormBean {
 		this.addressOfLocationUse1 = addressOfLocationUse1;
 	}
 
-	public boolean isAddressOfLocationOwned1() {
-		return addressOfLocationOwned1;
-	}
-
-	public void setAddressOfLocationOwned1(boolean addressOfLocationOwned1) {
-		this.addressOfLocationOwned1 = addressOfLocationOwned1;
-	}
-
 	public String getAddressOfLocation2() {
 		return addressOfLocation2;
 	}
@@ -1161,14 +1100,6 @@ public class InsuranceFormBean {
 
 	public void setAddressOfLocationUse2(String addressOfLocationUse2) {
 		this.addressOfLocationUse2 = addressOfLocationUse2;
-	}
-
-	public boolean isAddressOfLocationOwned2() {
-		return addressOfLocationOwned2;
-	}
-
-	public void setAddressOfLocationOwned2(boolean addressOfLocationOwned2) {
-		this.addressOfLocationOwned2 = addressOfLocationOwned2;
 	}
 
 	public String getAddressOfLocation3() {
@@ -1186,15 +1117,7 @@ public class InsuranceFormBean {
 	public void setAddressOfLocationUse3(String addressOfLocationUse3) {
 		this.addressOfLocationUse3 = addressOfLocationUse3;
 	}
-
-	public boolean isAddressOfLocationOwned3() {
-		return addressOfLocationOwned3;
-	}
-
-	public void setAddressOfLocationOwned3(boolean addressOfLocationOwned3) {
-		this.addressOfLocationOwned3 = addressOfLocationOwned3;
-	}
-
+	
 	public String getAddressOfLocation4() {
 		return addressOfLocation4;
 	}
@@ -1211,14 +1134,6 @@ public class InsuranceFormBean {
 		this.addressOfLocationUse4 = addressOfLocationUse4;
 	}
 
-	public boolean isAddressOfLocationOwned4() {
-		return addressOfLocationOwned4;
-	}
-
-	public void setAddressOfLocationOwned4(boolean addressOfLocationOwned4) {
-		this.addressOfLocationOwned4 = addressOfLocationOwned4;
-	}
-
 	public String getAddressOfLocation5() {
 		return addressOfLocation5;
 	}
@@ -1233,14 +1148,6 @@ public class InsuranceFormBean {
 
 	public void setAddressOfLocationUse5(String addressOfLocationUse5) {
 		this.addressOfLocationUse5 = addressOfLocationUse5;
-	}
-
-	public boolean isAddressOfLocationOwned5() {
-		return addressOfLocationOwned5;
-	}
-
-	public void setAddressOfLocationOwned5(boolean addressOfLocationOwned5) {
-		this.addressOfLocationOwned5 = addressOfLocationOwned5;
 	}
 
 	public String getLocationRentedToOthers1() {
@@ -2556,6 +2463,342 @@ public class InsuranceFormBean {
 
 	public void setMarketerUserName(String marketerUserName) {
 		this.marketerUserName = marketerUserName;
+	}
+
+	public String getOwner1() {
+		return owner1;
+	}
+
+	public void setOwner1(String owner1) {
+		this.owner1 = owner1;
+	}
+
+	public String getOwner2() {
+		return owner2;
+	}
+
+	public void setOwner2(String owner2) {
+		this.owner2 = owner2;
+	}
+
+	public String getOwner3() {
+		return owner3;
+	}
+
+	public void setOwner3(String owner3) {
+		this.owner3 = owner3;
+	}
+
+	public String getOwner4() {
+		return owner4;
+	}
+
+	public void setOwner4(String owner4) {
+		this.owner4 = owner4;
+	}
+
+	public String getSeverity() {
+		return severity;
+	}
+
+	public void setSeverity(String severity) {
+		this.severity = severity;
+	}
+
+	public String getBoardOfDirector1() {
+		return boardOfDirector1;
+	}
+
+	public void setBoardOfDirector1(String boardOfDirector1) {
+		this.boardOfDirector1 = boardOfDirector1;
+	}
+
+	public String getBoardOfDirector2() {
+		return boardOfDirector2;
+	}
+
+	public void setBoardOfDirector2(String boardOfDirector2) {
+		this.boardOfDirector2 = boardOfDirector2;
+	}
+
+	public String getBoardOfDirector4() {
+		return boardOfDirector4;
+	}
+
+	public void setBoardOfDirector4(String boardOfDirector4) {
+		this.boardOfDirector4 = boardOfDirector4;
+	}
+
+	public String getBoardOfDirector3() {
+		return boardOfDirector3;
+	}
+
+	public void setBoardOfDirector3(String boardOfDirector3) {
+		this.boardOfDirector3 = boardOfDirector3;
+	}
+
+	public String getCurrency1() {
+		return currency1;
+	}
+
+	public void setCurrency1(String currency1) {
+		this.currency1 = currency1;
+	}
+
+	public String getCurrency2() {
+		return currency2;
+	}
+
+	public void setCurrency2(String currency2) {
+		this.currency2 = currency2;
+	}
+
+	public String getCurrency3() {
+		return currency3;
+	}
+
+	public void setCurrency3(String currency3) {
+		this.currency3 = currency3;
+	}
+
+	public String getCurrency4() {
+		return currency4;
+	}
+
+	public void setCurrency4(String currency4) {
+		this.currency4 = currency4;
+	}
+
+	public int getOnpremises() {
+		return onpremises;
+	}
+
+	public void setOnpremises(int onpremises) {
+		this.onpremises = onpremises;
+	}
+
+	public int getOffpremises() {
+		return offpremises;
+	}
+
+	public void setOffpremises(int offpremises) {
+		this.offpremises = offpremises;
+	}
+
+	public int getResidential() {
+		return residential;
+	}
+
+	public void setResidential(int residential) {
+		this.residential = residential;
+	}
+
+	public int getCommercial() {
+		return commercial;
+	}
+
+	public void setCommercial(int commercial) {
+		this.commercial = commercial;
+	}
+
+	public int getSubcontracted() {
+		return subcontracted;
+	}
+
+	public void setSubcontracted(int subcontracted) {
+		this.subcontracted = subcontracted;
+	}
+
+	public String getEcommerce() {
+		return ecommerce;
+	}
+
+	public void setEcommerce(String ecommerce) {
+		this.ecommerce = ecommerce;
+	}
+
+	public String getProfessionalLiability() {
+		return professionalLiability;
+	}
+
+	public void setProfessionalLiability(String professionalLiability) {
+		this.professionalLiability = professionalLiability;
+	}
+
+	public String getCyberLiability() {
+		return cyberLiability;
+	}
+
+	public void setCyberLiability(String cyberLiability) {
+		this.cyberLiability = cyberLiability;
+	}
+
+	public String getPollutionexposure() {
+		return pollutionexposure;
+	}
+
+	public void setPollutionexposure(String pollutionexposure) {
+		this.pollutionexposure = pollutionexposure;
+	}
+
+	public String getAccidentalBenefits() {
+		return accidentalBenefits;
+	}
+
+	public void setAccidentalBenefits(String accidentalBenefits) {
+		this.accidentalBenefits = accidentalBenefits;
+	}
+
+	public String getMalpracticeExposure() {
+		return malpracticeExposure;
+	}
+
+	public void setMalpracticeExposure(String malpracticeExposure) {
+		this.malpracticeExposure = malpracticeExposure;
+	}
+
+	public String getAbuseExposure() {
+		return abuseExposure;
+	}
+
+	public void setAbuseExposure(String abuseExposure) {
+		this.abuseExposure = abuseExposure;
+	}
+
+	public String getBondingOpportunities() {
+		return bondingOpportunities;
+	}
+
+	public void setBondingOpportunities(String bondingOpportunities) {
+		this.bondingOpportunities = bondingOpportunities;
+	}
+
+	public Date getCurrentInsuranceExpiry1() {
+		return currentInsuranceExpiry1;
+	}
+
+	public void setCurrentInsuranceExpiry1(Date currentInsuranceExpiry1) {
+		this.currentInsuranceExpiry1 = currentInsuranceExpiry1;
+	}
+
+	public Date getCurrentInsuranceExpiry2() {
+		return currentInsuranceExpiry2;
+	}
+
+	public void setCurrentInsuranceExpiry2(Date currentInsuranceExpiry2) {
+		this.currentInsuranceExpiry2 = currentInsuranceExpiry2;
+	}
+
+	public Date getCurrentInsuranceExpiry3() {
+		return currentInsuranceExpiry3;
+	}
+
+	public void setCurrentInsuranceExpiry3(Date currentInsuranceExpiry3) {
+		this.currentInsuranceExpiry3 = currentInsuranceExpiry3;
+	}
+
+	public String getAddressOfLocationOwnedyes1() {
+		return addressOfLocationOwnedyes1;
+	}
+
+	public void setAddressOfLocationOwnedyes1(String addressOfLocationOwnedyes1) {
+		this.addressOfLocationOwnedyes1 = addressOfLocationOwnedyes1;
+	}
+
+	public String getAddressOfLocationOwnedyes2() {
+		return addressOfLocationOwnedyes2;
+	}
+
+	public void setAddressOfLocationOwnedyes2(String addressOfLocationOwnedyes2) {
+		this.addressOfLocationOwnedyes2 = addressOfLocationOwnedyes2;
+	}
+
+	public String getAddressOfLocationOwnedyes3() {
+		return addressOfLocationOwnedyes3;
+	}
+
+	public void setAddressOfLocationOwnedyes3(String addressOfLocationOwnedyes3) {
+		this.addressOfLocationOwnedyes3 = addressOfLocationOwnedyes3;
+	}
+
+	public String getAddressOfLocationOwnedno1() {
+		return addressOfLocationOwnedno1;
+	}
+
+	public void setAddressOfLocationOwnedno1(String addressOfLocationOwnedno1) {
+		this.addressOfLocationOwnedno1 = addressOfLocationOwnedno1;
+	}
+
+	public String getAddressOfLocationOwnedno2() {
+		return addressOfLocationOwnedno2;
+	}
+
+	public void setAddressOfLocationOwnedno2(String addressOfLocationOwnedno2) {
+		this.addressOfLocationOwnedno2 = addressOfLocationOwnedno2;
+	}
+
+	public String getAddressOfLocationOwnedno3() {
+		return addressOfLocationOwnedno3;
+	}
+
+	public void setAddressOfLocationOwnedno3(String addressOfLocationOwnedno3) {
+		this.addressOfLocationOwnedno3 = addressOfLocationOwnedno3;
+	}
+
+	public String getProducercomments() {
+		return producercomments;
+	}
+
+	public void setProducercomments(String producercomments) {
+		this.producercomments = producercomments;
+	}
+
+	public String getMarketercomments() {
+		return marketercomments;
+	}
+
+	public void setMarketercomments(String marketercomments) {
+		this.marketercomments = marketercomments;
+	}
+
+	public String getProfit() {
+		return profit;
+	}
+
+	public void setProfit(String profit) {
+		this.profit = profit;
+	}
+
+	public String getNonProfit() {
+		return nonProfit;
+	}
+
+	public void setNonProfit(String nonProfit) {
+		this.nonProfit = nonProfit;
+	}
+
+	public String getGroupBenefits() {
+		return groupBenefits;
+	}
+
+	public void setGroupBenefits(String groupBenefits) {
+		this.groupBenefits = groupBenefits;
+	}
+
+	public String getPensionPlan() {
+		return pensionPlan;
+	}
+
+	public void setPensionPlan(String pensionPlan) {
+		this.pensionPlan = pensionPlan;
+	}
+
+	public String getBusinessInterruptionSheet() {
+		return businessInterruptionSheet;
+	}
+
+	public void setBusinessInterruptionSheet(String businessInterruptionSheet) {
+		this.businessInterruptionSheet = businessInterruptionSheet;
 	}
 
 }

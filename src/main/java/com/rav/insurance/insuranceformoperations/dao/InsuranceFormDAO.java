@@ -39,7 +39,28 @@ public class InsuranceFormDAO {
 		return formId;
 	}
 
-	@SuppressWarnings("unchecked")
+	public boolean assignMarketer(int formId,String marketerUserName) throws Exception {
+		boolean result = false;
+
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			session = DatabaseConfig.getSessionFactory().openSession();
+			session.beginTransaction();
+			InsuranceFormBean bean = (InsuranceFormBean) session.get(
+					InsuranceFormBean.class, formId);
+			bean.setMarketerUserName(marketerUserName);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return result;
+	}
+
 	public GetInsuranceFormResponse getForm(int formId) throws Exception {
 		GetInsuranceFormResponse form = null;
 		Session session;
@@ -51,22 +72,16 @@ public class InsuranceFormDAO {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
-			Criteria crit = session.createCriteria(InsuranceFormBean.class);
-			Criterion restriction = Restrictions.eq("id", formId);
 
-			crit.add(restriction);
+			InsuranceFormBean bean = (InsuranceFormBean) session.get(
+					InsuranceFormBean.class, formId);
 
-			List<InsuranceFormBean> list = (List<InsuranceFormBean>) crit
-					.list();
-			if (list != null && list.size() > 0) {
-				InsuranceFormBean bean = list.get(0);
-				
-				form = new GetInsuranceFormResponse();
-				
-				DozerBeanMapper mapper = new DozerBeanMapper();
-				mapper.map(bean, form);
-				form.setFormId(""+bean.getId());
-			}
+			form = new GetInsuranceFormResponse();
+
+			DozerBeanMapper mapper = new DozerBeanMapper();
+			mapper.map(bean, form);
+			form.setFormId("" + bean.getId());
+
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			throw e;

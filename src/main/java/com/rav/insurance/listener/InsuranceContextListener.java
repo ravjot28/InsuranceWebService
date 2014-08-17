@@ -4,8 +4,6 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import com.rav.insurance.useroperations.constants.UserOperationsConstants;
-
 /**
  * Application Lifecycle Listener implementation class FamedenContextListener
  * 
@@ -25,10 +23,9 @@ public class InsuranceContextListener implements ServletContextListener {
 	 */
 	public void contextInitialized(ServletContextEvent context) {
 
-		System.setProperty(
-				UserOperationsConstants.EMAIL_TEMPLATES_PROPERTY,
-				context.getServletContext().getRealPath(
-						UserOperationsConstants.EMAIL_TEMPLATES_PATH));
+		System.setProperty("emailTemplates", context.getServletContext()
+				.getRealPath("/WEB-INF/classes/com/rav/emailformats"));
+
 	}
 
 	/**

@@ -6,8 +6,9 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 
 	private String userEmailAddress;
 	private String userFullName;
+	private String loggedInUserEmailAddress;
 	private String role;
-	
+
 	public String getUserEmailAddress() {
 		return userEmailAddress;
 	}
@@ -30,6 +31,14 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getLoggedInUserEmailAddress() {
+		return loggedInUserEmailAddress;
+	}
+
+	public void setLoggedInUserEmailAddress(String loggedInUserEmailAddress) {
+		this.loggedInUserEmailAddress = loggedInUserEmailAddress;
 	}
 
 }
