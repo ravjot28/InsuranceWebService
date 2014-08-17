@@ -35,7 +35,6 @@ public class InsuranceFormBean {
 	private String webSiteURL;
 	private int numberOfLocations;
 	private int numberOfOwnedAutos;
-
 	private String entityType;
 	private boolean profit;
 	private boolean nonProfit;
