@@ -1,8 +1,12 @@
 package com.rav.insurance.util;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class WriteByteArray {
 
@@ -27,5 +31,26 @@ public class WriteByteArray {
 				bs.close();
 			} catch (Exception e) {
 			}
+	}
+
+	public static byte[] getByteFromFile(File file) {
+		byte[] fileBytes = null;
+		try {
+			FileInputStream fis;
+
+			fis = new FileInputStream(file);
+
+			BufferedInputStream inputStream = new BufferedInputStream(fis);
+			fileBytes = new byte[(int) file.length()];
+			inputStream.read(fileBytes);
+			inputStream.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return fileBytes;
 	}
 }

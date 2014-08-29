@@ -17,7 +17,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private String secondayContactPhone;
 	private String secondayContactEmailAddress;
 
-	//new
+	// new
 	private String profit;
 	private String nonProfit;
 	private String owner1;
@@ -130,13 +130,13 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 
 	private String currentInsuranceType1;
 	private String currentInsuranceCarrier1;
-	
+
 	private String currentInsuranceType2;
 	private String currentInsuranceCarrier2;
-	
+
 	private String currentInsuranceType3;
 	private String currentInsuranceCarrier3;
-	
+
 	private String currentInsuranceType4;
 	private String currentInsuranceCarrier4;
 	private String currentInsuranceExpiry4;
@@ -156,13 +156,12 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private String addressOfLocationUse2;
 	private String addressOfLocation3;
 	private String addressOfLocationUse3;
-	
+
 	private String addressOfLocation4;
 	private String addressOfLocationUse4;
-	
+
 	private String addressOfLocation5;
 	private String addressOfLocationUse5;
-	
 
 	private String locationRentedToOthers1;
 	private String locationRentedToOthers2;
@@ -337,6 +336,27 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private String marketerUserName;
 	private String status;
 	private String producerUserName;
+
+	private byte[] file1;
+	private String file1Name;
+	private byte[] file2;
+	private String file2Name;
+	private byte[] file3;
+	private String file3Name;
+	private byte[] file4;
+	private String file4Name;
+	private byte[] file5;
+	private String file5Name;
+	private byte[] file6;
+	private String file6Name;
+	private byte[] file7;
+	private String file7Name;
+	private byte[] file8;
+	private String file8Name;
+	private byte[] file9;
+	private String file9Name;
+	private byte[] file10;
+	private String file10Name;
 
 	public String getFormId() {
 		return formId;
@@ -2804,6 +2824,166 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 
 	public void setMarketercomments(String marketercomments) {
 		this.marketercomments = marketercomments;
+	}
+
+	public byte[] getFile1() {
+		return file1;
+	}
+
+	public void setFile1(byte[] file1) {
+		this.file1 = file1;
+	}
+
+	public String getFile1Name() {
+		return file1Name;
+	}
+
+	public void setFile1Name(String file1Name) {
+		this.file1Name = file1Name;
+	}
+
+	public byte[] getFile2() {
+		return file2;
+	}
+
+	public void setFile2(byte[] file2) {
+		this.file2 = file2;
+	}
+
+	public String getFile2Name() {
+		return file2Name;
+	}
+
+	public void setFile2Name(String file2Name) {
+		this.file2Name = file2Name;
+	}
+
+	public byte[] getFile3() {
+		return file3;
+	}
+
+	public void setFile3(byte[] file3) {
+		this.file3 = file3;
+	}
+
+	public String getFile3Name() {
+		return file3Name;
+	}
+
+	public void setFile3Name(String file3Name) {
+		this.file3Name = file3Name;
+	}
+
+	public byte[] getFile4() {
+		return file4;
+	}
+
+	public void setFile4(byte[] file4) {
+		this.file4 = file4;
+	}
+
+	public String getFile4Name() {
+		return file4Name;
+	}
+
+	public void setFile4Name(String file4Name) {
+		this.file4Name = file4Name;
+	}
+
+	public byte[] getFile5() {
+		return file5;
+	}
+
+	public void setFile5(byte[] file5) {
+		this.file5 = file5;
+	}
+
+	public String getFile5Name() {
+		return file5Name;
+	}
+
+	public void setFile5Name(String file5Name) {
+		this.file5Name = file5Name;
+	}
+
+	public byte[] getFile6() {
+		return file6;
+	}
+
+	public void setFile6(byte[] file6) {
+		this.file6 = file6;
+	}
+
+	public String getFile6Name() {
+		return file6Name;
+	}
+
+	public void setFile6Name(String file6Name) {
+		this.file6Name = file6Name;
+	}
+
+	public byte[] getFile7() {
+		return file7;
+	}
+
+	public void setFile7(byte[] file7) {
+		this.file7 = file7;
+	}
+
+	public String getFile7Name() {
+		return file7Name;
+	}
+
+	public void setFile7Name(String file7Name) {
+		this.file7Name = file7Name;
+	}
+
+	public byte[] getFile8() {
+		return file8;
+	}
+
+	public void setFile8(byte[] file8) {
+		this.file8 = file8;
+	}
+
+	public String getFile8Name() {
+		return file8Name;
+	}
+
+	public void setFile8Name(String file8Name) {
+		this.file8Name = file8Name;
+	}
+
+	public byte[] getFile9() {
+		return file9;
+	}
+
+	public void setFile9(byte[] file9) {
+		this.file9 = file9;
+	}
+
+	public String getFile9Name() {
+		return file9Name;
+	}
+
+	public void setFile9Name(String file9Name) {
+		this.file9Name = file9Name;
+	}
+
+	public byte[] getFile10() {
+		return file10;
+	}
+
+	public void setFile10(byte[] file10) {
+		this.file10 = file10;
+	}
+
+	public String getFile10Name() {
+		return file10Name;
+	}
+
+	public void setFile10Name(String file10Name) {
+		this.file10Name = file10Name;
 	}
 
 }
