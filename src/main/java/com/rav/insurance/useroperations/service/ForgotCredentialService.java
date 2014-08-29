@@ -28,7 +28,7 @@ public class ForgotCredentialService extends ServiceAbstract {
 	public void validateRequest(Object dto) throws Exception {
 		ForgotCredentialDTO obj = (ForgotCredentialDTO) dto;
 
-		if (CommonValidations.isValidEmailAddress(obj.getEmailAddress())) {
+		if (!CommonValidations.isValidEmailAddress(obj.getEmailAddress())) {
 
 			throw new Exception("Invalid Email Address");
 		}
@@ -68,8 +68,10 @@ public class ForgotCredentialService extends ServiceAbstract {
 										+ new Random().nextInt());
 						sendMailNotification(bean.getEmailAddress(),
 								bean.getTitle() + " " + bean.getFirstName()
-										+ " " + bean.getMiddleName() + " "
-										+ bean.getLastName(), encoder.get());
+										, encoder.get());
+						response = new CommonResponseAttributes();
+						response.setStatus(CommonConstants.SUCCESS);
+						
 					} else {
 						throw new Exception("User is not registered");
 					}
@@ -107,6 +109,10 @@ public class ForgotCredentialService extends ServiceAbstract {
 				.getInstanceOf(UserOperationsConstants.FORGOT_CREDENTIAL_TEMPLATE_FILE);
 		loginEmail.setAttribute(
 				UserOperationsConstants.FORGOT_CREDENTIAL_CODE_PLACE_HOLDER,
+				code);
+		
+		loginEmail.setAttribute(
+				UserOperationsConstants.EMAIL_TEMPLATE_FULLNAME_PLACE_HOLDER,
 				fullName);
 
 		loginEmail.setAttribute(

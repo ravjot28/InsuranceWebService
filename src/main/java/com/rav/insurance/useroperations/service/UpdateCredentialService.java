@@ -74,7 +74,7 @@ public class UpdateCredentialService extends ServiceAbstract {
 			if ((!CommonValidations.isStringEmpty(obj.getPassword()))
 					|| (!CommonValidations.isStringEmpty(obj.getCode()))) {
 				if (CommonValidations.isStringEmpty(obj.getUserId())
-						|| (!CommonValidations.isStringEmpty(obj.getCode()))) {
+						&& (CommonValidations.isStringEmpty(obj.getCode()))) {
 					throw new Exception("Invalid User Name");
 				}
 			} else {

@@ -32,6 +32,7 @@
 		<!-- Drop and re-create the database schema on startup -->
 		<property name="hbm2ddl.auto">update</property>
 		<mapping class="com.rav.insurance.useroperations.bean.UserBean" />
+		<mapping class="com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean" />
 	</session-factory>
 </hibernate-configuration>
 
