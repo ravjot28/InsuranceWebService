@@ -12,7 +12,9 @@ import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
 import com.rav.insurance.service.ServiceAbstract;
+import com.rav.insurance.util.CommonValidations;
 import com.rav.insurance.util.SendMail;
+import com.rav.insurance.util.WriteByteArray;
 
 public class SubmitFormService extends ServiceAbstract {
 
@@ -24,10 +26,55 @@ public class SubmitFormService extends ServiceAbstract {
 					.submitForm(getBean((InsuranceFormSubmitRequest) model));
 			if (formId == -1)
 				throw new Exception("Error in inserting the form");
+
+			InsuranceFormSubmitRequest obj = (InsuranceFormSubmitRequest) model;
+			if (!CommonValidations.isStringEmpty(obj.getFile1Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile1Name(), obj.getFile1());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile2Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile2Name(), obj.getFile2());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile3Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile3Name(), obj.getFile3());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile4Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile4Name(), obj.getFile4());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile5Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile5Name(), obj.getFile5());
+			}
+			
+			if (!CommonValidations.isStringEmpty(obj.getFile6Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile6Name(), obj.getFile6());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile7Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile7Name(), obj.getFile7());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile8Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile8Name(), obj.getFile8());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile9Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile9Name(), obj.getFile9());
+			}
+
+			if (!CommonValidations.isStringEmpty(obj.getFile10Name())) {
+				WriteByteArray.writeByteArray(""+formId+"/"+obj.getFile10Name(), obj.getFile10());
+			}
+
 			response = new InsuranceFormSubmitResponse();
 			response.setStatus(CommonConstants.SUCCESS);
 			response.setFormId("UCCIG" + formId);
-			sendMail("UCCIG"+formId, ((InsuranceFormSubmitRequest) model).getLoggedInUserEmailAddress(), ((InsuranceFormSubmitRequest) model).getUserId());
+			sendMail("UCCIG" + formId,
+					((InsuranceFormSubmitRequest) model)
+							.getLoggedInUserEmailAddress(),
+					((InsuranceFormSubmitRequest) model).getUserId());
 		} catch (Exception e) {
 			response = new InsuranceFormSubmitResponse();
 			response.setStatus(CommonConstants.ERROR);
@@ -38,7 +85,7 @@ public class SubmitFormService extends ServiceAbstract {
 		return response;
 	}
 
-	private void sendMail(String formId, String emailAddress,String fullName) {
+	private void sendMail(String formId, String emailAddress, String fullName) {
 
 		StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
 				"welcomeloginemail group", System.getProperty("emailTemplates"));

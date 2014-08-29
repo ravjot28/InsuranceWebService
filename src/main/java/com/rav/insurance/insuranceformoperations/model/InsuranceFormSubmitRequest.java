@@ -8,9 +8,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private Date creationDate;
 	private String producer;
 	private String branch;
-	private String severity; //new
-	
-	
+	private String severity; // new
 
 	private String keyContact;
 	private String keyContactPhone;
@@ -39,13 +37,12 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String owner2;
 	private String owner3;
 	private String owner4;
-	
-	
+
 	private String boardOfDirector1;
 	private String boardOfDirector2;
 	private String boardOfDirector4;
 	private String boardOfDirector3;
-	
+
 	private String financialYearEnd;
 	private int noOfStaff;
 	private double payRoll;
@@ -63,15 +60,15 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private double amount5;
 	private String descriptionOfOperationsAndRevenue6;
 	private double amount6;
-	
+
 	private String currency1;
 	private String currency2;
 	private String currency3;
 	private String currency4;
-	
+
 	private double totalSale;
 	private double percentageOfUSSales;
-	
+
 	private int onpremises;
 	private int offpremises;
 	private int residential;
@@ -85,8 +82,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String malpracticeExposure;
 	private String abuseExposure;
 	private String bondingOpportunities;
-	
-	
+
 	private String largestCustomerOrProject1;
 	private String largestCustomerOrProject2;
 	private String largestCustomerOrProject3;
@@ -98,7 +94,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String largestSuppliers3;
 	private String largestSuppliers4;
 
-	
 	private String futureOpportunitiesOrPlanOfGrowth;
 	private String describeCompetition;
 	private String businessAsset;
@@ -127,6 +122,28 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String currentInsuranceType1;
 	private String currentInsuranceCarrier1;
 	private Date currentInsuranceExpiry1;
+
+	private byte[] file1;
+	private String file1Name;
+	private byte[] file2;
+	private String file2Name;
+	private byte[] file3;
+	private String file3Name;
+	private byte[] file4;
+	private String file4Name;
+	private byte[] file5;
+	private String file5Name;
+	private byte[] file6;
+	private String file6Name;
+	private byte[] file7;
+	private String file7Name;
+	private byte[] file8;
+	private String file8Name;
+	private byte[] file9;
+	private String file9Name;
+	private byte[] file10;
+	private String file10Name;
+
 	public Date getCurrentInsuranceExpiry1() {
 		return currentInsuranceExpiry1;
 	}
@@ -142,7 +159,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public Date getCurrentInsuranceExpiry4() {
 		return currentInsuranceExpiry4;
 	}
-	
+
 	public void setCurrentInsuranceExpiry1(Date currentInsuranceExpiry1) {
 		this.currentInsuranceExpiry1 = currentInsuranceExpiry1;
 	}
@@ -193,6 +210,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String addressOfLocation5;
 	private String addressOfLocationUse5;
 	private String addressOfLocationOwnedno2;
+
 	public String getAddressOfLocationOwnedyes1() {
 		return addressOfLocationOwnedyes1;
 	}
@@ -1185,7 +1203,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setRoof(String roof) {
 		this.roof = roof;
 	}
-	
+
 	public String getPincode() {
 		return pincode;
 	}
@@ -1193,7 +1211,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
-	
+
 	public String getCountry() {
 		return country;
 	}
@@ -1201,7 +1219,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
 
 	public String getFloors() {
 		return floors;
@@ -1378,7 +1395,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setClaimDesc1(String claimDesc1) {
 		this.claimDesc1 = claimDesc1;
 	}
-	
+
 	public String getSeverity() {
 		return severity;
 	}
@@ -1883,6 +1900,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setOwner1(String owner1) {
 		this.owner1 = owner1;
 	}
+
 	public String getOwner2() {
 		return owner2;
 	}
@@ -1890,7 +1908,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setOwner2(String owner2) {
 		this.owner2 = owner2;
 	}
-	
+
 	public String getOwner3() {
 		return owner3;
 	}
@@ -1898,7 +1916,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setOwner3(String owner3) {
 		this.owner3 = owner3;
 	}
-	
+
 	public String getOwner4() {
 		return owner4;
 	}
@@ -1922,7 +1940,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setBoardOfDirector2(String boardOfDirector2) {
 		this.boardOfDirector2 = boardOfDirector2;
 	}
-	
+
 	public String getBoardOfDirector3() {
 		return boardOfDirector3;
 	}
@@ -1930,7 +1948,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setBoardOfDirector3(String boardOfDirector3) {
 		this.boardOfDirector3 = boardOfDirector3;
 	}
-	
+
 	public String getBoardOfDirector4() {
 		return boardOfDirector4;
 	}
@@ -2523,7 +2541,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.currentInsuranceCarrier1 = currentInsuranceCarrier1;
 	}
 
-
 	public String getCurrentInsuranceType2() {
 		return currentInsuranceType2;
 	}
@@ -2699,6 +2716,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setAddressOfLocationUse4(String addressOfLocationUse4) {
 		this.addressOfLocationUse4 = addressOfLocationUse4;
 	}
+
 	public String getAddressOfLocation5() {
 		return addressOfLocation5;
 	}
@@ -2714,6 +2732,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setAddressOfLocationUse5(String addressOfLocationUse5) {
 		this.addressOfLocationUse5 = addressOfLocationUse5;
 	}
+
 	public String getLocationRentedToOthers1() {
 		return locationRentedToOthers1;
 	}
@@ -2768,6 +2787,166 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 
 	public void setMarketercomments(String marketercomments) {
 		this.marketercomments = marketercomments;
+	}
+
+	public byte[] getFile1() {
+		return file1;
+	}
+
+	public void setFile1(byte[] file1) {
+		this.file1 = file1;
+	}
+
+	public byte[] getFile2() {
+		return file2;
+	}
+
+	public void setFile2(byte[] file2) {
+		this.file2 = file2;
+	}
+
+	public byte[] getFile3() {
+		return file3;
+	}
+
+	public void setFile3(byte[] file3) {
+		this.file3 = file3;
+	}
+
+	public byte[] getFile4() {
+		return file4;
+	}
+
+	public void setFile4(byte[] file4) {
+		this.file4 = file4;
+	}
+
+	public byte[] getFile5() {
+		return file5;
+	}
+
+	public void setFile5(byte[] file5) {
+		this.file5 = file5;
+	}
+
+	public byte[] getFile6() {
+		return file6;
+	}
+
+	public void setFile6(byte[] file6) {
+		this.file6 = file6;
+	}
+
+	public byte[] getFile7() {
+		return file7;
+	}
+
+	public void setFile7(byte[] file7) {
+		this.file7 = file7;
+	}
+
+	public byte[] getFile8() {
+		return file8;
+	}
+
+	public void setFile8(byte[] file8) {
+		this.file8 = file8;
+	}
+
+	public byte[] getFile9() {
+		return file9;
+	}
+
+	public void setFile9(byte[] file9) {
+		this.file9 = file9;
+	}
+
+	public byte[] getFile10() {
+		return file10;
+	}
+
+	public void setFile10(byte[] file10) {
+		this.file10 = file10;
+	}
+
+	public String getFile1Name() {
+		return file1Name;
+	}
+
+	public void setFile1Name(String file1Name) {
+		this.file1Name = file1Name;
+	}
+
+	public String getFile2Name() {
+		return file2Name;
+	}
+
+	public void setFile2Name(String file2Name) {
+		this.file2Name = file2Name;
+	}
+
+	public String getFile3Name() {
+		return file3Name;
+	}
+
+	public void setFile3Name(String file3Name) {
+		this.file3Name = file3Name;
+	}
+
+	public String getFile4Name() {
+		return file4Name;
+	}
+
+	public void setFile4Name(String file4Name) {
+		this.file4Name = file4Name;
+	}
+
+	public String getFile5Name() {
+		return file5Name;
+	}
+
+	public void setFile5Name(String file5Name) {
+		this.file5Name = file5Name;
+	}
+
+	public String getFile6Name() {
+		return file6Name;
+	}
+
+	public void setFile6Name(String file6Name) {
+		this.file6Name = file6Name;
+	}
+
+	public String getFile7Name() {
+		return file7Name;
+	}
+
+	public void setFile7Name(String file7Name) {
+		this.file7Name = file7Name;
+	}
+
+	public String getFile8Name() {
+		return file8Name;
+	}
+
+	public void setFile8Name(String file8Name) {
+		this.file8Name = file8Name;
+	}
+
+	public String getFile9Name() {
+		return file9Name;
+	}
+
+	public void setFile9Name(String file9Name) {
+		this.file9Name = file9Name;
+	}
+
+	public String getFile10Name() {
+		return file10Name;
+	}
+
+	public void setFile10Name(String file10Name) {
+		this.file10Name = file10Name;
 	}
 
 }

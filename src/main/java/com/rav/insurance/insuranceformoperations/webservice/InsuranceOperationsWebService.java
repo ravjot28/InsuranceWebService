@@ -3,6 +3,7 @@ package com.rav.insurance.insuranceformoperations.webservice;
 import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.soap.MTOM;
 
 import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
@@ -19,6 +20,7 @@ import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceO
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.service.ServiceAbstract;
 
+@MTOM
 @WebService(endpointInterface = "com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceOperationsWS", serviceName = "InsuranceOperationsService", portName = "InsuranceOperationsPort")
 public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	@Resource
