@@ -40,6 +40,7 @@ public class LoginService extends ServiceAbstract {
 							response.setUserEmailAddress(bean.getEmailAddress());
 							response.setUserFullName(bean.getFullName());
 							response.setCurrentDate(Calendar.getInstance().getTime());
+							response.setBranch(bean.getBranch());
 						} else {
 							throw new Exception("Incorrect Password");
 						}

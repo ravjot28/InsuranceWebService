@@ -152,6 +152,7 @@ public class UserOperationsDAO {
 					if (userDetailsList != null && userDetailsList.size() > 0) {
 						String role = userDetailsList.get(0).getRole();
 						bean.setRole(role);
+						bean.setBranch(userDetailsList.get(0).getBranch());
 					}
 				}
 

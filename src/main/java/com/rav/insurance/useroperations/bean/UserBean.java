@@ -26,6 +26,8 @@ public class UserBean {
 	private Date updatedDate;
 	@Transient
 	private String role;
+	@Transient
+	private String branch;
 
 	public int getId() {
 		return id;
@@ -97,6 +99,14 @@ public class UserBean {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 
 }

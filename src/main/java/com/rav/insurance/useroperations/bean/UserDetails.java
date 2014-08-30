@@ -10,6 +10,7 @@ public class UserDetails {
 	@Id
 	private String emailAddress;
 	private String role;
+	private String branch;
 
 	public String getEmailAddress() {
 		return emailAddress;
@@ -25,6 +26,14 @@ public class UserDetails {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 
 }

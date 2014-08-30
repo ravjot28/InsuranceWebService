@@ -11,6 +11,7 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 	private String loggedInUserEmailAddress;
 	private String role;
 	private Date currentDate;
+	private String branch;
 
 	public String getUserEmailAddress() {
 		return userEmailAddress;
@@ -50,6 +51,14 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 
 	public void setCurrentDate(Date currentDate) {
 		this.currentDate = currentDate;
+	}
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
 	}
 
 }
