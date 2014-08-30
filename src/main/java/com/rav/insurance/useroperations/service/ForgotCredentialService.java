@@ -67,7 +67,7 @@ public class ForgotCredentialService extends ServiceAbstract {
 								bean.getUserName() + "%"
 										+ new Random().nextInt());
 						sendMailNotification(bean.getEmailAddress(),
-								bean.getTitle() + " " + bean.getFirstName()
+								bean.getFullName()
 										, encoder.get());
 						response = new CommonResponseAttributes();
 						response.setStatus(CommonConstants.SUCCESS);

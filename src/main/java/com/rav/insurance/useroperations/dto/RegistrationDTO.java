@@ -3,11 +3,9 @@ package com.rav.insurance.useroperations.dto;
 import com.rav.insurance.dto.CommonDTO;
 
 public class RegistrationDTO extends CommonDTO {
-	
+
 	private String title;
-	private String firstName;
-	private String middleName;
-	private String lastName;
+	private String fullName;
 	private String emailAddress;
 
 	public String getTitle() {
@@ -18,28 +16,12 @@ public class RegistrationDTO extends CommonDTO {
 		this.title = title;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getMiddleName() {
-		return middleName;
-	}
-
-	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getEmailAddress() {

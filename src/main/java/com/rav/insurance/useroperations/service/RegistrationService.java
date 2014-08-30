@@ -44,10 +44,7 @@ public class RegistrationService extends ServiceAbstract {
 						response = new CommonResponseAttributes();
 						response.setStatus(CommonConstants.SUCCESS);
 						sendMailNotification(
-								dto.getEmailAddress(),
-								dto.getTitle() + " " + dto.getFirstName() + " "
-										+ dto.getMiddleName() + " "
-										+ dto.getLastName());
+								dto.getEmailAddress(), dto.getFullName());
 					} catch (Exception e) {
 						throw new Exception("Not able to register the user");
 					}
@@ -75,8 +72,7 @@ public class RegistrationService extends ServiceAbstract {
 		RegistrationDTO obj = (RegistrationDTO) dto;
 
 		if (CommonValidations.isValidEmailAddress(obj.getEmailAddress())) {
-			if (!(CommonValidations.isStringEmpty(obj.getFirstName()) && CommonValidations
-					.isStringEmpty(obj.getLastName()))) {
+			if (!(CommonValidations.isStringEmpty(obj.getFullName()) )) {
 
 				if (!CommonValidations.isStringEmpty(obj.getPassword())) {
 					if (CommonValidations.isStringEmpty(obj.getUserId())) {
@@ -101,11 +97,7 @@ public class RegistrationService extends ServiceAbstract {
 		dto.setIpAddress(getIPAddress(wsContext));
 		dto.setRequestType(UserOperationsConstants.REGISTRATION_REQUEST_TYPE);
 
-		dto.setTitle(((InsuranceRegistrationRequest) model).getTitle());
-		dto.setFirstName(((InsuranceRegistrationRequest) model).getFirstName());
-		dto.setMiddleName(((InsuranceRegistrationRequest) model)
-				.getMiddleName());
-		dto.setLastName(((InsuranceRegistrationRequest) model).getLastName());
+		dto.setFullName(((InsuranceRegistrationRequest) model).getFullName());
 		dto.setUserId(((InsuranceRegistrationRequest) model).getUserId());
 
 		dto.setPassword(((InsuranceRegistrationRequest) model).getPassword());
@@ -119,11 +111,8 @@ public class RegistrationService extends ServiceAbstract {
 		bean.setActive(CommonConstants.ACTIVE);
 		bean.setCreationDate(new Date());
 		bean.setEmailAddress(dto.getEmailAddress());
-		bean.setFirstName(dto.getFirstName());
-		bean.setLastName(dto.getLastName());
-		bean.setMiddleName(dto.getMiddleName());
+		bean.setFullName(dto.getFullName());
 		bean.setPassword(dto.getPassword());
-		bean.setTitle(dto.getTitle());
 		bean.setUserName(dto.getUserId());
 		return bean;
 	}

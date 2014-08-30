@@ -38,10 +38,7 @@ public class LoginService extends ServiceAbstract {
 							response.setStatus(CommonConstants.SUCCESS);
 							response.setRole(bean.getRole());
 							response.setUserEmailAddress(bean.getEmailAddress());
-							response.setUserFullName(bean.getTitle() + " "
-									+ bean.getFirstName() + " "
-									+ bean.getMiddleName() + " "
-									+ bean.getLastName());
+							response.setUserFullName(bean.getFullName());
 							response.setCurrentDate(Calendar.getInstance().getTime());
 						} else {
 							throw new Exception("Incorrect Password");
