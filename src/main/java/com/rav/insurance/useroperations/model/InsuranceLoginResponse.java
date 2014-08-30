@@ -1,5 +1,7 @@
 package com.rav.insurance.useroperations.model;
 
+import java.util.Date;
+
 import com.rav.insurance.model.CommonResponseAttributes;
 
 public class InsuranceLoginResponse extends CommonResponseAttributes {
@@ -8,6 +10,7 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 	private String userFullName;
 	private String loggedInUserEmailAddress;
 	private String role;
+	private Date currentDate;
 
 	public String getUserEmailAddress() {
 		return userEmailAddress;
@@ -39,6 +42,14 @@ public class InsuranceLoginResponse extends CommonResponseAttributes {
 
 	public void setLoggedInUserEmailAddress(String loggedInUserEmailAddress) {
 		this.loggedInUserEmailAddress = loggedInUserEmailAddress;
+	}
+
+	public Date getCurrentDate() {
+		return currentDate;
+	}
+
+	public void setCurrentDate(Date currentDate) {
+		this.currentDate = currentDate;
 	}
 
 }

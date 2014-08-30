@@ -1,5 +1,7 @@
 package com.rav.insurance.useroperations.service;
 
+import java.util.Calendar;
+
 import javax.xml.ws.WebServiceContext;
 
 import com.rav.insurance.constants.CommonConstants;
@@ -40,6 +42,7 @@ public class LoginService extends ServiceAbstract {
 									+ bean.getFirstName() + " "
 									+ bean.getMiddleName() + " "
 									+ bean.getLastName());
+							response.setCurrentDate(Calendar.getInstance().getTime());
 						} else {
 							throw new Exception("Incorrect Password");
 						}
