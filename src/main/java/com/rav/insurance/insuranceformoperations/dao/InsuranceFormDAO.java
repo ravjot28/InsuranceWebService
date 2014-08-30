@@ -1,12 +1,13 @@
 package com.rav.insurance.insuranceformoperations.dao;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
@@ -39,7 +40,8 @@ public class InsuranceFormDAO {
 		return formId;
 	}
 
-	public boolean assignMarketer(int formId,String marketerUserName) throws Exception {
+	public boolean assignMarketer(int formId, String marketerUserName)
+			throws Exception {
 		boolean result = false;
 
 		Session session;
@@ -91,46 +93,64 @@ public class InsuranceFormDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<AbstractFormInfo> getFormList(String role, String userName)
+	public List<AbstractFormInfo> getFormList(String role, String userName,
+			String status, String businessName, int formId, int month)
 			throws Exception {
 		Session session;
 		List<AbstractFormInfo> finalList = null;
-		if (!CommonValidations.isStringEmpty(role)) {
-			try {
-				session = DatabaseConfig.getSessionFactory().openSession();
 
-				session.beginTransaction();
-				Criteria crit = session.createCriteria(InsuranceFormBean.class);
-				Criterion restriction = null;
-				if (role.equals("PRODUCER")) {
-					restriction = Restrictions.eq("producerUserName", userName);
-				} else if (role.equals("MARKETER")) {
-					restriction = Restrictions.eq("marketerUserName", userName);
-				} else if (role.equals("MANAGER")) {
-					restriction = Restrictions.eq("status", "NEW");
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			Criteria crit = session.createCriteria(InsuranceFormBean.class);
+
+		
+			if (!CommonValidations.isStringEmpty(userName)
+					&& !CommonValidations.isStringEmpty(role)) {
+				if (role.equals("MARKETER")) {
+					crit.add(Restrictions.eq("marketerUserName", userName));
+				} else if (role.equals("PRODUCER")) {
+					crit.add(Restrictions.eq("producerUserName", userName));
 				}
-
-				crit.add(restriction);
-
-				List<InsuranceFormBean> list = (List<InsuranceFormBean>) crit
-						.list();
-				if (list != null && list.size() > 0) {
-					finalList = new ArrayList<AbstractFormInfo>();
-
-					for (InsuranceFormBean form : list) {
-						AbstractFormInfo formInfo = new AbstractFormInfo();
-						formInfo.setFormId("" + form.getId());
-						formInfo.setMarketerId(form.getMarketerUserName());
-						formInfo.setProducerId(form.getProducerUserName());
-						formInfo.setStatus(form.getStatus());
-						finalList.add(formInfo);
-					}
-				}
-
-				session.getTransaction().commit();
-			} catch (Exception e) {
-				throw e;
 			}
+
+			if (!CommonValidations.isStringEmpty(status))
+				crit.add(Restrictions.eq("status", status));
+
+			if (!CommonValidations.isStringEmpty(businessName))
+				crit.add(Restrictions.eq("businessName", businessName));
+
+			if (formId > 0)
+				crit.add(Restrictions.eq("id", formId));
+
+			if (month > 0) {
+				Calendar cal = Calendar.getInstance();
+				cal.add(Calendar.MONTH, (-1 * month));
+				Date date = cal.getTime();
+				crit.add(Restrictions.ge("creationDate", date));
+
+			}
+
+			List<InsuranceFormBean> list = (List<InsuranceFormBean>) crit
+					.list();
+			if (list != null && list.size() > 0) {
+				finalList = new ArrayList<AbstractFormInfo>();
+
+				for (InsuranceFormBean form : list) {
+					AbstractFormInfo formInfo = new AbstractFormInfo();
+					formInfo.setFormId("" + form.getId());
+					formInfo.setMarketerId(form.getMarketerUserName());
+					formInfo.setProducerId(form.getProducerUserName());
+					formInfo.setStatus(form.getStatus());
+					finalList.add(formInfo);
+				}
+			}
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
 		}
 
 		return finalList;

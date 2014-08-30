@@ -10,7 +10,6 @@ import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListResponse;
 import com.rav.insurance.service.ServiceAbstract;
-import com.rav.insurance.util.CommonValidations;
 
 public class GetFormListSerivce extends ServiceAbstract {
 
@@ -20,18 +19,20 @@ public class GetFormListSerivce extends ServiceAbstract {
 		try {
 			String role = ((GetInsuranceFormListRequest) model).getRole();
 			String userName = ((GetInsuranceFormListRequest) model).getUserId();
-			if (!CommonValidations.isStringEmpty(role)
-					&& !CommonValidations.isStringEmpty(userName)) {
+			String status = ((GetInsuranceFormListRequest) model).getStatus();
+			String businessName = ((GetInsuranceFormListRequest) model).getBusinessName();
+			int formId = ((GetInsuranceFormListRequest) model).getFormId();
+			int month = ((GetInsuranceFormListRequest) model).getMonth();
+			
+				List<AbstractFormInfo> list = new InsuranceFormDAO()
+						.getFormList(role, userName, status, businessName,
+								formId, month);
 
-				List<AbstractFormInfo> list = new InsuranceFormDAO().getFormList(role, userName);
-				
-				for(AbstractFormInfo form:list)
-					form.setFormId("UCCIG"+form.getFormId());
+				for (AbstractFormInfo form : list)
+					form.setFormId("UCCIG" + form.getFormId());
 				response = new GetInsuranceFormListResponse();
 				response.setFormList(list);
-			} else {
-				throw new Exception("Empty userName and/or role");
-			}
+			
 			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {
 			response = new GetInsuranceFormListResponse();
