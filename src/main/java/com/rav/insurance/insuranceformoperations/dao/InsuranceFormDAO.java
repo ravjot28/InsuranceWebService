@@ -13,10 +13,12 @@ import org.hibernate.criterion.Restrictions;
 import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
+import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.util.CommonValidations;
 import com.rav.insurance.util.DatabaseConfig;
+import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
 
@@ -56,6 +58,11 @@ public class InsuranceFormDAO {
 			session.beginTransaction();
 			InsuranceFormBean bean = (InsuranceFormBean) session.get(
 					InsuranceFormBean.class, formId);
+			if (!CommonValidations.isStringEmpty(bean.getMarketerUserName())) {
+				throw new Exception("Form ID UCCIG" + formId
+						+ " is already assigned to "
+						+ bean.getMarketerUserName());
+			}
 			bean.setMarketerUserName(marketerUserName);
 			session.getTransaction().commit();
 		} catch (Exception e) {
@@ -170,7 +177,10 @@ public class InsuranceFormDAO {
 			session = DatabaseConfig.getSessionFactory().openSession();
 			session.beginTransaction();
 			session.save(mail);
+			WriteByteArray.writeByteArray(mail.getId().toString(),
+					request.getMessage());
 			session.getTransaction().commit();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			for (Throwable ex = e; ex != null; ex = e.getCause())
@@ -195,6 +205,32 @@ public class InsuranceFormDAO {
 		res = calendar.getTime();
 
 		return res;
+	}
+
+	public void updateForm(EditFormSubmissionRequest model) throws Exception {
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			InsuranceFormBean bean = (InsuranceFormBean) session
+					.get(InsuranceFormBean.class,
+							Integer.parseInt(model.getFormId().replaceAll(
+									"UCCIG", "")));
+			DozerBeanMapper mapper = new DozerBeanMapper();
+			mapper.map(model, bean);
+			bean.setStatus("NEW");
+
+			session.save(bean);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 }

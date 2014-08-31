@@ -3,6 +3,7 @@ package com.rav.insurance.insuranceformoperations.service;
 import javax.xml.ws.WebServiceContext;
 
 import com.rav.insurance.constants.CommonConstants;
+import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.service.ServiceAbstract;
@@ -16,7 +17,8 @@ public class PostFormMailService extends ServiceAbstract {
 		PostFormMailRequest request = (PostFormMailRequest) model;
 		try {
 			validateRequest(request);
-			
+			InsuranceFormDAO dao = new InsuranceFormDAO();
+			dao.insertDelayMail(request);
 		} catch (Exception e) {
 			response = new CommonResponseAttributes();
 			response.setStatus(CommonConstants.ERROR);
