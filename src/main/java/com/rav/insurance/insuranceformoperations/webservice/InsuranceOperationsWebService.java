@@ -12,9 +12,11 @@ import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
+import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
 import com.rav.insurance.insuranceformoperations.service.GetFormService;
+import com.rav.insurance.insuranceformoperations.service.PostFormMailService;
 import com.rav.insurance.insuranceformoperations.service.SubmitFormService;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceOperationsWS;
 import com.rav.insurance.model.CommonResponseAttributes;
@@ -56,6 +58,14 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	public CommonResponseAttributes assignMarketer(AssignMarketerRequest request)
 			throws Exception {
 		service = new AssignMarketerService();
+		return (CommonResponseAttributes) service.processRequest(request,
+				wsContext);
+	}
+
+	@Override
+	public CommonResponseAttributes postFormMail(PostFormMailRequest request)
+			throws Exception {
+		service = new PostFormMailService();
 		return (CommonResponseAttributes) service.processRequest(request,
 				wsContext);
 	}

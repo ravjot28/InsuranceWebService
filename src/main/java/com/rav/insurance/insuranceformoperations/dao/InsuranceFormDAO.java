@@ -10,9 +10,11 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
+import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.util.CommonValidations;
 import com.rav.insurance.util.DatabaseConfig;
 
@@ -106,7 +108,6 @@ public class InsuranceFormDAO {
 
 			Criteria crit = session.createCriteria(InsuranceFormBean.class);
 
-		
 			if (!CommonValidations.isStringEmpty(userName)
 					&& !CommonValidations.isStringEmpty(role)) {
 				if (role.equals("MARKETER")) {
@@ -154,6 +155,46 @@ public class InsuranceFormDAO {
 		}
 
 		return finalList;
+	}
+
+	public void insertDelayMail(PostFormMailRequest request) throws Exception {
+		DelayMails mail = new DelayMails();
+		mail.setFormId(request.getFormId());
+		mail.setFrom1(request.getFrom());
+		mail.setRecepients(request.getRecpients());
+		mail.setSentDate(getZeroTimeDate(request.getSendDate()));
+		mail.setSubject(request.getSubject());
+
+		Session session = null;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+			session.beginTransaction();
+			session.save(mail);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			for (Throwable ex = e; ex != null; ex = e.getCause())
+				ex.printStackTrace();
+			if (session != null) {
+				session.getTransaction().rollback();
+			}
+			throw e;
+		}
+	}
+
+	public static Date getZeroTimeDate(Date fecha) {
+		Date res = fecha;
+		Calendar calendar = Calendar.getInstance();
+
+		calendar.setTime(fecha);
+		calendar.set(Calendar.HOUR_OF_DAY, 0);
+		calendar.set(Calendar.MINUTE, 0);
+		calendar.set(Calendar.SECOND, 0);
+		calendar.set(Calendar.MILLISECOND, 0);
+
+		res = calendar.getTime();
+
+		return res;
 	}
 
 }

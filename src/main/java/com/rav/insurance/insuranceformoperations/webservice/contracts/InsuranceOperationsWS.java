@@ -12,6 +12,7 @@ import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
+import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.model.CommonResponseAttributes;
 
 @WebService(name = "InsuranceOperationsService")
@@ -39,6 +40,12 @@ public interface InsuranceOperationsWS {
 	@WebResult(name = "AssignMarketerResponse")
 	public CommonResponseAttributes assignMarketer(
 			@WebParam(name = "AssignMarketerRequest") AssignMarketerRequest request)
+			throws Exception;
+	
+	@WebMethod(operationName = "RegisterPostFormMail")
+	@WebResult(name = "RegisterPostFormMailResponse")
+	public CommonResponseAttributes postFormMail(
+			@WebParam(name = "RegisterPostFormMailRequest") PostFormMailRequest request)
 			throws Exception;
 
 }
