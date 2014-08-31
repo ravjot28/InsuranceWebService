@@ -6,6 +6,7 @@ import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.soap.MTOM;
 
 import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
+import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
@@ -14,6 +15,7 @@ import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitReques
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
+import com.rav.insurance.insuranceformoperations.service.EditFormSubmission;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
 import com.rav.insurance.insuranceformoperations.service.GetFormService;
 import com.rav.insurance.insuranceformoperations.service.PostFormMailService;
@@ -66,6 +68,14 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	public CommonResponseAttributes postFormMail(PostFormMailRequest request)
 			throws Exception {
 		service = new PostFormMailService();
+		return (CommonResponseAttributes) service.processRequest(request,
+				wsContext);
+	}
+
+	@Override
+	public CommonResponseAttributes editForm(EditFormSubmissionRequest request)
+			throws Exception {
+		service = new EditFormSubmission();
 		return (CommonResponseAttributes) service.processRequest(request,
 				wsContext);
 	}

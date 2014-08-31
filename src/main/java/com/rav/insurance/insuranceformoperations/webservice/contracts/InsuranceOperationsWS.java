@@ -6,6 +6,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 
 import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
+import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
@@ -41,11 +42,17 @@ public interface InsuranceOperationsWS {
 	public CommonResponseAttributes assignMarketer(
 			@WebParam(name = "AssignMarketerRequest") AssignMarketerRequest request)
 			throws Exception;
-	
+
 	@WebMethod(operationName = "RegisterPostFormMail")
 	@WebResult(name = "RegisterPostFormMailResponse")
 	public CommonResponseAttributes postFormMail(
 			@WebParam(name = "RegisterPostFormMailRequest") PostFormMailRequest request)
+			throws Exception;
+
+	@WebMethod(operationName = "EditFormSubmission")
+	@WebResult(name = "EditFormSubmissionResponse")
+	public CommonResponseAttributes editForm(
+			@WebParam(name = "EditFormSubmissionRequest") EditFormSubmissionRequest request)
 			throws Exception;
 
 }

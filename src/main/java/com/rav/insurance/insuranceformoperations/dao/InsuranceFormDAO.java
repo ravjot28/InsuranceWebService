@@ -13,6 +13,7 @@ import org.hibernate.criterion.Restrictions;
 import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
+import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.util.CommonValidations;
@@ -204,6 +205,32 @@ public class InsuranceFormDAO {
 		res = calendar.getTime();
 
 		return res;
+	}
+
+	public void updateForm(EditFormSubmissionRequest model) throws Exception {
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			InsuranceFormBean bean = (InsuranceFormBean) session
+					.get(InsuranceFormBean.class,
+							Integer.parseInt(model.getFormId().replaceAll(
+									"UCCIG", "")));
+			DozerBeanMapper mapper = new DozerBeanMapper();
+			mapper.map(model, bean);
+			bean.setStatus("NEW");
+
+			session.save(bean);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 }
