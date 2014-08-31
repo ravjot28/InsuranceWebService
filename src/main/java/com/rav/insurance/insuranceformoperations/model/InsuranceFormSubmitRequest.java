@@ -295,8 +295,8 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private double toolFloaterDeductible;
 	private double signFloaterLimit;
 	private double signFloaterDeductible;
-	private boolean truckMan;
-	private boolean owner;
+	private String truckMan;
+	private String owner;
 	private double motorTruckLimit;
 	private double motorTruckDeductible;
 	private double glassLimit;
@@ -309,8 +309,8 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private double earthquakeDeductible;
 	private double profitLimit;
 	private double profitDeductible;
-	private boolean grossEarning80;
-	private boolean grossEarning50;
+	private String grossEarning80;
+	private String grossEarning50;
 	private double grossEarningLimit;
 	private double grossEarningDeductible;
 	private double rentalIncomeLimit;
@@ -357,20 +357,26 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private double productionMachineryDeductible;
 	private double otherCoverageLimit;
 	private double otherCoverageDeductible;
+	
 
 	private String address;
 	private int age;
 	private double totalSqFootage;
 	private double insdSqFootage;
 	private int noOfStories;
-	private boolean basement;
+	private String basement;
 	private String walls;
 	private String roof;
+	private String roofupdated;
 	private String floors;
 	private String heating;
+	private String heatingupdated;
 	private String electrical;
+	private String electricalupdated;
 	private String plumbing;
+	private String plumbingupdated;
 	private String fireProtection;
+	private String fireProtectiondistance;
 	private String security;
 	private String notes;
 
@@ -643,22 +649,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.signFloaterDeductible = signFloaterDeductible;
 	}
 
-	public boolean isTruckMan() {
-		return truckMan;
-	}
-
-	public void setTruckMan(boolean truckMan) {
-		this.truckMan = truckMan;
-	}
-
-	public boolean isOwner() {
-		return owner;
-	}
-
-	public void setOwner(boolean owner) {
-		this.owner = owner;
-	}
-
 	public double getMotorTruckLimit() {
 		return motorTruckLimit;
 	}
@@ -755,21 +745,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.profitDeductible = profitDeductible;
 	}
 
-	public boolean isGrossEarning80() {
-		return grossEarning80;
-	}
-
-	public void setGrossEarning80(boolean grossEarning80) {
-		this.grossEarning80 = grossEarning80;
-	}
-
-	public boolean isGrossEarning50() {
-		return grossEarning50;
-	}
-
-	public void setGrossEarning50(boolean grossEarning50) {
-		this.grossEarning50 = grossEarning50;
-	}
 
 	public double getGrossEarningLimit() {
 		return grossEarningLimit;
@@ -1178,14 +1153,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 
 	public void setNoOfStories(int noOfStories) {
 		this.noOfStories = noOfStories;
-	}
-
-	public boolean isBasement() {
-		return basement;
-	}
-
-	public void setBasement(boolean basement) {
-		this.basement = basement;
 	}
 
 	public String getWalls() {
