@@ -17,6 +17,7 @@ import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.util.CommonValidations;
 import com.rav.insurance.util.DatabaseConfig;
+import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
 
@@ -56,6 +57,11 @@ public class InsuranceFormDAO {
 			session.beginTransaction();
 			InsuranceFormBean bean = (InsuranceFormBean) session.get(
 					InsuranceFormBean.class, formId);
+			if (!CommonValidations.isStringEmpty(bean.getMarketerUserName())) {
+				throw new Exception("Form ID UCCIG" + formId
+						+ " is already assigned to "
+						+ bean.getMarketerUserName());
+			}
 			bean.setMarketerUserName(marketerUserName);
 			session.getTransaction().commit();
 		} catch (Exception e) {
@@ -170,7 +176,10 @@ public class InsuranceFormDAO {
 			session = DatabaseConfig.getSessionFactory().openSession();
 			session.beginTransaction();
 			session.save(mail);
+			WriteByteArray.writeByteArray(mail.getId().toString(),
+					request.getMessage());
 			session.getTransaction().commit();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			for (Throwable ex = e; ex != null; ex = e.getCause())
