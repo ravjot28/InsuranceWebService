@@ -16,6 +16,7 @@ import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
+import com.rav.insurance.insuranceformoperations.model.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
@@ -24,6 +25,7 @@ import com.rav.insurance.insuranceformoperations.service.EditFormSubmission;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
 import com.rav.insurance.insuranceformoperations.service.GetFormService;
 import com.rav.insurance.insuranceformoperations.service.PostFormMailService;
+import com.rav.insurance.insuranceformoperations.service.QuoteDetailsService;
 import com.rav.insurance.insuranceformoperations.service.SearchMailService;
 import com.rav.insurance.insuranceformoperations.service.SendFormMailToUnderWriterService;
 import com.rav.insurance.insuranceformoperations.service.SubmitFormService;
@@ -109,6 +111,15 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 		service = new CloseFormService();
 		return (CommonResponseAttributes) service.processRequest(request,
 				wsContext);
+	}
+
+	@Override
+	public CommonResponseAttributes quoteDetails(QuoteDetailsRequest request)
+			throws Exception {
+		service = new QuoteDetailsService();
+		return (CommonResponseAttributes) service.processRequest(request,
+				wsContext);
+		
 	}
 
 }

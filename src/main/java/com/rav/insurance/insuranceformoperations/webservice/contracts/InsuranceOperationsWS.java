@@ -16,6 +16,7 @@ import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
+import com.rav.insurance.insuranceformoperations.model.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
 import com.rav.insurance.model.CommonResponseAttributes;
@@ -64,19 +65,23 @@ public interface InsuranceOperationsWS {
 	public CommonResponseAttributes sendMailToUnderWriter(
 			@WebParam(name = "SendMailToUnderWriterRequest") FormMailToUnderWriterRequest request)
 			throws Exception;
-	
-	
+
 	@WebMethod(operationName = "SearchMail")
 	@WebResult(name = "SearchMailResponse")
 	public SearchMailResponse searchMail(
 			@WebParam(name = "SearchMailRequest") SearchMailRequest request)
 			throws Exception;
-	
-	
+
 	@WebMethod(operationName = "CloseForm")
 	@WebResult(name = "CloseFormResponse")
 	public CommonResponseAttributes closeForm(
 			@WebParam(name = "CloseFormRequest") CloseFormRequest request)
+			throws Exception;
+
+	@WebMethod(operationName = "QuoteDetails")
+	@WebResult(name = "QuoteDetailsResponse")
+	public CommonResponseAttributes quoteDetails(
+			@WebParam(name = "QuoteDetailsRequest") QuoteDetailsRequest request)
 			throws Exception;
 
 }

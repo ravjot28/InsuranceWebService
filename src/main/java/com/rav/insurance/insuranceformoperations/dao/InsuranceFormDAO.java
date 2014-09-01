@@ -15,6 +15,7 @@ import com.rav.insurance.insuranceformoperations.bean.CloseFormBean;
 import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.insuranceformoperations.bean.MessageInfo;
+import com.rav.insurance.insuranceformoperations.bean.QuoteDetailsBean;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
@@ -24,11 +25,53 @@ import com.rav.insurance.util.DatabaseConfig;
 import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
-	
-	public void insertCloseFormInformation(CloseFormBean bean,int id){
-		
+
+	public void insertCloseFormInformation(CloseFormBean bean, int id)
+			throws Exception {
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			InsuranceFormBean bean1 = (InsuranceFormBean) session.get(
+					InsuranceFormBean.class, id);
+
+			bean.setFormBean(bean1);
+			session.save(bean);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
+	public void insertQuoteDetails(QuoteDetailsBean bean, int id)
+			throws Exception {
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			InsuranceFormBean bean1 = (InsuranceFormBean) session.get(
+					InsuranceFormBean.class, id);
+
+			bean.setFormBean(bean1);
+			session.save(bean);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
+	}
+	
 	public int submitForm(InsuranceFormBean bean) throws Exception {
 		Session session = null;
 		int formId = -1;
