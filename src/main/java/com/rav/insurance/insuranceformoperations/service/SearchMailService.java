@@ -34,9 +34,9 @@ public class SearchMailService extends ServiceAbstract {
 			List<MessageInfo> list = dao.searchMail(request.getFormId());
 			List<MailInfo> mails = new ArrayList<MailInfo>();
 			for (MessageInfo mi : list) {
-				int index = mi.getSubject().indexOf(request.getFormId());
+				int index = mi.getSubject().trim().indexOf(request.getFormId());
 				
-				if(mi.getSubject().contains(request.getFormId()+" ") || index + request.getFormId().length() == mi.getSubject().length()){
+				if(mi.getSubject().contains(request.getFormId()+" ") || index + request.getFormId().length() == mi.getSubject().trim().length()){
 					MailInfo mail = new MailInfo();
 					mail.setFrom(mi.getFrom1());
 					mail.setMailBody(getMessage(FOLDER_NAME + mi.getId()));
