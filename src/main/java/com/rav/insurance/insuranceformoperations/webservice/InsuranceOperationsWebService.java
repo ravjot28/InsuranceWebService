@@ -9,6 +9,7 @@ import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
 import com.rav.insurance.insuranceformoperations.model.CloseFormRequest;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.FormMailToUnderWriterRequest;
+import com.rav.insurance.insuranceformoperations.model.GetCloseFormNQuoteDetailsResponse;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
@@ -22,6 +23,7 @@ import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
 import com.rav.insurance.insuranceformoperations.service.CloseFormService;
 import com.rav.insurance.insuranceformoperations.service.EditFormSubmission;
+import com.rav.insurance.insuranceformoperations.service.GetCloseFormNQuoteDetailsService;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
 import com.rav.insurance.insuranceformoperations.service.GetFormService;
 import com.rav.insurance.insuranceformoperations.service.PostFormMailService;
@@ -101,13 +103,12 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	public SearchMailResponse searchMail(SearchMailRequest request)
 			throws Exception {
 		service = new SearchMailService();
-		return (SearchMailResponse) service.processRequest(request,
-				wsContext);
+		return (SearchMailResponse) service.processRequest(request, wsContext);
 	}
 
 	@Override
-	public CommonResponseAttributes closeForm(
-			CloseFormRequest request) throws Exception {
+	public CommonResponseAttributes closeForm(CloseFormRequest request)
+			throws Exception {
 		service = new CloseFormService();
 		return (CommonResponseAttributes) service.processRequest(request,
 				wsContext);
@@ -119,7 +120,16 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 		service = new QuoteDetailsService();
 		return (CommonResponseAttributes) service.processRequest(request,
 				wsContext);
-		
+
+	}
+
+	@Override
+	public GetCloseFormNQuoteDetailsResponse getCloseFormNQuoteDetails(
+			SearchMailRequest request) throws Exception {
+		service = new GetCloseFormNQuoteDetailsService();
+		return (GetCloseFormNQuoteDetailsResponse) service.processRequest(
+				request, wsContext);
+
 	}
 
 }

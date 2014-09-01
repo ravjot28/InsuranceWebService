@@ -18,6 +18,7 @@ import com.rav.insurance.insuranceformoperations.bean.MessageInfo;
 import com.rav.insurance.insuranceformoperations.bean.QuoteDetailsBean;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
+import com.rav.insurance.insuranceformoperations.model.GetCloseFormNQuoteDetailsResponse;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.util.CommonValidations;
@@ -25,6 +26,71 @@ import com.rav.insurance.util.DatabaseConfig;
 import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
+
+	@SuppressWarnings("unchecked")
+	public GetCloseFormNQuoteDetailsResponse getCloseFormNQuoteDetails(
+			String formId) throws Exception {
+		Session session;
+		GetCloseFormNQuoteDetailsResponse response = new GetCloseFormNQuoteDetailsResponse();
+		try {
+
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			Criteria crit = session.createCriteria(QuoteDetailsBean.class);
+
+			crit.add(Restrictions.ge("formId", formId));
+
+			List<QuoteDetailsBean> list = (List<QuoteDetailsBean>) crit.list();
+			if (list != null && list.size() > 0) {
+				QuoteDetailsBean qdb = list.get(0);
+				response.setAbex(qdb.getAbex());
+				response.setAmFredericks(qdb.getAmFredericks());
+				response.setApril(qdb.getApril());
+				response.setAviva(qdb.getAviva());
+				response.setBurnsnWilcox(qdb.getBurnsnWilcox());
+				response.setCfc(qdb.getCfc());
+				response.setChutter(qdb.getChutter());
+				response.setcNA(qdb.getcNA());
+				response.setCreechurch(qdb.getCreechurch());
+				response.setDominion(qdb.getDominion());
+				response.setEcclesiastical(qdb.getEcclesiastical());
+				response.setEncon(qdb.getEncon());
+				response.setGore(qdb.getGore());
+				response.setGroupOne(qdb.getGroupOne());
+				response.setIntact(qdb.getIntact());
+				response.setLloyds(qdb.getLloyds());
+				response.setNorthbridge(qdb.getNorthbridge());
+				response.setPremierMarine(qdb.getPremierMarine());
+				response.setrSA(qdb.getrSA());
+				response.setSouthWestern(qdb.getSouthWestern());
+				response.setsRIM(qdb.getsRIM());
+				response.setsUM(qdb.getsUM());
+				response.settCIM(qdb.gettCIM());
+				response.setTotte(qdb.getTotte());
+				response.setZurich(qdb.getZurich());
+			}
+
+			crit = session.createCriteria(CloseFormBean.class);
+
+			crit.add(Restrictions.ge("formId", formId));
+
+			List<CloseFormBean> list1 = (List<CloseFormBean>) crit.list();
+			if (list1 != null && list1.size() > 0) {
+				CloseFormBean cfb = list1.get(0);
+				response.setQuote(cfb.getQuote());
+				response.setBusinessWithUs(cfb.getBusinessWithUs());
+				response.setCompany(cfb.getCompany());
+			}
+
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
+
+		return response;
+	}
 
 	public void insertCloseFormInformation(CloseFormBean bean) throws Exception {
 		Session session;
@@ -110,7 +176,6 @@ public class InsuranceFormDAO {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
-
 
 			InsuranceFormBean bean = (InsuranceFormBean) session.get(
 					InsuranceFormBean.class, formId);

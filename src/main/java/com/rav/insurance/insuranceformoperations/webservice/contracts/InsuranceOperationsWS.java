@@ -9,6 +9,7 @@ import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
 import com.rav.insurance.insuranceformoperations.model.CloseFormRequest;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.FormMailToUnderWriterRequest;
+import com.rav.insurance.insuranceformoperations.model.GetCloseFormNQuoteDetailsResponse;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListResponse;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
@@ -82,6 +83,12 @@ public interface InsuranceOperationsWS {
 	@WebResult(name = "QuoteDetailsResponse")
 	public CommonResponseAttributes quoteDetails(
 			@WebParam(name = "QuoteDetailsRequest") QuoteDetailsRequest request)
+			throws Exception;
+	
+	@WebMethod(operationName = "GetCloseFormNQuoteDetails")
+	@WebResult(name = "GetCloseFormNQuoteDetailsResponse")
+	public GetCloseFormNQuoteDetailsResponse getCloseFormNQuoteDetails(
+			@WebParam(name = "GetCloseFormNQuoteDetailsRequest") SearchMailRequest request)
 			throws Exception;
 
 }
