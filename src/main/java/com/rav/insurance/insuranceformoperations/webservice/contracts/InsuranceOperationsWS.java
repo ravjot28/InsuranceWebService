@@ -6,6 +6,7 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 
 import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
+import com.rav.insurance.insuranceformoperations.model.CloseFormRequest;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.FormMailToUnderWriterRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
@@ -75,7 +76,7 @@ public interface InsuranceOperationsWS {
 	@WebMethod(operationName = "CloseForm")
 	@WebResult(name = "CloseFormResponse")
 	public CommonResponseAttributes closeForm(
-			@WebParam(name = "CloseFormRequest") FormMailToUnderWriterRequest request)
+			@WebParam(name = "CloseFormRequest") CloseFormRequest request)
 			throws Exception;
 
 }

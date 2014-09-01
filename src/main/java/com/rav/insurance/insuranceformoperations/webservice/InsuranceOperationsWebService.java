@@ -6,6 +6,7 @@ import javax.xml.ws.WebServiceContext;
 import javax.xml.ws.soap.MTOM;
 
 import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
+import com.rav.insurance.insuranceformoperations.model.CloseFormRequest;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.FormMailToUnderWriterRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormListRequest;
@@ -18,10 +19,12 @@ import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
+import com.rav.insurance.insuranceformoperations.service.CloseFormService;
 import com.rav.insurance.insuranceformoperations.service.EditFormSubmission;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
 import com.rav.insurance.insuranceformoperations.service.GetFormService;
 import com.rav.insurance.insuranceformoperations.service.PostFormMailService;
+import com.rav.insurance.insuranceformoperations.service.SearchMailService;
 import com.rav.insurance.insuranceformoperations.service.SendFormMailToUnderWriterService;
 import com.rav.insurance.insuranceformoperations.service.SubmitFormService;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceOperationsWS;
@@ -95,15 +98,17 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	@Override
 	public SearchMailResponse searchMail(SearchMailRequest request)
 			throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		service = new SearchMailService();
+		return (SearchMailResponse) service.processRequest(request,
+				wsContext);
 	}
 
 	@Override
 	public CommonResponseAttributes closeForm(
-			FormMailToUnderWriterRequest request) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+			CloseFormRequest request) throws Exception {
+		service = new CloseFormService();
+		return (CommonResponseAttributes) service.processRequest(request,
+				wsContext);
 	}
 
 }

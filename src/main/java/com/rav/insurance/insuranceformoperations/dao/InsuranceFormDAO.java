@@ -11,6 +11,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
+import com.rav.insurance.insuranceformoperations.bean.CloseFormBean;
 import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.insuranceformoperations.bean.MessageInfo;
@@ -23,6 +24,10 @@ import com.rav.insurance.util.DatabaseConfig;
 import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
+	
+	public void insertCloseFormInformation(CloseFormBean bean,int id){
+		
+	}
 
 	public int submitForm(InsuranceFormBean bean) throws Exception {
 		Session session = null;
