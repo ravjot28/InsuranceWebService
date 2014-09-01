@@ -26,22 +26,13 @@ import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
 
-	public void insertCloseFormInformation(CloseFormBean bean, int id)
-			throws Exception {
+	public void insertCloseFormInformation(CloseFormBean bean) throws Exception {
 		Session session;
 		try {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
 
-			session = DatabaseConfig.getSessionFactory().openSession();
-
-			session.beginTransaction();
-
-			InsuranceFormBean bean1 = (InsuranceFormBean) session.get(
-					InsuranceFormBean.class, id);
-
-			bean.setFormBean(bean1);
 			session.save(bean);
 			session.getTransaction().commit();
 		} catch (Exception e) {
@@ -49,29 +40,20 @@ public class InsuranceFormDAO {
 		}
 	}
 
-	public void insertQuoteDetails(QuoteDetailsBean bean, int id)
-			throws Exception {
+	public void insertQuoteDetails(QuoteDetailsBean bean) throws Exception {
 		Session session;
 		try {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
 
-			session = DatabaseConfig.getSessionFactory().openSession();
-
-			session.beginTransaction();
-
-			InsuranceFormBean bean1 = (InsuranceFormBean) session.get(
-					InsuranceFormBean.class, id);
-
-			bean.setFormBean(bean1);
 			session.save(bean);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			throw e;
 		}
 	}
-	
+
 	public int submitForm(InsuranceFormBean bean) throws Exception {
 		Session session = null;
 		int formId = -1;
@@ -104,11 +86,10 @@ public class InsuranceFormDAO {
 
 			session.beginTransaction();
 
-			session = DatabaseConfig.getSessionFactory().openSession();
-			session.beginTransaction();
 			InsuranceFormBean bean = (InsuranceFormBean) session.get(
 					InsuranceFormBean.class, formId);
-			if (!CommonValidations.isStringEmpty(bean.getMarketerUserName()) && !bean.getMarketerUserName().equals("Not Assigned")) {
+			if (!CommonValidations.isStringEmpty(bean.getMarketerUserName())
+					&& !bean.getMarketerUserName().equals("Not Assigned")) {
 				throw new Exception("Form ID UCCIG" + formId
 						+ " is already assigned to "
 						+ bean.getMarketerUserName());
@@ -130,9 +111,6 @@ public class InsuranceFormDAO {
 
 			session.beginTransaction();
 
-			session = DatabaseConfig.getSessionFactory().openSession();
-
-			session.beginTransaction();
 
 			InsuranceFormBean bean = (InsuranceFormBean) session.get(
 					InsuranceFormBean.class, formId);

@@ -1,12 +1,9 @@
 package com.rav.insurance.insuranceformoperations.bean;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -43,10 +40,7 @@ public class QuoteDetailsBean {
 	private double tCIM;
 	private double totte;
 	private double zurich;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
-	private InsuranceFormBean formBean;
+	private String formId;
 
 	public Long getId() {
 		return id;
@@ -56,12 +50,12 @@ public class QuoteDetailsBean {
 		this.id = id;
 	}
 
-	public InsuranceFormBean getFormBean() {
-		return formBean;
+	public String getFormId() {
+		return formId;
 	}
 
-	public void setFormBean(InsuranceFormBean formBean) {
-		this.formBean = formBean;
+	public void setFormId(String formId) {
+		this.formId = formId;
 	}
 
 	public double getAbex() {

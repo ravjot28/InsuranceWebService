@@ -1,12 +1,9 @@
 package com.rav.insurance.insuranceformoperations.bean;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -17,9 +14,7 @@ public class CloseFormBean {
 	@GeneratedValue(generator = "closeForm_seq1", strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(allocationSize = 1, initialValue = 1001, sequenceName = "closeForm_seq1", name = "closeForm_seq1")
 	private Long id;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "id")
-	private InsuranceFormBean formBean;
+	private String formId;
 	private String businessWithUs;
 	private String company;
 	private double quote;
@@ -32,12 +27,12 @@ public class CloseFormBean {
 		this.id = id;
 	}
 
-	public InsuranceFormBean getFormBean() {
-		return formBean;
+	public String getFormId() {
+		return formId;
 	}
 
-	public void setFormBean(InsuranceFormBean formBean) {
-		this.formBean = formBean;
+	public void setFormId(String formId) {
+		this.formId = formId;
 	}
 
 	public String getBusinessWithUs() {

@@ -22,9 +22,10 @@ public class CloseFormService extends ServiceAbstract {
 			bean.setBusinessWithUs(request.getBusinessWithUs());
 			bean.setCompany(request.getCompany());
 			bean.setQuote(request.getQuote());
+			bean.setFormId(request.getFormId());
 			InsuranceFormDAO dao = new InsuranceFormDAO();
-			dao.insertCloseFormInformation(bean, Integer.parseInt(request
-					.getFormId().replaceAll("UCCIG", "")));
+			
+			dao.insertCloseFormInformation(bean);
 			response = new CommonResponseAttributes();
 			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {

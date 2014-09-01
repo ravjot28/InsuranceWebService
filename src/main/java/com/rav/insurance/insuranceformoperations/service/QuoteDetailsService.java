@@ -21,10 +21,9 @@ public class QuoteDetailsService extends ServiceAbstract {
 			DozerBeanMapper mapper = new DozerBeanMapper();
 			QuoteDetailsBean bean = new QuoteDetailsBean();
 			mapper.map(request, bean);
-
+			bean.setFormId(request.getFormId());
 			InsuranceFormDAO dao = new InsuranceFormDAO();
-			dao.insertQuoteDetails(bean, Integer.parseInt(request.getFormId()
-					.replaceAll("UCCIG", "")));
+			dao.insertQuoteDetails(bean);
 		} catch (Exception e) {
 			response = new CommonResponseAttributes();
 			response.setStatus(CommonConstants.ERROR);
