@@ -5,6 +5,7 @@ import java.util.Calendar;
 import javax.xml.ws.WebServiceContext;
 
 import com.rav.insurance.constants.CommonConstants;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.security.SaltAlgorithmImpl;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.useroperations.bean.UserBean;
@@ -14,6 +15,7 @@ import com.rav.insurance.useroperations.dto.LoginDTO;
 import com.rav.insurance.useroperations.model.InsuranceLoginRequest;
 import com.rav.insurance.useroperations.model.InsuranceLoginResponse;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 
 public class LoginService extends ServiceAbstract {
 
@@ -48,6 +50,19 @@ public class LoginService extends ServiceAbstract {
 						throw new Exception("User is not registered");
 					}
 				} catch (Exception e) {
+					RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+					StackTraceElement[] stack = e.getStackTrace();
+					String theTrace = "";
+					for(StackTraceElement line : stack)
+					{
+					   theTrace += "\n"+line.toString();
+					}
+					bean.setDate(Calendar.getInstance().getTime());
+					bean.setException(theTrace);
+					bean.setLoggedInUser(((LoginDTO) model).getUserId());
+					bean.setRequestType("LOGIN");
+					
+					RequestResponseLoggingDAO.log(bean);
 					response = new InsuranceLoginResponse();
 					response.setErrorCode("-200");
 					response.setStatus(CommonConstants.ERROR);
@@ -55,6 +70,20 @@ public class LoginService extends ServiceAbstract {
 				}
 
 			} catch (Exception e) {
+				RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+				StackTraceElement[] stack = e.getStackTrace();
+				String theTrace = "";
+				for(StackTraceElement line : stack)
+				{
+				   theTrace += "\n"+line.toString();
+				}
+				bean.setDate(Calendar.getInstance().getTime());
+				bean.setException(theTrace);
+				bean.setLoggedInUser(((LoginDTO) model).getUserId());
+				bean.setRequestType("LOGIN");
+				
+				RequestResponseLoggingDAO.log(bean);
+				
 				response = new InsuranceLoginResponse();
 				response.setErrorCode("-200");
 				response.setStatus(CommonConstants.ERROR);

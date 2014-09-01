@@ -1,6 +1,7 @@
 package com.rav.insurance.useroperations.service;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Calendar;
 import java.util.Random;
 
 import javax.crypto.NoSuchPaddingException;
@@ -12,6 +13,7 @@ import org.antlr.stringtemplate.StringTemplateGroup;
 import RavBase64.Base64Encoder;
 
 import com.rav.insurance.constants.CommonConstants;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.useroperations.bean.UserBean;
@@ -20,6 +22,7 @@ import com.rav.insurance.useroperations.dao.UserOperationsDAO;
 import com.rav.insurance.useroperations.dto.ForgotCredentialDTO;
 import com.rav.insurance.useroperations.model.InsuranceForgotCredentialRequest;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 import com.rav.insurance.util.SendMail;
 
 public class ForgotCredentialService extends ServiceAbstract {
@@ -76,6 +79,20 @@ public class ForgotCredentialService extends ServiceAbstract {
 						throw new Exception("User is not registered");
 					}
 				} catch (Exception e) {
+					
+					RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+					StackTraceElement[] stack = e.getStackTrace();
+					String theTrace = "";
+					for(StackTraceElement line : stack)
+					{
+					   theTrace += "\n"+line.toString();
+					}
+					bean.setDate(Calendar.getInstance().getTime());
+					bean.setException(theTrace);
+					bean.setLoggedInUser(((ForgotCredentialDTO) model).getUserId());
+					bean.setRequestType("FORGOT_CREDENTIAL");
+					
+					RequestResponseLoggingDAO.log(bean);
 					response = new CommonResponseAttributes();
 					response.setErrorCode("-200");
 					response.setStatus(CommonConstants.ERROR);
@@ -83,6 +100,19 @@ public class ForgotCredentialService extends ServiceAbstract {
 				}
 
 			} catch (Exception e) {
+				RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+				StackTraceElement[] stack = e.getStackTrace();
+				String theTrace = "";
+				for(StackTraceElement line : stack)
+				{
+				   theTrace += "\n"+line.toString();
+				}
+				bean.setDate(Calendar.getInstance().getTime());
+				bean.setException(theTrace);
+				bean.setLoggedInUser(((ForgotCredentialDTO) model).getUserId());
+				bean.setRequestType("FORGOT_CREDENTIAL");
+				
+				RequestResponseLoggingDAO.log(bean);
 				response = new CommonResponseAttributes();
 				response.setErrorCode("-200");
 				response.setStatus(CommonConstants.ERROR);

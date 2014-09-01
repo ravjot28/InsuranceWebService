@@ -1,6 +1,7 @@
 package com.rav.insurance.insuranceformoperations.service;
 
 import java.io.File;
+import java.util.Calendar;
 
 import javax.xml.ws.WebServiceContext;
 
@@ -8,8 +9,10 @@ import com.rav.insurance.constants.CommonConstants;
 import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 import com.rav.insurance.util.WriteByteArray;
 
 public class GetFormService extends ServiceAbstract {
@@ -90,6 +93,21 @@ public class GetFormService extends ServiceAbstract {
 			}
 			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {
+			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+			StackTraceElement[] stack = e.getStackTrace();
+			String theTrace = "";
+			for(StackTraceElement line : stack)
+			{
+			   theTrace += "\n"+line.toString();
+			}
+			bean.setDate(Calendar.getInstance().getTime());
+			bean.setException(theTrace);
+			bean.setLoggedInUser(((GetInsuranceFormRequest) model).getUserId());
+			bean.setRequestType("GET_FORM");
+			
+			RequestResponseLoggingDAO.log(bean);
+			
+			
 			response = new GetInsuranceFormResponse();
 			response.setStatus(CommonConstants.ERROR);
 			response.setErrorMessage(e.getMessage());

@@ -1,6 +1,7 @@
 package com.rav.insurance.useroperations.service;
 
 import java.security.NoSuchAlgorithmException;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.crypto.NoSuchPaddingException;
@@ -10,6 +11,7 @@ import org.antlr.stringtemplate.StringTemplate;
 import org.antlr.stringtemplate.StringTemplateGroup;
 
 import com.rav.insurance.constants.CommonConstants;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.security.SaltAlgorithmImpl;
 import com.rav.insurance.service.ServiceAbstract;
@@ -19,6 +21,7 @@ import com.rav.insurance.useroperations.dao.UserOperationsDAO;
 import com.rav.insurance.useroperations.dto.RegistrationDTO;
 import com.rav.insurance.useroperations.model.InsuranceRegistrationRequest;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 import com.rav.insurance.util.SendMail;
 
 public class RegistrationService extends ServiceAbstract {
@@ -53,6 +56,22 @@ public class RegistrationService extends ServiceAbstract {
 				}
 
 			} catch (Exception e) {
+				
+				RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+				StackTraceElement[] stack = e.getStackTrace();
+				String theTrace = "";
+				for(StackTraceElement line : stack)
+				{
+				   theTrace += "\n"+line.toString();
+				}
+				bean.setDate(Calendar.getInstance().getTime());
+				bean.setException(theTrace);
+				bean.setLoggedInUser(((RegistrationDTO) model).getUserId());
+				bean.setRequestType("REGISTRATION");
+				
+				RequestResponseLoggingDAO.log(bean);
+				
+				
 				response = new CommonResponseAttributes();
 				response.setErrorCode("-200");
 				response.setStatus(CommonConstants.ERROR);
