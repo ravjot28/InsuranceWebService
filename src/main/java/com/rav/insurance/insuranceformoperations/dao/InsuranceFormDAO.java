@@ -108,7 +108,7 @@ public class InsuranceFormDAO {
 			session.beginTransaction();
 			InsuranceFormBean bean = (InsuranceFormBean) session.get(
 					InsuranceFormBean.class, formId);
-			if (!CommonValidations.isStringEmpty(bean.getMarketerUserName())) {
+			if (!CommonValidations.isStringEmpty(bean.getMarketerUserName()) && !bean.getMarketerUserName().equals("Not Assigned")) {
 				throw new Exception("Form ID UCCIG" + formId
 						+ " is already assigned to "
 						+ bean.getMarketerUserName());
