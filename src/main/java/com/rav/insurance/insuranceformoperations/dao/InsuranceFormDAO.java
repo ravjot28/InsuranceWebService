@@ -7,11 +7,13 @@ import java.util.List;
 
 import org.dozer.DozerBeanMapper;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
+import com.rav.insurance.insuranceformoperations.bean.MessageInfo;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
@@ -214,10 +216,6 @@ public class InsuranceFormDAO {
 
 			session.beginTransaction();
 
-			session = DatabaseConfig.getSessionFactory().openSession();
-
-			session.beginTransaction();
-
 			InsuranceFormBean bean = (InsuranceFormBean) session
 					.get(InsuranceFormBean.class,
 							Integer.parseInt(model.getFormId().replaceAll(
@@ -231,6 +229,25 @@ public class InsuranceFormDAO {
 		} catch (Exception e) {
 			throw e;
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<MessageInfo> searchMail(String formId) throws Exception {
+		List<MessageInfo> list = null;
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+			Query queryObject = session
+					.createQuery("from MessageInfo where subject like '%'||"
+							+ formId + "||'%'");
+			list = (List<MessageInfo>) queryObject.list();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
+		return list;
 	}
 
 }

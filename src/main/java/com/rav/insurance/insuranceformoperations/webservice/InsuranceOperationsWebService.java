@@ -15,6 +15,8 @@ import com.rav.insurance.insuranceformoperations.model.GetInsuranceFormResponse;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitRequest;
 import com.rav.insurance.insuranceformoperations.model.InsuranceFormSubmitResponse;
 import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
+import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
+import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
 import com.rav.insurance.insuranceformoperations.service.EditFormSubmission;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
@@ -88,6 +90,20 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 		service = new SendFormMailToUnderWriterService();
 		return (CommonResponseAttributes) service.processRequest(request,
 				wsContext);
+	}
+
+	@Override
+	public SearchMailResponse searchMail(SearchMailRequest request)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CommonResponseAttributes closeForm(
+			FormMailToUnderWriterRequest request) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
