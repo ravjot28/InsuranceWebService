@@ -38,14 +38,9 @@ public class InsuranceFormBean {
 	private String entityType;
 	private String otherSpecify;
 	private int yearInBusiness;
-	public int getYearInBusiness() {
-		return yearInBusiness;
-	}
 
-	public void setYearInBusiness(int yearInBusiness) {
-		this.yearInBusiness = yearInBusiness;
-	}
-
+	private String withUs;
+	private String type;
 	private String relatedExperience;
 
 	private String profit;
@@ -6953,6 +6948,30 @@ public class InsuranceFormBean {
 
 	public void setNotes4(String notes4) {
 		this.notes4 = notes4;
+	}
+
+	public int getYearInBusiness() {
+		return yearInBusiness;
+	}
+
+	public void setYearInBusiness(int yearInBusiness) {
+		this.yearInBusiness = yearInBusiness;
+	}
+
+	public String getWithUs() {
+		return withUs;
+	}
+
+	public void setWithUs(String withUs) {
+		this.withUs = withUs;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }
