@@ -1,13 +1,17 @@
 package com.rav.insurance.insuranceformoperations.service;
 
+import java.util.Calendar;
+
 import javax.xml.ws.WebServiceContext;
 
 import com.rav.insurance.constants.CommonConstants;
 import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.GetCloseFormNQuoteDetailsResponse;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 
 public class GetCloseFormNQuoteDetailsService extends ServiceAbstract {
 
@@ -21,6 +25,20 @@ public class GetCloseFormNQuoteDetailsService extends ServiceAbstract {
 					.getFormId());
 			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {
+			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+			StackTraceElement[] stack = e.getStackTrace();
+			String theTrace = "";
+			for(StackTraceElement line : stack)
+			{
+			   theTrace += "\n"+line.toString();
+			}
+			bean.setDate(Calendar.getInstance().getTime());
+			bean.setException(theTrace);
+			bean.setLoggedInUser(request.getUserId());
+			bean.setRequestType("GET_CLOSE_QUERY_FORM_DETAILS");
+			
+			RequestResponseLoggingDAO.log(bean);
+			
 			response = new GetCloseFormNQuoteDetailsResponse();
 			response.setStatus(CommonConstants.ERROR);
 			response.setErrorMessage(e.getMessage());

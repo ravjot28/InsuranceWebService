@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.xml.ws.WebServiceContext;
@@ -17,8 +18,10 @@ import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.MailInfo;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 
 public class SearchMailService extends ServiceAbstract {
 	private String FOLDER_NAME = "C:\\Documents and Settings\\developer\\Desktop\\ReadMail\\";
@@ -50,6 +53,20 @@ public class SearchMailService extends ServiceAbstract {
 			response = new SearchMailResponse();
 			response.setMailList(mails);
 		} catch (Exception e) {
+			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+			StackTraceElement[] stack = e.getStackTrace();
+			String theTrace = "";
+			for(StackTraceElement line : stack)
+			{
+			   theTrace += "\n"+line.toString();
+			}
+			bean.setDate(Calendar.getInstance().getTime());
+			bean.setException(theTrace);
+			bean.setLoggedInUser(request.getUserId());
+			bean.setRequestType("SEARCH_MAIL");
+			
+			RequestResponseLoggingDAO.log(bean);
+			
 			response = new SearchMailResponse();
 			response.setStatus(CommonConstants.ERROR);
 			response.setErrorMessage(e.getMessage());

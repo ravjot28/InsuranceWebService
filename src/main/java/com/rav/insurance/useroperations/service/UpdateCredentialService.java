@@ -1,5 +1,6 @@
 package com.rav.insurance.useroperations.service;
 
+import java.util.Calendar;
 import java.util.StringTokenizer;
 
 import javax.xml.ws.WebServiceContext;
@@ -7,6 +8,7 @@ import javax.xml.ws.WebServiceContext;
 import RavBase64.Base64Decoder;
 
 import com.rav.insurance.constants.CommonConstants;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.security.SaltAlgorithmImpl;
 import com.rav.insurance.service.ServiceAbstract;
@@ -15,6 +17,7 @@ import com.rav.insurance.useroperations.dao.UserOperationsDAO;
 import com.rav.insurance.useroperations.dto.UpdateCredentialDTO;
 import com.rav.insurance.useroperations.model.InsuranceUpdateCredentialRequest;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 
 public class UpdateCredentialService extends ServiceAbstract {
 
@@ -45,6 +48,19 @@ public class UpdateCredentialService extends ServiceAbstract {
 						throw new Exception("User is not registered");
 					}
 				} catch (Exception e) {
+					RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+					StackTraceElement[] stack = e.getStackTrace();
+					String theTrace = "";
+					for(StackTraceElement line : stack)
+					{
+					   theTrace += "\n"+line.toString();
+					}
+					bean.setDate(Calendar.getInstance().getTime());
+					bean.setException(theTrace);
+					bean.setLoggedInUser(((UpdateCredentialDTO) model).getUserId());
+					bean.setRequestType("UPDATE_CREDENTIAL");
+					
+					RequestResponseLoggingDAO.log(bean);
 					response = new CommonResponseAttributes();
 					response.setErrorCode("-200");
 					response.setStatus(CommonConstants.ERROR);
@@ -52,6 +68,19 @@ public class UpdateCredentialService extends ServiceAbstract {
 				}
 
 			} catch (Exception e) {
+				RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+				StackTraceElement[] stack = e.getStackTrace();
+				String theTrace = "";
+				for(StackTraceElement line : stack)
+				{
+				   theTrace += "\n"+line.toString();
+				}
+				bean.setDate(Calendar.getInstance().getTime());
+				bean.setException(theTrace);
+				bean.setLoggedInUser(((UpdateCredentialDTO) model).getUserId());
+				bean.setRequestType("UPDATE_CREDENTIAL");
+				
+				RequestResponseLoggingDAO.log(bean);
 				response = new CommonResponseAttributes();
 				response.setErrorCode("-200");
 				response.setStatus(CommonConstants.ERROR);

@@ -1,5 +1,7 @@
 package com.rav.insurance.insuranceformoperations.service;
 
+import java.util.Calendar;
+
 import javax.xml.ws.WebServiceContext;
 
 import org.antlr.stringtemplate.StringTemplate;
@@ -8,9 +10,11 @@ import org.antlr.stringtemplate.StringTemplateGroup;
 import com.rav.insurance.constants.CommonConstants;
 import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
+import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.service.ServiceAbstract;
 import com.rav.insurance.util.CommonValidations;
+import com.rav.insurance.util.RequestResponseLoggingDAO;
 import com.rav.insurance.util.SendMail;
 import com.rav.insurance.util.WriteByteArray;
 
@@ -92,6 +96,21 @@ public class EditFormSubmission extends ServiceAbstract {
 							.getLoggedInUserEmailAddress(),
 					((EditFormSubmissionRequest) model).getUserId());
 		} catch (Exception e) {
+			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
+			StackTraceElement[] stack = e.getStackTrace();
+			String theTrace = "";
+			for(StackTraceElement line : stack)
+			{
+			   theTrace += "\n"+line.toString();
+			}
+			bean.setDate(Calendar.getInstance().getTime());
+			bean.setException(theTrace);
+			bean.setLoggedInUser(((EditFormSubmissionRequest) model).getUserId());
+			bean.setRequestType("EDIT_FORM");
+			
+			RequestResponseLoggingDAO.log(bean);
+			
+			
 			response = new CommonResponseAttributes();
 			response.setStatus(CommonConstants.ERROR);
 			response.setErrorMessage(e.getMessage());
