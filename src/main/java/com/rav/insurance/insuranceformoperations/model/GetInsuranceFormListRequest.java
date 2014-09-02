@@ -3,19 +3,27 @@ package com.rav.insurance.insuranceformoperations.model;
 import com.rav.insurance.model.CommonRequestAttributes;
 
 public class GetInsuranceFormListRequest extends CommonRequestAttributes {
-	private String role;
-
+	private String producerId;
+	private String marketerId;
 	private String status;
 	private String businessName;
 	private int formId;
 	private int month;
 
-	public String getRole() {
-		return role;
+	public String getProducerId() {
+		return producerId;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setProducerId(String producerId) {
+		this.producerId = producerId;
+	}
+
+	public String getMarketerId() {
+		return marketerId;
+	}
+
+	public void setMarketerId(String marketerId) {
+		this.marketerId = marketerId;
 	}
 
 	public String getStatus() {

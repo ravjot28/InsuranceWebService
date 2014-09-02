@@ -20,16 +20,19 @@ public class GetFormListSerivce extends ServiceAbstract {
 	public Object processRequest(Object model, WebServiceContext wsContext) {
 		GetInsuranceFormListResponse response = null;
 		try {
-			String role = ((GetInsuranceFormListRequest) model).getRole();
-			String userName = ((GetInsuranceFormListRequest) model).getUserId();
+			String producerId = ((GetInsuranceFormListRequest) model)
+					.getProducerId();
+			String marketerId = ((GetInsuranceFormListRequest) model)
+					.getMarketerId();
 			String status = ((GetInsuranceFormListRequest) model).getStatus();
 			String businessName = ((GetInsuranceFormListRequest) model)
 					.getBusinessName();
 			int formId = ((GetInsuranceFormListRequest) model).getFormId();
 			int month = ((GetInsuranceFormListRequest) model).getMonth();
 
-			List<AbstractFormInfo> list = new InsuranceFormDAO().getFormList(
-					role, userName, status, businessName, formId, month);
+			List<AbstractFormInfo> list = new InsuranceFormDAO()
+					.getFormList(producerId, marketerId, status, businessName,
+							formId, month);
 
 			for (AbstractFormInfo form : list)
 				form.setFormId("UCCIG" + form.getFormId());
