@@ -29,10 +29,11 @@ public class GetFormListSerivce extends ServiceAbstract {
 					.getBusinessName();
 			int formId = ((GetInsuranceFormListRequest) model).getFormId();
 			int month = ((GetInsuranceFormListRequest) model).getMonth();
+			String withUs = ((GetInsuranceFormListRequest) model).getWithUs();
 
 			List<AbstractFormInfo> list = new InsuranceFormDAO()
 					.getFormList(producerId, marketerId, status, businessName,
-							formId, month);
+							formId, month,withUs);
 
 			for (AbstractFormInfo form : list)
 				form.setFormId("UCCIG" + form.getFormId());

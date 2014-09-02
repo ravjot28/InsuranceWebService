@@ -197,7 +197,7 @@ public class InsuranceFormDAO {
 	@SuppressWarnings("unchecked")
 	public List<AbstractFormInfo> getFormList(String producerId,
 			String marketerId, String status, String businessName, int formId,
-			int month) throws Exception {
+			int month,String withUs) throws Exception {
 		Session session;
 		List<AbstractFormInfo> finalList = null;
 
@@ -219,6 +219,9 @@ public class InsuranceFormDAO {
 
 			if (!CommonValidations.isStringEmpty(businessName))
 				crit.add(Restrictions.eq("businessName", businessName));
+			
+			if (!CommonValidations.isStringEmpty(withUs))
+				crit.add(Restrictions.eq("withUs", withUs));
 
 			if (formId > 0)
 				crit.add(Restrictions.eq("id", formId));

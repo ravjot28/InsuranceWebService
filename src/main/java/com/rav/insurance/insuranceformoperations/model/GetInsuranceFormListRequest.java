@@ -9,6 +9,7 @@ public class GetInsuranceFormListRequest extends CommonRequestAttributes {
 	private String businessName;
 	private int formId;
 	private int month;
+	private String withUs;
 
 	public String getProducerId() {
 		return producerId;
@@ -56,6 +57,14 @@ public class GetInsuranceFormListRequest extends CommonRequestAttributes {
 
 	public void setMonth(int month) {
 		this.month = month;
+	}
+
+	public String getWithUs() {
+		return withUs;
+	}
+
+	public void setWithUs(String withUs) {
+		this.withUs = withUs;
 	}
 
 }
