@@ -24,13 +24,22 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String country;
 	private String fax;
 	private String webSiteURL;
+	private String otherSpecify;
 	private int numberOfLocations;
 	private int numberOfOwnedAutos;
 
 	private String entityType;
 	private String profit;
 	private String nonProfit;
-	private String yearInBusiness;
+	private int yearInBusiness;
+	public int getYearInBusiness() {
+		return yearInBusiness;
+	}
+
+	public void setYearInBusiness(int yearInBusiness) {
+		this.yearInBusiness = yearInBusiness;
+	}
+
 	private String relatedExperience;
 
 	private String owner1;
@@ -1693,6 +1702,14 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.roof = roof;
 	}
 
+	public String getOtherSpecify() {
+		return otherSpecify;
+	}
+
+	public void setOtherSpecify(String otherSpecify) {
+		this.otherSpecify = otherSpecify;
+	}
+
 	public String getPincode() {
 		return pincode;
 	}
@@ -2366,13 +2383,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.nonProfit = nonProfit;
 	}
 
-	public String getYearInBusiness() {
-		return yearInBusiness;
-	}
-
-	public void setYearInBusiness(String yearInBusiness) {
-		this.yearInBusiness = yearInBusiness;
-	}
 
 	public String getRelatedExperience() {
 		return relatedExperience;

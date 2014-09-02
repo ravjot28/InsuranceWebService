@@ -36,7 +36,16 @@ public class InsuranceFormBean {
 	private int numberOfLocations;
 	private int numberOfOwnedAutos;
 	private String entityType;
-	private String yearInBusiness;
+	private String otherSpecify;
+	private int yearInBusiness;
+	public int getYearInBusiness() {
+		return yearInBusiness;
+	}
+
+	public void setYearInBusiness(int yearInBusiness) {
+		this.yearInBusiness = yearInBusiness;
+	}
+
 	private String relatedExperience;
 
 	private String profit;
@@ -963,20 +972,20 @@ public class InsuranceFormBean {
 		this.numberOfOwnedAutos = numberOfOwnedAutos;
 	}
 
+	public String getOtherSpecify() {
+		return otherSpecify;
+	}
+
+	public void setOtherSpecify(String otherSpecify) {
+		this.otherSpecify = otherSpecify;
+	}
+
 	public String getEntityType() {
 		return entityType;
 	}
 
 	public void setEntityType(String entityType) {
 		this.entityType = entityType;
-	}
-
-	public String getYearInBusiness() {
-		return yearInBusiness;
-	}
-
-	public void setYearInBusiness(String yearInBusiness) {
-		this.yearInBusiness = yearInBusiness;
 	}
 
 	public String getRelatedExperience() {

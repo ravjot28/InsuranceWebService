@@ -16,6 +16,15 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private String secondayContact;
 	private String secondayContactPhone;
 	private String secondayContactEmailAddress;
+	private String otherSpecify;
+
+	public String getOtherSpecify() {
+		return otherSpecify;
+	}
+
+	public void setOtherSpecify(String otherSpecify) {
+		this.otherSpecify = otherSpecify;
+	}
 
 	// new
 	private String profit;
@@ -70,7 +79,15 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private int numberOfOwnedAutos;
 
 	private String entityType;
-	private String yearInBusiness;
+	private int yearInBusiness;
+	public int getYearInBusiness() {
+		return yearInBusiness;
+	}
+
+	public void setYearInBusiness(int yearInBusiness) {
+		this.yearInBusiness = yearInBusiness;
+	}
+
 	private String relatedExperience;
 
 	private String owners;
@@ -201,11 +218,11 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private double motorTruckDeductible;
 	private double glassLimit;
 	private double glassDeductible;
-	private double sewerBackupLimit;
+	
 	private double sewerBackupDeductible;
-	private double floodLimit;
+	
 	private double floodDeductible;
-	private double earthquakeLimit;
+	
 	private double earthquakeDeductible;
 	private double profitLimit;
 	private double profitDeductible;
@@ -966,14 +983,6 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 
 	public void setEntityType(String entityType) {
 		this.entityType = entityType;
-	}
-
-	public String getYearInBusiness() {
-		return yearInBusiness;
-	}
-
-	public void setYearInBusiness(String yearInBusiness) {
-		this.yearInBusiness = yearInBusiness;
 	}
 
 	public String getRelatedExperience() {
@@ -1906,14 +1915,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 		this.glassDeductible = glassDeductible;
 	}
 
-	public double getSewerBackupLimit() {
-		return sewerBackupLimit;
-	}
-
-	public void setSewerBackupLimit(double sewerBackupLimit) {
-		this.sewerBackupLimit = sewerBackupLimit;
-	}
-
+	
 	public double getSewerBackupDeductible() {
 		return sewerBackupDeductible;
 	}
@@ -1922,13 +1924,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 		this.sewerBackupDeductible = sewerBackupDeductible;
 	}
 
-	public double getFloodLimit() {
-		return floodLimit;
-	}
-
-	public void setFloodLimit(double floodLimit) {
-		this.floodLimit = floodLimit;
-	}
+	
 
 	public double getFloodDeductible() {
 		return floodDeductible;
@@ -1937,15 +1933,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	public void setFloodDeductible(double floodDeductible) {
 		this.floodDeductible = floodDeductible;
 	}
-
-	public double getEarthquakeLimit() {
-		return earthquakeLimit;
-	}
-
-	public void setEarthquakeLimit(double earthquakeLimit) {
-		this.earthquakeLimit = earthquakeLimit;
-	}
-
+	
 	public double getEarthquakeDeductible() {
 		return earthquakeDeductible;
 	}
