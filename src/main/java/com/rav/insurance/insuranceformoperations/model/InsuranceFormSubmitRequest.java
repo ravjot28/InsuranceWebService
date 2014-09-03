@@ -794,7 +794,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String claimDesc5;
 	private Date claimDate6;
 	private String claimDesc6;
-	private double commoditiesTransportedBy;
+	private String commoditiesTransportedBy;
 	private String haulingForOthers;
 
 	private String filingState1;
@@ -818,8 +818,8 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String filingType4;
 	private String filingName4;
 
-	private boolean vehicleNonOwned;
-	private boolean contract;
+	private String vehicleNonOwned;
+	private String contract;
 	private String typeOfNonOwned;
 	private double avgNoOfVehicles;
 	private double avgValue;
@@ -1990,11 +1990,13 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.claimDesc6 = claimDesc6;
 	}
 
-	public double getCommoditiesTransportedBy() {
+	
+
+	public String getCommoditiesTransportedBy() {
 		return commoditiesTransportedBy;
 	}
 
-	public void setCommoditiesTransportedBy(double commoditiesTransportedBy) {
+	public void setCommoditiesTransportedBy(String commoditiesTransportedBy) {
 		this.commoditiesTransportedBy = commoditiesTransportedBy;
 	}
 
@@ -2166,19 +2168,19 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.filingName4 = filingName4;
 	}
 
-	public boolean isVehicleNonOwned() {
+	public String getVehicleNonOwned() {
 		return vehicleNonOwned;
 	}
 
-	public void setVehicleNonOwned(boolean vehicleNonOwned) {
+	public void setVehicleNonOwned(String vehicleNonOwned) {
 		this.vehicleNonOwned = vehicleNonOwned;
 	}
 
-	public boolean isContract() {
+	public String getContract() {
 		return contract;
 	}
 
-	public void setContract(boolean contract) {
+	public void setContract(String contract) {
 		this.contract = contract;
 	}
 
