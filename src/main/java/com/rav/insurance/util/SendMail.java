@@ -118,7 +118,8 @@ public class SendMail implements Runnable {
 		msg.setFrom(addressFrom);
 		InternetAddress[] addressTo = new InternetAddress[recipients.length];
 		for (int i = 0; i < recipients.length; i++) {
-			addressTo[i] = new InternetAddress(recipients[i]);
+			if(recipients[i]!=null)
+				addressTo[i] = new InternetAddress(recipients[i]);
 		}
 		msg.setRecipients(Message.RecipientType.TO, addressTo);
 
