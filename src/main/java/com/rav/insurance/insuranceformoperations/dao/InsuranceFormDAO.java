@@ -195,9 +195,9 @@ public class InsuranceFormDAO {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<AbstractFormInfo> getFormList(String role, String userName,
-			String status, String businessName, int formId, int month)
-			throws Exception {
+	public List<AbstractFormInfo> getFormList(String producerId,
+			String marketerId, String status, String businessName, int formId,
+			int month,String withUs) throws Exception {
 		Session session;
 		List<AbstractFormInfo> finalList = null;
 
@@ -208,13 +208,10 @@ public class InsuranceFormDAO {
 
 			Criteria crit = session.createCriteria(InsuranceFormBean.class);
 
-			if (!CommonValidations.isStringEmpty(userName)
-					&& !CommonValidations.isStringEmpty(role)) {
-				if (role.equals("MARKETER")) {
-					crit.add(Restrictions.eq("marketerUserName", userName));
-				} else if (role.equals("PRODUCER")) {
-					crit.add(Restrictions.eq("producerUserName", userName));
-				}
+			if (!CommonValidations.isStringEmpty(producerId)) {
+				crit.add(Restrictions.eq("producerUserName", producerId));
+			} else if (!CommonValidations.isStringEmpty(marketerId)) {
+				crit.add(Restrictions.eq("marketerUserName", marketerId));
 			}
 
 			if (!CommonValidations.isStringEmpty(status))
@@ -222,6 +219,9 @@ public class InsuranceFormDAO {
 
 			if (!CommonValidations.isStringEmpty(businessName))
 				crit.add(Restrictions.eq("businessName", businessName));
+			
+			if (!CommonValidations.isStringEmpty(withUs))
+				crit.add(Restrictions.eq("withUs", withUs));
 
 			if (formId > 0)
 				crit.add(Restrictions.eq("id", formId));

@@ -8,7 +8,9 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private Date creationDate;
 	private String producer;
 	private String branch;
-	private String severity; // new
+	private String severity;
+	private String withUs;
+	private String type;
 
 	private String keyContact;
 	private String keyContactPhone;
@@ -32,13 +34,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private String profit;
 	private String nonProfit;
 	private int yearInBusiness;
-	public int getYearInBusiness() {
-		return yearInBusiness;
-	}
-
-	public void setYearInBusiness(int yearInBusiness) {
-		this.yearInBusiness = yearInBusiness;
-	}
 
 	private String relatedExperience;
 
@@ -826,6 +821,14 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private double maxVehicleValue;
 	private double maxCostValue;
 	private String instructionNotes;
+
+	public int getYearInBusiness() {
+		return yearInBusiness;
+	}
+
+	public void setYearInBusiness(int yearInBusiness) {
+		this.yearInBusiness = yearInBusiness;
+	}
 
 	public Date getCurrentInsuranceExpiry1() {
 		return currentInsuranceExpiry1;
@@ -2384,7 +2387,6 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	public void setNonProfit(String nonProfit) {
 		this.nonProfit = nonProfit;
 	}
-
 
 	public String getRelatedExperience() {
 		return relatedExperience;
@@ -7108,6 +7110,22 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 
 	public void setAddressOfLocationOwnedno3(String addressOfLocationOwnedno3) {
 		this.addressOfLocationOwnedno3 = addressOfLocationOwnedno3;
+	}
+
+	public String getWithUs() {
+		return withUs;
+	}
+
+	public void setWithUs(String withUs) {
+		this.withUs = withUs;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

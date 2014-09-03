@@ -18,15 +18,8 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private String secondayContactEmailAddress;
 	private String otherSpecify;
 
-	public String getOtherSpecify() {
-		return otherSpecify;
-	}
-
-	public void setOtherSpecify(String otherSpecify) {
-		this.otherSpecify = otherSpecify;
-	}
-
-	// new
+	private String withUs;
+	private String type;
 	private String profit;
 	private String nonProfit;
 	private String owner1;
@@ -80,6 +73,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 
 	private String entityType;
 	private int yearInBusiness;
+
 	public int getYearInBusiness() {
 		return yearInBusiness;
 	}
@@ -218,11 +212,11 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private double motorTruckDeductible;
 	private double glassLimit;
 	private double glassDeductible;
-	
+
 	private double sewerBackupDeductible;
-	
+
 	private double floodDeductible;
-	
+
 	private double earthquakeDeductible;
 	private double profitLimit;
 	private double profitDeductible;
@@ -1915,7 +1909,6 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 		this.glassDeductible = glassDeductible;
 	}
 
-	
 	public double getSewerBackupDeductible() {
 		return sewerBackupDeductible;
 	}
@@ -1924,8 +1917,6 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 		this.sewerBackupDeductible = sewerBackupDeductible;
 	}
 
-	
-
 	public double getFloodDeductible() {
 		return floodDeductible;
 	}
@@ -1933,7 +1924,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	public void setFloodDeductible(double floodDeductible) {
 		this.floodDeductible = floodDeductible;
 	}
-	
+
 	public double getEarthquakeDeductible() {
 		return earthquakeDeductible;
 	}
@@ -7124,6 +7115,30 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 
 	public void setNotes4(String notes4) {
 		this.notes4 = notes4;
+	}
+
+	public String getOtherSpecify() {
+		return otherSpecify;
+	}
+
+	public void setOtherSpecify(String otherSpecify) {
+		this.otherSpecify = otherSpecify;
+	}
+
+	public String getWithUs() {
+		return withUs;
+	}
+
+	public void setWithUs(String withUs) {
+		this.withUs = withUs;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }
