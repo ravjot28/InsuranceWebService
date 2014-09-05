@@ -5,6 +5,8 @@ import java.util.Date;
 import com.rav.insurance.model.CommonRequestAttributes;
 
 public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
+	//category
+	
 	private Date creationDate;
 	private String producer;
 	private String branch;
