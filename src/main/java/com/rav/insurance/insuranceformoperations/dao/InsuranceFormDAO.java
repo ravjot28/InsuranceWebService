@@ -28,13 +28,13 @@ import com.rav.insurance.util.DatabaseConfig;
 import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
-	
-	public void insertMailRepo(String formId,String emailAddress) throws Exception{
+
+	public void insertMailRepo(String formId, String emailAddress)
+			throws Exception {
 
 		Session session;
 		try {
 			session = DatabaseConfig.getSessionFactory().openSession();
-
 			session.beginTransaction();
 			MailRepoBean bean = new MailRepoBean();
 			bean.setFormId(formId);
@@ -45,28 +45,23 @@ public class InsuranceFormDAO {
 		} catch (Exception e) {
 			throw e;
 		}
-	
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public String getEmailAddress(String formId) throws Exception{
+	public String getEmailAddress(String formId) throws Exception {
 		Session session;
 		String email = null;
 		try {
-
 			session = DatabaseConfig.getSessionFactory().openSession();
-
 			session.beginTransaction();
 
 			Criteria crit = session.createCriteria(MailRepoBean.class);
-
 			crit.add(Restrictions.ge("formId", formId));
-
 			List<MailRepoBean> list = (List<MailRepoBean>) crit.list();
 			if (list != null && list.size() > 0) {
 				email = list.get(0).getRecepients();
 			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			throw e;
 		}
 		return email;
@@ -100,7 +95,7 @@ public class InsuranceFormDAO {
 				response.setCompanyname8(qdb.getCompanyname8());
 				response.setCompanyname9(qdb.getCompanyname9());
 				response.setCompanyname10(qdb.getCompanyname10());
-				
+
 				response.setQuote1(qdb.getQuote1());
 				response.setQuote2(qdb.getQuote2());
 				response.setQuote3(qdb.getQuote3());
@@ -111,7 +106,7 @@ public class InsuranceFormDAO {
 				response.setQuote8(qdb.getQuote8());
 				response.setQuote9(qdb.getQuote9());
 				response.setQuote10(qdb.getQuote10());
-				
+
 				response.setComment1(qdb.getComment1());
 				response.setComment2(qdb.getComment2());
 				response.setComment3(qdb.getComment3());
@@ -152,12 +147,13 @@ public class InsuranceFormDAO {
 			session.beginTransaction();
 
 			session.save(bean);
-			
-			InsuranceFormBean b = (InsuranceFormBean) session.get(InsuranceFormBean.class, Integer.parseInt(bean.getFormId().replaceAll("UCCIG", "")));
+
+			InsuranceFormBean b = (InsuranceFormBean) session.get(
+					InsuranceFormBean.class,
+					Integer.parseInt(bean.getFormId().replaceAll("UCCIG", "")));
 			b.setStatus("CLOSE");
 			session.getTransaction().commit();
-			
-			
+
 		} catch (Exception e) {
 			throw e;
 		}
@@ -250,107 +246,107 @@ public class InsuranceFormDAO {
 
 		return form;
 	}
-	
-	public List<QuoteDetailsRequest> getQuoteDetails(Date creationDate,String companyName,String marketerId){
+
+	@SuppressWarnings("unchecked")
+	public List<QuoteDetailsRequest> getQuoteDetails(Date creationDate,
+			String companyName, String marketerId) {
 		Session session;
 		List<QuoteDetailsRequest> finalList = null;
 		try {
-			List<AbstractFormInfo> list =getFormList(null, marketerId, null, null, -1, -1, null,
-					creationDate);
+			List<AbstractFormInfo> list = getFormList(null, marketerId, null,
+					null, -1, -1, null, creationDate);
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
 			finalList = new ArrayList<QuoteDetailsRequest>();
-			for(AbstractFormInfo a:list){
-				
+			for (AbstractFormInfo a : list) {
 
 				Criteria crit = session.createCriteria(QuoteDetailsBean.class);
-					crit.add(Restrictions.eq("formId", "UCCIG"+a.getFormId()));
-					List<QuoteDetailsBean> b = (List<QuoteDetailsBean>)crit.list();
-					if(b!=null && b.size()>0){
-						
-						if(b.get(0).getCompanyname1().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname1());
-							request.setComment1(b.get(0).getComment1());
-							request.setQuote1(b.get(0).getQuote1());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname2().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname2());
-							request.setComment1(b.get(0).getComment2());
-							request.setQuote1(b.get(0).getQuote2());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname3().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname3());
-							request.setComment1(b.get(0).getComment3());
-							request.setQuote1(b.get(0).getQuote3());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname4().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname4());
-							request.setComment1(b.get(0).getComment4());
-							request.setQuote1(b.get(0).getQuote4());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname5().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname5());
-							request.setComment1(b.get(0).getComment5());
-							request.setQuote1(b.get(0).getQuote5());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname6().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname6());
-							request.setComment1(b.get(0).getComment6());
-							request.setQuote1(b.get(0).getQuote6());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname7().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname7());
-							request.setComment1(b.get(0).getComment7());
-							request.setQuote1(b.get(0).getQuote7());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname8().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname8());
-							request.setComment1(b.get(0).getComment8());
-							request.setQuote1(b.get(0).getQuote8());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname9().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname9());
-							request.setComment1(b.get(0).getComment9());
-							request.setQuote1(b.get(0).getQuote9());
-							finalList.add(request);
-						}
-						
-						if(b.get(0).getCompanyname10().equals(companyName)){
-							QuoteDetailsRequest request = new QuoteDetailsRequest();
-							request.setCompanyname1(b.get(0).getCompanyname10());
-							request.setComment1(b.get(0).getComment10());
-							request.setQuote1(b.get(0).getQuote10());
-							finalList.add(request);
-						}
-						
-						
+				crit.add(Restrictions.eq("formId", "UCCIG" + a.getFormId()));
+				List<QuoteDetailsBean> b = (List<QuoteDetailsBean>) crit.list();
+				if (b != null && b.size() > 0) {
+
+					if (b.get(0).getCompanyname1().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname1());
+						request.setComment1(b.get(0).getComment1());
+						request.setQuote1(b.get(0).getQuote1());
+						finalList.add(request);
 					}
+
+					if (b.get(0).getCompanyname2().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname2());
+						request.setComment1(b.get(0).getComment2());
+						request.setQuote1(b.get(0).getQuote2());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname3().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname3());
+						request.setComment1(b.get(0).getComment3());
+						request.setQuote1(b.get(0).getQuote3());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname4().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname4());
+						request.setComment1(b.get(0).getComment4());
+						request.setQuote1(b.get(0).getQuote4());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname5().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname5());
+						request.setComment1(b.get(0).getComment5());
+						request.setQuote1(b.get(0).getQuote5());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname6().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname6());
+						request.setComment1(b.get(0).getComment6());
+						request.setQuote1(b.get(0).getQuote6());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname7().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname7());
+						request.setComment1(b.get(0).getComment7());
+						request.setQuote1(b.get(0).getQuote7());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname8().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname8());
+						request.setComment1(b.get(0).getComment8());
+						request.setQuote1(b.get(0).getQuote8());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname9().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname9());
+						request.setComment1(b.get(0).getComment9());
+						request.setQuote1(b.get(0).getQuote9());
+						finalList.add(request);
+					}
+
+					if (b.get(0).getCompanyname10().equals(companyName)) {
+						QuoteDetailsRequest request = new QuoteDetailsRequest();
+						request.setCompanyname1(b.get(0).getCompanyname10());
+						request.setComment1(b.get(0).getComment10());
+						request.setQuote1(b.get(0).getQuote10());
+						finalList.add(request);
+					}
+
+				}
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -362,7 +358,7 @@ public class InsuranceFormDAO {
 	@SuppressWarnings("unchecked")
 	public List<AbstractFormInfo> getFormList(String producerId,
 			String marketerId, String status, String businessName, int formId,
-			int month, String withUs,Date creationDate) throws Exception {
+			int month, String withUs, Date creationDate) throws Exception {
 		Session session;
 		List<AbstractFormInfo> finalList = null;
 
@@ -398,8 +394,8 @@ public class InsuranceFormDAO {
 				crit.add(Restrictions.ge("creationDate", date));
 
 			}
-			
-			if(creationDate!=null)
+
+			if (creationDate != null)
 				crit.add(Restrictions.ge("creationDate", creationDate));
 
 			List<InsuranceFormBean> list = (List<InsuranceFormBean>) crit
