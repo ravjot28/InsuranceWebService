@@ -55,7 +55,7 @@ public class InsuranceFormDAO {
 				response.setCompanyname8(qdb.getCompanyname8());
 				response.setCompanyname9(qdb.getCompanyname9());
 				response.setCompanyname10(qdb.getCompanyname10());
-
+				
 				response.setQuote1(qdb.getQuote1());
 				response.setQuote2(qdb.getQuote2());
 				response.setQuote3(qdb.getQuote3());
@@ -66,7 +66,7 @@ public class InsuranceFormDAO {
 				response.setQuote8(qdb.getQuote8());
 				response.setQuote9(qdb.getQuote9());
 				response.setQuote10(qdb.getQuote10());
-
+				
 				response.setComment1(qdb.getComment1());
 				response.setComment2(qdb.getComment2());
 				response.setComment3(qdb.getComment3());
@@ -107,68 +107,25 @@ public class InsuranceFormDAO {
 			session.beginTransaction();
 
 			session.save(bean);
-
-			InsuranceFormBean b = (InsuranceFormBean) session.get(
-					InsuranceFormBean.class,
-					Integer.parseInt(bean.getFormId().replaceAll("UCCIG", "")));
+			
+			InsuranceFormBean b = (InsuranceFormBean) session.get(InsuranceFormBean.class, Integer.parseInt(bean.getFormId().replaceAll("UCCIG", "")));
 			b.setStatus("CLOSE");
 			session.getTransaction().commit();
-
+			
+			
 		} catch (Exception e) {
 			throw e;
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public void insertQuoteDetails(QuoteDetailsBean bean) throws Exception {
 		Session session;
 		try {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
-			Criteria crit = session.createCriteria(QuoteDetailsBean.class);
 
-			crit.add(Restrictions.eq("formId", bean.getFormId()));
-			List<QuoteDetailsBean> list = (List<QuoteDetailsBean>) crit.list();
-
-			if (list != null && list.size() > 0) {
-				QuoteDetailsBean qdb = list.get(0);
-				qdb.setCompanyname1(bean.getCompanyname1());
-				qdb.setCompanyname2(bean.getCompanyname2());
-				qdb.setCompanyname3(bean.getCompanyname3());
-				qdb.setCompanyname4(bean.getCompanyname4());
-				qdb.setCompanyname5(bean.getCompanyname5());
-				qdb.setCompanyname6(bean.getCompanyname6());
-				qdb.setCompanyname7(bean.getCompanyname7());
-				qdb.setCompanyname8(bean.getCompanyname8());
-				qdb.setCompanyname9(bean.getCompanyname9());
-				qdb.setCompanyname10(bean.getCompanyname10());
-
-				qdb.setQuote1(bean.getQuote1());
-				qdb.setQuote2(bean.getQuote2());
-				qdb.setQuote3(bean.getQuote3());
-				qdb.setQuote4(bean.getQuote4());
-				qdb.setQuote5(bean.getQuote5());
-				qdb.setQuote6(bean.getQuote6());
-				qdb.setQuote7(bean.getQuote7());
-				qdb.setQuote8(bean.getQuote8());
-				qdb.setQuote9(bean.getQuote9());
-				qdb.setQuote10(bean.getQuote10());
-
-				qdb.setComment1(bean.getComment1());
-				qdb.setComment2(bean.getComment2());
-				qdb.setComment3(bean.getComment3());
-				qdb.setComment4(bean.getComment4());
-				qdb.setComment5(bean.getComment5());
-				qdb.setComment6(bean.getComment6());
-				qdb.setComment7(bean.getComment7());
-				qdb.setComment8(bean.getComment8());
-				qdb.setComment9(bean.getComment9());
-				qdb.setComment10(qdb.getComment10());
-				session.save(qdb);
-			} else {
-				session.save(bean);
-			}
+			session.save(bean);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			throw e;
