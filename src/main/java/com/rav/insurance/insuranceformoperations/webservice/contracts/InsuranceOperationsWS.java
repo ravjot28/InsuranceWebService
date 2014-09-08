@@ -22,6 +22,8 @@ import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.model.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
+import com.rav.insurance.insuranceformoperations.model.SearchQuotesRequest;
+import com.rav.insurance.insuranceformoperations.model.SearchQuotesResponse;
 import com.rav.insurance.insuranceformoperations.model.UploadProposalBinderRequest;
 import com.rav.insurance.model.CommonResponseAttributes;
 
@@ -110,6 +112,12 @@ public interface InsuranceOperationsWS {
 	@WebResult(name = "GetEmailAddressResponse")
 	public String getEmailAddress(
 			@WebParam(name = "GetEmailAddressRequest") String formId)
+			throws Exception;
+	
+	@WebMethod(operationName = "SearchQuotes")
+	@WebResult(name = "SearchQuotesResponse")
+	public SearchQuotesResponse searchQuotes(
+			@WebParam(name = "SearchQuotesRequest") SearchQuotesRequest request)
 			throws Exception;
 
 }

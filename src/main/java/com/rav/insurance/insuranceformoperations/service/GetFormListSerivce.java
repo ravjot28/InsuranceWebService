@@ -33,7 +33,7 @@ public class GetFormListSerivce extends ServiceAbstract {
 
 			List<AbstractFormInfo> list = new InsuranceFormDAO()
 					.getFormList(producerId, marketerId, status, businessName,
-							formId, month,withUs);
+							formId, month,withUs,null);
 
 			for (AbstractFormInfo form : list)
 				form.setFormId("UCCIG" + form.getFormId());

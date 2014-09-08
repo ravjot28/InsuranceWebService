@@ -22,6 +22,8 @@ import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.model.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
+import com.rav.insurance.insuranceformoperations.model.SearchQuotesRequest;
+import com.rav.insurance.insuranceformoperations.model.SearchQuotesResponse;
 import com.rav.insurance.insuranceformoperations.model.UploadProposalBinderRequest;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
 import com.rav.insurance.insuranceformoperations.service.CloseFormService;
@@ -34,6 +36,7 @@ import com.rav.insurance.insuranceformoperations.service.GetFormService;
 import com.rav.insurance.insuranceformoperations.service.PostFormMailService;
 import com.rav.insurance.insuranceformoperations.service.QuoteDetailsService;
 import com.rav.insurance.insuranceformoperations.service.SearchMailService;
+import com.rav.insurance.insuranceformoperations.service.SearchQuotesService;
 import com.rav.insurance.insuranceformoperations.service.SendFormMailToUnderWriterService;
 import com.rav.insurance.insuranceformoperations.service.SubmitFormService;
 import com.rav.insurance.insuranceformoperations.service.UploadProposalBinderService;
@@ -158,6 +161,13 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	public String getEmailAddress(String formId) throws Exception {
 		service = new GetEmailAddressService();
 		return (String) service.processRequest(formId, wsContext);
+	}
+
+	@Override
+	public SearchQuotesResponse searchQuotes(SearchQuotesRequest request)
+			throws Exception {
+		service = new SearchQuotesService();
+		return (SearchQuotesResponse) service.processRequest(request, wsContext);
 	}
 
 }
