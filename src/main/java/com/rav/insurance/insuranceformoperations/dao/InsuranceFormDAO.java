@@ -100,7 +100,12 @@ public class InsuranceFormDAO {
 			session.beginTransaction();
 
 			session.save(bean);
+			
+			InsuranceFormBean b = (InsuranceFormBean) session.get(InsuranceFormBean.class, Integer.parseInt(bean.getFormId().replaceAll("UCCIG", "")));
+			b.setStatus("CLOSE");
 			session.getTransaction().commit();
+			
+			
 		} catch (Exception e) {
 			throw e;
 		}
