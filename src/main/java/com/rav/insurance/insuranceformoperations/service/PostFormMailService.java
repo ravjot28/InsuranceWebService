@@ -23,6 +23,7 @@ public class PostFormMailService extends ServiceAbstract {
 			validateRequest(request);
 			InsuranceFormDAO dao = new InsuranceFormDAO();
 			dao.insertDelayMail(request);
+			new InsuranceFormDAO().insertMailRepo(request.getFormId(), request.getRecpients());
 		} catch (Exception e) {
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();

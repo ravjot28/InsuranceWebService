@@ -11,6 +11,7 @@ import java.util.Calendar;
 import javax.xml.ws.WebServiceContext;
 
 import com.rav.insurance.constants.CommonConstants;
+import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.FormMailToUnderWriterRequest;
 import com.rav.insurance.log.bean.RequestResponseLoggingBean;
 import com.rav.insurance.model.CommonResponseAttributes;
@@ -43,7 +44,10 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 
 			response = new CommonResponseAttributes();
 			response.setStatus(CommonConstants.SUCCESS);
-		} catch (Exception e) {
+			
+			new InsuranceFormDAO().insertMailRepo(request.getFormId(), request.getRecpients());
+			
+			} catch (Exception e) {
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();
 			String theTrace = "";

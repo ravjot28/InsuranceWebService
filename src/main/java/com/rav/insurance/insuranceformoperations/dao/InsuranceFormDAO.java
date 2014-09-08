@@ -14,6 +14,7 @@ import org.hibernate.criterion.Restrictions;
 import com.rav.insurance.insuranceformoperations.bean.CloseFormBean;
 import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
+import com.rav.insurance.insuranceformoperations.bean.MailRepoBean;
 import com.rav.insurance.insuranceformoperations.bean.MessageInfo;
 import com.rav.insurance.insuranceformoperations.bean.QuoteDetailsBean;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
@@ -26,6 +27,25 @@ import com.rav.insurance.util.DatabaseConfig;
 import com.rav.insurance.util.WriteByteArray;
 
 public class InsuranceFormDAO {
+	
+	public void insertMailRepo(String formId,String emailAddress) throws Exception{
+
+		Session session;
+		try {
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+			MailRepoBean bean = new MailRepoBean();
+			bean.setFormId(formId);
+			bean.setRecepients(emailAddress);
+
+			session.save(bean);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			throw e;
+		}
+	
+	}
 
 	@SuppressWarnings("unchecked")
 	public GetCloseFormNQuoteDetailsResponse getCloseFormNQuoteDetails(
