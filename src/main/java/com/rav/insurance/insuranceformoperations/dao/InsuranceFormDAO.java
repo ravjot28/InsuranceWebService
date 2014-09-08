@@ -45,31 +45,38 @@ public class InsuranceFormDAO {
 			List<QuoteDetailsBean> list = (List<QuoteDetailsBean>) crit.list();
 			if (list != null && list.size() > 0) {
 				QuoteDetailsBean qdb = list.get(0);
-				response.setAbex(qdb.getAbex());
-				response.setAmFredericks(qdb.getAmFredericks());
-				response.setApril(qdb.getApril());
-				response.setAviva(qdb.getAviva());
-				response.setBurnsnWilcox(qdb.getBurnsnWilcox());
-				response.setCfc(qdb.getCfc());
-				response.setChutter(qdb.getChutter());
-				response.setcNA(qdb.getcNA());
-				response.setCreechurch(qdb.getCreechurch());
-				response.setDominion(qdb.getDominion());
-				response.setEcclesiastical(qdb.getEcclesiastical());
-				response.setEncon(qdb.getEncon());
-				response.setGore(qdb.getGore());
-				response.setGroupOne(qdb.getGroupOne());
-				response.setIntact(qdb.getIntact());
-				response.setLloyds(qdb.getLloyds());
-				response.setNorthbridge(qdb.getNorthbridge());
-				response.setPremierMarine(qdb.getPremierMarine());
-				response.setrSA(qdb.getrSA());
-				response.setSouthWestern(qdb.getSouthWestern());
-				response.setsRIM(qdb.getsRIM());
-				response.setsUM(qdb.getsUM());
-				response.settCIM(qdb.gettCIM());
-				response.setTotte(qdb.getTotte());
-				response.setZurich(qdb.getZurich());
+				response.setCompanyname1(qdb.getCompanyname1());
+				response.setCompanyname2(qdb.getCompanyname2());
+				response.setCompanyname3(qdb.getCompanyname3());
+				response.setCompanyname4(qdb.getCompanyname4());
+				response.setCompanyname5(qdb.getCompanyname5());
+				response.setCompanyname6(qdb.getCompanyname6());
+				response.setCompanyname7(qdb.getCompanyname7());
+				response.setCompanyname8(qdb.getCompanyname8());
+				response.setCompanyname9(qdb.getCompanyname9());
+				response.setCompanyname10(qdb.getCompanyname10());
+				
+				response.setQuote1(qdb.getQuote1());
+				response.setQuote2(qdb.getQuote2());
+				response.setQuote3(qdb.getQuote3());
+				response.setQuote4(qdb.getQuote4());
+				response.setQuote5(qdb.getQuote5());
+				response.setQuote6(qdb.getQuote6());
+				response.setQuote7(qdb.getQuote7());
+				response.setQuote8(qdb.getQuote8());
+				response.setQuote9(qdb.getQuote9());
+				response.setQuote10(qdb.getQuote10());
+				
+				response.setComment1(qdb.getComment1());
+				response.setComment2(qdb.getComment2());
+				response.setComment3(qdb.getComment3());
+				response.setComment4(qdb.getComment4());
+				response.setComment5(qdb.getComment5());
+				response.setComment6(qdb.getComment6());
+				response.setComment7(qdb.getComment7());
+				response.setComment8(qdb.getComment8());
+				response.setComment9(qdb.getComment9());
+				response.setComment10(qdb.getComment10());
 			}
 
 			crit = session.createCriteria(CloseFormBean.class);

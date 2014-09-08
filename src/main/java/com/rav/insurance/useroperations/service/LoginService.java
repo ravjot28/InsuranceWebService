@@ -59,7 +59,7 @@ public class LoginService extends ServiceAbstract {
 					}
 					bean.setDate(Calendar.getInstance().getTime());
 					bean.setException(theTrace);
-					bean.setLoggedInUser(((LoginDTO) model).getUserId());
+					bean.setLoggedInUser(((InsuranceLoginRequest) model).getUserId());
 					bean.setRequestType("LOGIN");
 					
 					RequestResponseLoggingDAO.log(bean);
@@ -79,7 +79,7 @@ public class LoginService extends ServiceAbstract {
 				}
 				bean.setDate(Calendar.getInstance().getTime());
 				bean.setException(theTrace);
-				bean.setLoggedInUser(((LoginDTO) model).getUserId());
+				bean.setLoggedInUser(((InsuranceLoginRequest) model).getUserId());
 				bean.setRequestType("LOGIN");
 				
 				RequestResponseLoggingDAO.log(bean);

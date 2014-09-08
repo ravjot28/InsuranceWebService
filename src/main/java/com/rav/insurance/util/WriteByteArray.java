@@ -21,7 +21,7 @@ public class WriteByteArray {
 			bs.write(array);
 			bs.close();
 			bs = null;
-
+			System.out.println(new File(fileName).getAbsoluteFile());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -7,6 +7,8 @@ import javax.jws.WebService;
 
 import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
 import com.rav.insurance.insuranceformoperations.model.CloseFormRequest;
+import com.rav.insurance.insuranceformoperations.model.DownloadProposalBinderRequest;
+import com.rav.insurance.insuranceformoperations.model.DownloadProposalBinderResponse;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.FormMailToUnderWriterRequest;
 import com.rav.insurance.insuranceformoperations.model.GetCloseFormNQuoteDetailsResponse;
@@ -20,6 +22,7 @@ import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.model.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
+import com.rav.insurance.insuranceformoperations.model.UploadProposalBinderRequest;
 import com.rav.insurance.model.CommonResponseAttributes;
 
 @WebService(name = "InsuranceOperationsService")
@@ -89,6 +92,18 @@ public interface InsuranceOperationsWS {
 	@WebResult(name = "GetCloseFormNQuoteDetailsResponse")
 	public GetCloseFormNQuoteDetailsResponse getCloseFormNQuoteDetails(
 			@WebParam(name = "GetCloseFormNQuoteDetailsRequest") SearchMailRequest request)
+			throws Exception;
+	
+	@WebMethod(operationName = "UploadProposalBinder")
+	@WebResult(name = "UploadProposalBinderResponse")
+	public CommonResponseAttributes uploadProposalBinder(
+			@WebParam(name = "UploadProposalBinderRequest") UploadProposalBinderRequest request)
+			throws Exception;
+	
+	@WebMethod(operationName = "DownloadProposalBinder")
+	@WebResult(name = "DownloadProposalBinderResponse")
+	public DownloadProposalBinderResponse downloadProposalBinder(
+			@WebParam(name = "DownloadProposalBinderRequest") DownloadProposalBinderRequest request)
 			throws Exception;
 
 }

@@ -25,7 +25,7 @@ public class QuoteDetailsService extends ServiceAbstract {
 			DozerBeanMapper mapper = new DozerBeanMapper();
 			QuoteDetailsBean bean = new QuoteDetailsBean();
 			mapper.map(request, bean);
-			bean.setFormId(request.getFormId());
+			bean.setFormId(request.getApplicationid());
 			InsuranceFormDAO dao = new InsuranceFormDAO();
 			dao.insertQuoteDetails(bean);
 		} catch (Exception e) {

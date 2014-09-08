@@ -16,11 +16,11 @@ public class InsuranceFormBean {
 	@Id
 	@GeneratedValue(generator = "formID_seq", strategy = GenerationType.SEQUENCE)
 	@SequenceGenerator(allocationSize = 1, initialValue = 1001, sequenceName = "formID_seq", name = "formID_seq")
+	
 	private int id;
 	private Date creationDate;
 	private String producer;
 	private String branch;
-
 	private String keyContact;
 	private String keyContactPhone;
 	private String keyContactEmailAddress;

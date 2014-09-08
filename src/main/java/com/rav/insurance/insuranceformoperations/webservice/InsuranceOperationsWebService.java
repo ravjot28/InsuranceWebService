@@ -7,6 +7,8 @@ import javax.xml.ws.soap.MTOM;
 
 import com.rav.insurance.insuranceformoperations.model.AssignMarketerRequest;
 import com.rav.insurance.insuranceformoperations.model.CloseFormRequest;
+import com.rav.insurance.insuranceformoperations.model.DownloadProposalBinderRequest;
+import com.rav.insurance.insuranceformoperations.model.DownloadProposalBinderResponse;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
 import com.rav.insurance.insuranceformoperations.model.FormMailToUnderWriterRequest;
 import com.rav.insurance.insuranceformoperations.model.GetCloseFormNQuoteDetailsResponse;
@@ -20,8 +22,10 @@ import com.rav.insurance.insuranceformoperations.model.PostFormMailRequest;
 import com.rav.insurance.insuranceformoperations.model.QuoteDetailsRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
 import com.rav.insurance.insuranceformoperations.model.SearchMailResponse;
+import com.rav.insurance.insuranceformoperations.model.UploadProposalBinderRequest;
 import com.rav.insurance.insuranceformoperations.service.AssignMarketerService;
 import com.rav.insurance.insuranceformoperations.service.CloseFormService;
+import com.rav.insurance.insuranceformoperations.service.DownloadProposalBinderService;
 import com.rav.insurance.insuranceformoperations.service.EditFormSubmission;
 import com.rav.insurance.insuranceformoperations.service.GetCloseFormNQuoteDetailsService;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
@@ -31,6 +35,7 @@ import com.rav.insurance.insuranceformoperations.service.QuoteDetailsService;
 import com.rav.insurance.insuranceformoperations.service.SearchMailService;
 import com.rav.insurance.insuranceformoperations.service.SendFormMailToUnderWriterService;
 import com.rav.insurance.insuranceformoperations.service.SubmitFormService;
+import com.rav.insurance.insuranceformoperations.service.UploadProposalBinderService;
 import com.rav.insurance.insuranceformoperations.webservice.contracts.InsuranceOperationsWS;
 import com.rav.insurance.model.CommonResponseAttributes;
 import com.rav.insurance.service.ServiceAbstract;
@@ -130,6 +135,22 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 		return (GetCloseFormNQuoteDetailsResponse) service.processRequest(
 				request, wsContext);
 
+	}
+
+	@Override
+	public CommonResponseAttributes uploadProposalBinder(
+			UploadProposalBinderRequest request) throws Exception {
+		service = new UploadProposalBinderService();
+		return (CommonResponseAttributes) service.processRequest(
+				request, wsContext);
+	}
+
+	@Override
+	public DownloadProposalBinderResponse downloadProposalBinder(
+			DownloadProposalBinderRequest request) throws Exception {
+		service = new DownloadProposalBinderService();
+		return (DownloadProposalBinderResponse) service.processRequest(
+				request, wsContext);
 	}
 
 }
