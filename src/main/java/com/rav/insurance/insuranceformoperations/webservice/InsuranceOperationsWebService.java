@@ -28,6 +28,7 @@ import com.rav.insurance.insuranceformoperations.service.CloseFormService;
 import com.rav.insurance.insuranceformoperations.service.DownloadProposalBinderService;
 import com.rav.insurance.insuranceformoperations.service.EditFormSubmission;
 import com.rav.insurance.insuranceformoperations.service.GetCloseFormNQuoteDetailsService;
+import com.rav.insurance.insuranceformoperations.service.GetEmailAddressService;
 import com.rav.insurance.insuranceformoperations.service.GetFormListSerivce;
 import com.rav.insurance.insuranceformoperations.service.GetFormService;
 import com.rav.insurance.insuranceformoperations.service.PostFormMailService;
@@ -141,16 +142,22 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	public CommonResponseAttributes uploadProposalBinder(
 			UploadProposalBinderRequest request) throws Exception {
 		service = new UploadProposalBinderService();
-		return (CommonResponseAttributes) service.processRequest(
-				request, wsContext);
+		return (CommonResponseAttributes) service.processRequest(request,
+				wsContext);
 	}
 
 	@Override
 	public DownloadProposalBinderResponse downloadProposalBinder(
 			DownloadProposalBinderRequest request) throws Exception {
 		service = new DownloadProposalBinderService();
-		return (DownloadProposalBinderResponse) service.processRequest(
-				request, wsContext);
+		return (DownloadProposalBinderResponse) service.processRequest(request,
+				wsContext);
+	}
+
+	@Override
+	public String getEmailAddress(String formId) throws Exception {
+		service = new GetEmailAddressService();
+		return (String) service.processRequest(formId, wsContext);
 	}
 
 }

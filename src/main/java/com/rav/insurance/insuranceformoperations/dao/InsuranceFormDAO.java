@@ -46,6 +46,30 @@ public class InsuranceFormDAO {
 		}
 	
 	}
+	
+	@SuppressWarnings("unchecked")
+	public String getEmailAddress(String formId) throws Exception{
+		Session session;
+		String email = null;
+		try {
+
+			session = DatabaseConfig.getSessionFactory().openSession();
+
+			session.beginTransaction();
+
+			Criteria crit = session.createCriteria(MailRepoBean.class);
+
+			crit.add(Restrictions.ge("formId", formId));
+
+			List<MailRepoBean> list = (List<MailRepoBean>) crit.list();
+			if (list != null && list.size() > 0) {
+				email = list.get(0).getRecepients();
+			}
+		}catch(Exception e){
+			throw e;
+		}
+		return email;
+	}
 
 	@SuppressWarnings("unchecked")
 	public GetCloseFormNQuoteDetailsResponse getCloseFormNQuoteDetails(

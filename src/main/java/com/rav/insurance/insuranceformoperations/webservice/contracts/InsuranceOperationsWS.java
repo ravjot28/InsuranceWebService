@@ -87,23 +87,29 @@ public interface InsuranceOperationsWS {
 	public CommonResponseAttributes quoteDetails(
 			@WebParam(name = "QuoteDetailsRequest") QuoteDetailsRequest request)
 			throws Exception;
-	
+
 	@WebMethod(operationName = "GetCloseFormNQuoteDetails")
 	@WebResult(name = "GetCloseFormNQuoteDetailsResponse")
 	public GetCloseFormNQuoteDetailsResponse getCloseFormNQuoteDetails(
 			@WebParam(name = "GetCloseFormNQuoteDetailsRequest") SearchMailRequest request)
 			throws Exception;
-	
+
 	@WebMethod(operationName = "UploadProposalBinder")
 	@WebResult(name = "UploadProposalBinderResponse")
 	public CommonResponseAttributes uploadProposalBinder(
 			@WebParam(name = "UploadProposalBinderRequest") UploadProposalBinderRequest request)
 			throws Exception;
-	
+
 	@WebMethod(operationName = "DownloadProposalBinder")
 	@WebResult(name = "DownloadProposalBinderResponse")
 	public DownloadProposalBinderResponse downloadProposalBinder(
 			@WebParam(name = "DownloadProposalBinderRequest") DownloadProposalBinderRequest request)
+			throws Exception;
+
+	@WebMethod(operationName = "GetEmailAddress")
+	@WebResult(name = "GetEmailAddressResponse")
+	public String getEmailAddress(
+			@WebParam(name = "GetEmailAddressRequest") String formId)
 			throws Exception;
 
 }
