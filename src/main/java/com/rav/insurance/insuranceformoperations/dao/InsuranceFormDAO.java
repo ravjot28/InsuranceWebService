@@ -214,6 +214,7 @@ public class InsuranceFormDAO {
 						+ bean.getMarketerUserName());
 			}
 			bean.setMarketerUserName(marketerUserName);
+			bean.setStatus("ASSIGNED");
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			throw e;
