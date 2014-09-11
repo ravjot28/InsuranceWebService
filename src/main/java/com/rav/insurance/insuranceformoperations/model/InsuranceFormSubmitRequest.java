@@ -294,20 +294,33 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 	private double insdSqFootage;
 	private int noOfStories;
 	private String basement;
-	private String walls;
-	private String roof;
+	private String wallsframe;
+	private String wallshcb;
+	private String wallssteel;
+	private String wallsbrick;
+	private String roofwood;
+	private String roofsteel;
+	private String roofconcrete;
 	private String roofupdated;
-	private String floors;
-	private String heating;
-	private String heatingupdated;
-	private String electrical;
+	private String floorsconcrete;
+	private String floorswood;
+	private String heatinggas;
+	private String heatingoil;
+	private String heatingelectric;
+	private String heatingother;
+	private String heatingupdated;	
+	private String electricalbreakers;
+	private String electricalfuses;
+	private String electricalamps;
 	private String electricalupdated;
-	private String plumbing;
+	private String plumbingcopper;
+	private String plumbingpvc;
+	private String plumbingother;
 	private String plumbingupdated;
 	private String fireProtection;
 	private String fireProtectiondistance;
 	private String security;
-	private String notes;
+	private String additionalcoverage;
 
 	private double buildingLimit1;
 	private double buildingDeductible1;
@@ -1691,22 +1704,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.noOfStories = noOfStories;
 	}
 
-	public String getWalls() {
-		return walls;
-	}
-
-	public void setWalls(String walls) {
-		this.walls = walls;
-	}
-
-	public String getRoof() {
-		return roof;
-	}
-
-	public void setRoof(String roof) {
-		this.roof = roof;
-	}
-
+	
 	public String getOtherSpecify() {
 		return otherSpecify;
 	}
@@ -1731,37 +1729,7 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.country = country;
 	}
 
-	public String getFloors() {
-		return floors;
-	}
-
-	public void setFloors(String floors) {
-		this.floors = floors;
-	}
-
-	public String getHeating() {
-		return heating;
-	}
-
-	public void setHeating(String heating) {
-		this.heating = heating;
-	}
-
-	public String getElectrical() {
-		return electrical;
-	}
-
-	public void setElectrical(String electrical) {
-		this.electrical = electrical;
-	}
-
-	public String getPlumbing() {
-		return plumbing;
-	}
-
-	public void setPlumbing(String plumbing) {
-		this.plumbing = plumbing;
-	}
+	
 
 	public String getFireProtection() {
 		return fireProtection;
@@ -1779,12 +1747,164 @@ public class InsuranceFormSubmitRequest extends CommonRequestAttributes {
 		this.security = security;
 	}
 
-	public String getNotes() {
-		return notes;
+	public String getWallsframe() {
+		return wallsframe;
 	}
 
-	public void setNotes(String notes) {
-		this.notes = notes;
+	public void setWallsframe(String wallsframe) {
+		this.wallsframe = wallsframe;
+	}
+
+	public String getWallshcb() {
+		return wallshcb;
+	}
+
+	public void setWallshcb(String wallshcb) {
+		this.wallshcb = wallshcb;
+	}
+
+	public String getWallssteel() {
+		return wallssteel;
+	}
+
+	public void setWallssteel(String wallssteel) {
+		this.wallssteel = wallssteel;
+	}
+
+	public String getWallsbrick() {
+		return wallsbrick;
+	}
+
+	public void setWallsbrick(String wallsbrick) {
+		this.wallsbrick = wallsbrick;
+	}
+
+	public String getRoofwood() {
+		return roofwood;
+	}
+
+	public void setRoofwood(String roofwood) {
+		this.roofwood = roofwood;
+	}
+
+	public String getRoofsteel() {
+		return roofsteel;
+	}
+
+	public void setRoofsteel(String roofsteel) {
+		this.roofsteel = roofsteel;
+	}
+
+	public String getRoofconcrete() {
+		return roofconcrete;
+	}
+
+	public void setRoofconcrete(String roofconcrete) {
+		this.roofconcrete = roofconcrete;
+	}
+
+	public String getFloorsconcrete() {
+		return floorsconcrete;
+	}
+
+	public void setFloorsconcrete(String floorsconcrete) {
+		this.floorsconcrete = floorsconcrete;
+	}
+
+	public String getFloorswood() {
+		return floorswood;
+	}
+
+	public void setFloorswood(String floorswood) {
+		this.floorswood = floorswood;
+	}
+
+	public String getHeatinggas() {
+		return heatinggas;
+	}
+
+	public void setHeatinggas(String heatinggas) {
+		this.heatinggas = heatinggas;
+	}
+
+	public String getHeatingoil() {
+		return heatingoil;
+	}
+
+	public void setHeatingoil(String heatingoil) {
+		this.heatingoil = heatingoil;
+	}
+
+	public String getHeatingelectric() {
+		return heatingelectric;
+	}
+
+	public void setHeatingelectric(String heatingelectric) {
+		this.heatingelectric = heatingelectric;
+	}
+
+	public String getHeatingother() {
+		return heatingother;
+	}
+
+	public void setHeatingother(String heatingother) {
+		this.heatingother = heatingother;
+	}
+
+	public String getElectricalbreakers() {
+		return electricalbreakers;
+	}
+
+	public void setElectricalbreakers(String electricalbreakers) {
+		this.electricalbreakers = electricalbreakers;
+	}
+
+	public String getElectricalfuses() {
+		return electricalfuses;
+	}
+
+	public void setElectricalfuses(String electricalfuses) {
+		this.electricalfuses = electricalfuses;
+	}
+
+	public String getElectricalamps() {
+		return electricalamps;
+	}
+
+	public void setElectricalamps(String electricalamps) {
+		this.electricalamps = electricalamps;
+	}
+
+	public String getPlumbingcopper() {
+		return plumbingcopper;
+	}
+
+	public void setPlumbingcopper(String plumbingcopper) {
+		this.plumbingcopper = plumbingcopper;
+	}
+
+	public String getPlumbingpvc() {
+		return plumbingpvc;
+	}
+
+	public void setPlumbingpvc(String plumbingpvc) {
+		this.plumbingpvc = plumbingpvc;
+	}
+
+	public String getPlumbingother() {
+		return plumbingother;
+	}
+
+	public void setPlumbingother(String plumbingother) {
+		this.plumbingother = plumbingother;
+	}
+
+	public String getAdditionalcoverage() {
+		return additionalcoverage;
+	}
+
+	public void setAdditionalcoverage(String additionalcoverage) {
+		this.additionalcoverage = additionalcoverage;
 	}
 
 	public String getCurrentInsurer() {
