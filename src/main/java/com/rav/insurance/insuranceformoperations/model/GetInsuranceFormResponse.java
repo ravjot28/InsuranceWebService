@@ -220,8 +220,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private double earthquakeDeductible;
 	private double profitLimit;
 	private double profitDeductible;
-	private String grossEarning80;
-	private String grossEarning50;
+	private String grossEarningCheckbox;
 	private double grossEarningLimit;
 	private double grossEarningDeductible;
 	private double rentalIncomeLimit;
@@ -773,10 +772,6 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private String lienHoldersVehicle2;
 	private String lienHolders3;
 	private String lienHoldersVehicle3;
-	private String lienHolders4;
-	private String lienHoldersVehicle4;
-	private String lienHolders5;
-	private String lienHoldersVehicle5;
 	private Date claimDate1;
 	private String claimDesc1;
 	private Date claimDate2;
@@ -807,12 +802,7 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 	private String dilingDocket3;
 	private String filingType3;
 	private String filingName3;
-	private String filingState4;
-	private String filingUSDot4;
-	private String dilingDocket4;
-	private String filingType4;
-	private String filingName4;
-
+	
 	private String vehicleNonOwned;
 	private String contract;
 	private String typeOfNonOwned;
@@ -2607,38 +2597,6 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 		this.lienHoldersVehicle3 = lienHoldersVehicle3;
 	}
 
-	public String getLienHolders4() {
-		return lienHolders4;
-	}
-
-	public void setLienHolders4(String lienHolders4) {
-		this.lienHolders4 = lienHolders4;
-	}
-
-	public String getLienHoldersVehicle4() {
-		return lienHoldersVehicle4;
-	}
-
-	public void setLienHoldersVehicle4(String lienHoldersVehicle4) {
-		this.lienHoldersVehicle4 = lienHoldersVehicle4;
-	}
-
-	public String getLienHolders5() {
-		return lienHolders5;
-	}
-
-	public void setLienHolders5(String lienHolders5) {
-		this.lienHolders5 = lienHolders5;
-	}
-
-	public String getLienHoldersVehicle5() {
-		return lienHoldersVehicle5;
-	}
-
-	public void setLienHoldersVehicle5(String lienHoldersVehicle5) {
-		this.lienHoldersVehicle5 = lienHoldersVehicle5;
-	}
-
 	public Date getClaimDate1() {
 		return claimDate1;
 	}
@@ -2871,46 +2829,6 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 
 	public void setFilingName3(String filingName3) {
 		this.filingName3 = filingName3;
-	}
-
-	public String getFilingState4() {
-		return filingState4;
-	}
-
-	public void setFilingState4(String filingState4) {
-		this.filingState4 = filingState4;
-	}
-
-	public String getFilingUSDot4() {
-		return filingUSDot4;
-	}
-
-	public void setFilingUSDot4(String filingUSDot4) {
-		this.filingUSDot4 = filingUSDot4;
-	}
-
-	public String getDilingDocket4() {
-		return dilingDocket4;
-	}
-
-	public void setDilingDocket4(String dilingDocket4) {
-		this.dilingDocket4 = dilingDocket4;
-	}
-
-	public String getFilingType4() {
-		return filingType4;
-	}
-
-	public void setFilingType4(String filingType4) {
-		this.filingType4 = filingType4;
-	}
-
-	public String getFilingName4() {
-		return filingName4;
-	}
-
-	public void setFilingName4(String filingName4) {
-		this.filingName4 = filingName4;
 	}
 
 
@@ -3514,20 +3432,12 @@ public class GetInsuranceFormResponse extends CommonResponseAttributes {
 		this.owner = owner;
 	}
 
-	public String getGrossEarning80() {
-		return grossEarning80;
+	public String getGrossEarningCheckbox() {
+		return grossEarningCheckbox;
 	}
 
-	public void setGrossEarning80(String grossEarning80) {
-		this.grossEarning80 = grossEarning80;
-	}
-
-	public String getGrossEarning50() {
-		return grossEarning50;
-	}
-
-	public void setGrossEarning50(String grossEarning50) {
-		this.grossEarning50 = grossEarning50;
+	public void setGrossEarningCheckbox(String grossEarningCheckbox) {
+		this.grossEarningCheckbox = grossEarningCheckbox;
 	}
 
 	public String getOthercoverage1() {
