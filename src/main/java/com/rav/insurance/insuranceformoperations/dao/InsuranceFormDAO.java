@@ -266,12 +266,31 @@ public class InsuranceFormDAO {
 				crit.add(Restrictions.eq("formId", "UCCIG" + a.getFormId()));
 				List<QuoteDetailsBean> b = (List<QuoteDetailsBean>) crit.list();
 				if (b != null && b.size() > 0) {
+					String businessWithUs = null;
+					double quote = 0;
+					String company = null;
+
+					Criteria crit1 = session
+							.createCriteria(CloseFormBean.class);
+					crit1.add(Restrictions.eq("formId", "UCCIG" + a.getFormId()));
+					List<CloseFormBean> c = (List<CloseFormBean>) crit1.list();
+					if (c != null && c.size() > 0) {
+						businessWithUs = c.get(0).getBusinessWithUs();
+						quote = c.get(0).getQuote();
+						company = c.get(0).getCompany();
+					}
 
 					if (b.get(0).getCompanyname1().equals(companyName)) {
 						QuoteDetailsRequest request = new QuoteDetailsRequest();
 						request.setCompanyname1(b.get(0).getCompanyname1());
 						request.setComment1(b.get(0).getComment1());
 						request.setQuote1(b.get(0).getQuote1());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -280,6 +299,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname2());
 						request.setComment1(b.get(0).getComment2());
 						request.setQuote1(b.get(0).getQuote2());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -288,6 +313,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname3());
 						request.setComment1(b.get(0).getComment3());
 						request.setQuote1(b.get(0).getQuote3());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -296,6 +327,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname4());
 						request.setComment1(b.get(0).getComment4());
 						request.setQuote1(b.get(0).getQuote4());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -304,6 +341,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname5());
 						request.setComment1(b.get(0).getComment5());
 						request.setQuote1(b.get(0).getQuote5());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -312,6 +355,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname6());
 						request.setComment1(b.get(0).getComment6());
 						request.setQuote1(b.get(0).getQuote6());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -320,6 +369,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname7());
 						request.setComment1(b.get(0).getComment7());
 						request.setQuote1(b.get(0).getQuote7());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -328,6 +383,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname8());
 						request.setComment1(b.get(0).getComment8());
 						request.setQuote1(b.get(0).getQuote8());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -336,6 +397,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname9());
 						request.setComment1(b.get(0).getComment9());
 						request.setQuote1(b.get(0).getQuote9());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
@@ -344,6 +411,12 @@ public class InsuranceFormDAO {
 						request.setCompanyname1(b.get(0).getCompanyname10());
 						request.setComment1(b.get(0).getComment10());
 						request.setQuote1(b.get(0).getQuote10());
+						request.setFormId("UCCIG" + a.getFormId());
+						request.setBusinessWithUs(businessWithUs);
+						request.setCompany(company);
+						request.setQuote(quote);
+						request.setMarketerId(a.getMarketerId());
+						request.setBusinessName(a.getBusinessName());
 						finalList.add(request);
 					}
 
