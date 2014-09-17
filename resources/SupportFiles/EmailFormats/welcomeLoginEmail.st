@@ -1,5 +1,4 @@
 Dear $fullName$,
-    Welcome .......
-    Form id is $formId$
+    You have been successfully registered with UCCIG WMS software. 
 Best Regards, 
 $from$

@@ -129,7 +129,7 @@ public class SubmitFormService extends ServiceAbstract {
 		StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
 				"welcomeloginemail group", System.getProperty("emailTemplates"));
 		StringTemplate submitFormMail = emailTemplateGroup
-				.getInstanceOf("welcomeLoginEmail");
+				.getInstanceOf("formSubmission");
 		submitFormMail.setAttribute("fullName", fullName);
 		submitFormMail.setAttribute("formId", formId);
 		submitFormMail.setAttribute("from", "UCCIG");
