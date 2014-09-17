@@ -9,6 +9,7 @@ import org.dozer.DozerBeanMapper;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Restrictions;
 
 import com.rav.insurance.insuranceformoperations.bean.CloseFormBean;
@@ -444,13 +445,20 @@ public class InsuranceFormDAO {
 			Criteria crit = session.createCriteria(InsuranceFormBean.class);
 
 			if (!CommonValidations.isStringEmpty(producerId)) {
-				crit.add(Restrictions.eq("producerUserName", producerId));
+				crit.add(Restrictions.eq("producer", producerId));
 			} else if (!CommonValidations.isStringEmpty(marketerId)) {
 				crit.add(Restrictions.eq("marketerUserName", marketerId));
 			}
 
-			if (!CommonValidations.isStringEmpty(status))
-				crit.add(Restrictions.eq("status", status));
+			if (!CommonValidations.isStringEmpty(status)){
+				String[] s = status.split(",");
+				if(s.length ==2)
+					crit.add(Restrictions.or(Restrictions.eq("status", s[0]),
+							Restrictions.eq("status", s[1])));
+				if(s.length==1)
+					crit.add(Restrictions.eq("status", s[0]));
+				
+			}
 
 			if (!CommonValidations.isStringEmpty(businessName))
 				crit.add(Restrictions.eq("businessName", businessName));
@@ -549,13 +557,17 @@ public class InsuranceFormDAO {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
-
+			System.out.println("gvghvhg "+model.getFormId());
+			
 			InsuranceFormBean bean = (InsuranceFormBean) session
 					.get(InsuranceFormBean.class,
 							Integer.parseInt(model.getFormId().replaceAll(
 									"UCCIG", "")));
+			System.out.println("gvghvhg "+model.getFormId());
 			DozerBeanMapper mapper = new DozerBeanMapper();
 			mapper.map(model, bean);
+			bean.setId(Integer.parseInt(model.getFormId().replaceAll(
+									"UCCIG", "")));
 			bean.setStatus("NEW");
 
 			session.save(bean);
