@@ -1,9 +1,7 @@
 package com.rav.insurance.util;
-
 import java.io.UnsupportedEncodingException;
 import java.security.Security;
 import java.util.Properties;
-
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 import javax.mail.Authenticator;
@@ -17,16 +15,10 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-
-import com.rav.insurance.useroperations.constants.UserOperationsConstants;
 import com.sun.net.ssl.internal.ssl.Provider;
 
-/**
- * 
- * @author Rav
- */
+/** * * @author Rav */
 public class SendMail implements Runnable {
-
 	private String SMTP_HOST_NAME;
 	private String SMTP_PORT;
 	private String debug;
@@ -38,6 +30,12 @@ public class SendMail implements Runnable {
 	private String[] too;
 	private String[] attachements;
 	private Thread th;
+	
+	public static void main(String as[]){
+		String[] a = {"C:\\Documents and Settings\\developer\\Desktop\\MailRead\\main.mf"};
+		String[] to = {"harmansingh1699@gmail.com"};
+		new SendMail("Asdsad","ererr",a,to).send();
+	}
 
 	public SendMail(String hostName, String portNmber, String debug,
 			String auth, String from, String password, String sub, String msg,
@@ -56,8 +54,8 @@ public class SendMail implements Runnable {
 
 	public SendMail(String from, String password, String sub, String msg,
 			String[] attachments, String[] to) {
-		this.SMTP_HOST_NAME = UserOperationsConstants.GMAIL_SMTP_HOST_NAME;
-		this.SMTP_PORT = UserOperationsConstants.GMAIL_SMTP_PORT;
+		this.SMTP_HOST_NAME = "192.168.105.10";
+		this.SMTP_PORT = "143";
 		this.debug = Boolean.toString(true);
 		this.auth = Boolean.toString(true);
 		this.MsgTxt = msg;
@@ -73,14 +71,14 @@ public class SendMail implements Runnable {
 	}
 
 	public SendMail(String sub, String msg, String[] attachments, String[] to) {
-		this.SMTP_HOST_NAME = UserOperationsConstants.GMAIL_SMTP_HOST_NAME;
-		this.SMTP_PORT = UserOperationsConstants.GMAIL_SMTP_PORT;
+		this.SMTP_HOST_NAME = "192.168.105.10";
+		this.SMTP_PORT = "143";
 		this.debug = Boolean.toString(true);
 		this.auth = Boolean.toString(true);
 		this.MsgTxt = msg;
 		this.Subject = sub;
-		this.From = UserOperationsConstants.GMAIL_USER_NAME;
-		this.pwd = UserOperationsConstants.GMAIL_PASSWORD;
+		this.From = "hsing@uccig.com";
+		this.pwd = "Password!23";
 		this.too = to;
 		this.attachements = attachments;
 	}
@@ -93,38 +91,23 @@ public class SendMail implements Runnable {
 	private void sendSSLMessage(String[] recipients, String subject,
 			String message, String from, String pwd, String[] attachement)
 			throws MessagingException, UnsupportedEncodingException {
-		boolean debug = false;
+		boolean debug = true;
 		Properties props = new Properties();
-		props.put("mail.smtp.host", SMTP_HOST_NAME);
-		props.put("mail.smtp.auth", auth);
-		props.put("mail.debug", this.debug);
-		props.put("mail.smtp.port", SMTP_PORT);
-		props.put("mail.smtp.socketFactory.port", SMTP_PORT);
-		props.put("mail.smtp.socketFactory.class", UserOperationsConstants.SSL_FACTORY);
-		props.put("mail.smtp.socketFactory.fallback", Boolean.toString(false));
-		final String from1 = from;
-		final String pwd1 = pwd;
-		Session session = Session.getDefaultInstance(props,
-				new Authenticator() {
-					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication(from1, pwd1);
-					}
-				});
-		session.setDebug(debug);
+		props.put("mail.smtp.host", "192.168.105.10");
+		props.put("mail.smtp.auth", "false");
+		props.put("mail.debug", "true");
 
+		Session session = Session.getInstance(props, new MyAuth());
+		session.setDebug(debug);
 		MimeMessage msg = new MimeMessage(session);
-		InternetAddress addressFrom = new InternetAddress(from,
-				UserOperationsConstants.ORG_NAME);
+		InternetAddress addressFrom = new InternetAddress(from, "UCCIG");
 		msg.setFrom(addressFrom);
 		InternetAddress[] addressTo = new InternetAddress[recipients.length];
 		for (int i = 0; i < recipients.length; i++) {
-			if(recipients[i]!=null)
-				addressTo[i] = new InternetAddress(recipients[i]);
+			addressTo[i] = new InternetAddress(recipients[i]);
 		}
 		msg.setRecipients(Message.RecipientType.TO, addressTo);
-
 		msg.setSubject(subject);
-
 		MimeBodyPart mbp1 = new MimeBodyPart();
 		mbp1.setText(message);
 		Multipart mp = new MimeMultipart();
@@ -140,23 +123,25 @@ public class SendMail implements Runnable {
 			for (int j = 0; j < attachement.length; j++) {
 				mp.addBodyPart(attachment[j]);
 			}
-
 		}
-
 		msg.setContent(mp);
-
 		Transport.send(msg);
 	}
 
 	@Override
 	public void run() {
-		Security.addProvider(new Provider());
+		
 		try {
 			sendSSLMessage(this.too, this.Subject, this.MsgTxt, this.From,
 					this.pwd, this.attachements);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
 
+	class MyAuth extends Authenticator {
+		protected PasswordAuthentication getPasswordAuthentication() {
+			return new PasswordAuthentication(From, pwd);
+		}
 	}
 }
