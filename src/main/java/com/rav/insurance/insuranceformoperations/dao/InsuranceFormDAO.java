@@ -490,7 +490,7 @@ public class InsuranceFormDAO {
 					AbstractFormInfo formInfo = new AbstractFormInfo();
 					formInfo.setFormId("" + form.getId());
 					formInfo.setMarketerId(form.getMarketerUserName());
-					formInfo.setProducerId(form.getProducerUserName());
+					formInfo.setProducerId(form.getProducer());
 					formInfo.setStatus(form.getStatus());
 					formInfo.setBranch(form.getBranch());
 					formInfo.setBusinessName(form.getBusinessName());
@@ -587,8 +587,8 @@ public class InsuranceFormDAO {
 
 			session.beginTransaction();
 			Query queryObject = session
-					.createQuery("from MessageInfo where subject like '%'||"
-							+ formId + "||'%'");
+					.createQuery("from MessageInfo where subject like '%'||'"
+							+ formId + "'||'%'");
 			list = (List<MessageInfo>) queryObject.list();
 			session.getTransaction().commit();
 		} catch (Exception e) {

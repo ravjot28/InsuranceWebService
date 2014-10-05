@@ -133,7 +133,7 @@ public class EditFormSubmission extends ServiceAbstract {
 
 		String to[] = { emailAddress };
 
-		SendMail sm = new SendMail(formId + " Form submitted", message, to);
+		SendMail sm = new SendMail(formId + " Application Edited", message, to);
 		sm.send();
 	}
 

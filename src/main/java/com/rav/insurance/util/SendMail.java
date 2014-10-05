@@ -1,4 +1,5 @@
 package com.rav.insurance.util;
+
 import java.io.UnsupportedEncodingException;
 import java.security.Security;
 import java.util.Properties;
@@ -30,11 +31,11 @@ public class SendMail implements Runnable {
 	private String[] too;
 	private String[] attachements;
 	private Thread th;
-	
-	public static void main(String as[]){
-		String[] a = {"C:\\Documents and Settings\\developer\\Desktop\\MailRead\\main.mf"};
-		String[] to = {"harmansingh1699@gmail.com"};
-		new SendMail("Asdsad","ererr",a,to).send();
+
+	public static void main(String as[]) {
+		String[] a = { "C:\\Documents and Settings\\developer\\Desktop\\MailRead\\main.mf" };
+		String[] to = { "harmansingh1699@gmail.com" };
+		new SendMail("Asdsad", "ererr", a, to).send();
 	}
 
 	public SendMail(String hostName, String portNmber, String debug,
@@ -77,7 +78,7 @@ public class SendMail implements Runnable {
 		this.auth = Boolean.toString(true);
 		this.MsgTxt = msg;
 		this.Subject = sub;
-		this.From = "hsing@uccig.com";
+		this.From = "hsingh@uccig.com";
 		this.pwd = "Password!23";
 		this.too = to;
 		this.attachements = attachments;
@@ -106,7 +107,10 @@ public class SendMail implements Runnable {
 		for (int i = 0; i < recipients.length; i++) {
 			addressTo[i] = new InternetAddress(recipients[i]);
 		}
+		InternetAddress[] addressCC = new InternetAddress[1];
+		addressCC[0] = new InternetAddress("hsingh@uccig.com");
 		msg.setRecipients(Message.RecipientType.TO, addressTo);
+		msg.setRecipients(Message.RecipientType.CC, addressCC);
 		msg.setSubject(subject);
 		MimeBodyPart mbp1 = new MimeBodyPart();
 		mbp1.setText(message);
@@ -130,7 +134,7 @@ public class SendMail implements Runnable {
 
 	@Override
 	public void run() {
-		
+
 		try {
 			sendSSLMessage(this.too, this.Subject, this.MsgTxt, this.From,
 					this.pwd, this.attachements);

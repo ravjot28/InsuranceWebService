@@ -29,13 +29,14 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 		try {
 			File file = new File(request.getFormId());
 			File[] fi = file.listFiles();
-			
-			String[] a = new String[fi.length];
+			String[] a  = null;
+			if(fi!=null){
+			a= new String[fi.length];
 			for(int i=0;i<fi.length;i++){
 				if(fi[i].getAbsolutePath().endsWith(".zip"))
 					a[i] = fi[i].getAbsolutePath();
 			}
-			
+			}
 			String[] to = request.getRecpients().split(",");
 			File dir = new File("Mails");
 			if (!dir.exists())
@@ -54,6 +55,7 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 			new InsuranceFormDAO().insertMailRepo(request.getFormId(), request.getRecpients());
 			
 			} catch (Exception e) {
+				e.printStackTrace();
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();
 			String theTrace = "";

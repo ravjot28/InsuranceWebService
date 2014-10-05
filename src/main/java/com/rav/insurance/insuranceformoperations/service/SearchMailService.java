@@ -52,6 +52,7 @@ public class SearchMailService extends ServiceAbstract {
 			}
 			response = new SearchMailResponse();
 			response.setMailList(mails);
+			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();

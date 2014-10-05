@@ -17,8 +17,8 @@ public class UserOperationsConstants {
 
 	public static final String ORG_NAME = "UCCIG";
 	
-	public static final String WELCOME_SUBJECT = "WELCOME";
-	public static final String FORGOT_CREDENTIAL_SUBJECT = "FORGOT CREDENTIAL";
+	public static final String WELCOME_SUBJECT = "Welcome to UCCIG WMS";
+	public static final String FORGOT_CREDENTIAL_SUBJECT = "[UCCIG WMS] Password Reset";
 
 	public static final String EMAIL_TEMPLATE_FOLDER_LOCATION = System
 			.getProperty(EMAIL_TEMPLATES_PROPERTY);
