@@ -497,6 +497,7 @@ public class InsuranceFormDAO {
 					formInfo.setCreationDate(form.getCreationDate());
 					formInfo.setSeverity(form.getSeverity());
 					formInfo.setWithUs(form.getWithUs());
+					formInfo.setInsuranceType(form.getType());
 					finalList.add(formInfo);
 				}
 			}
