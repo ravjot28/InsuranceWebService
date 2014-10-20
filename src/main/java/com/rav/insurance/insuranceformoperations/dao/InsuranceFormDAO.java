@@ -446,9 +446,9 @@ public class InsuranceFormDAO {
 			Criteria crit = session.createCriteria(InsuranceFormBean.class);
 
 			if (!CommonValidations.isStringEmpty(producerId)) {
-				crit.add(Restrictions.eq("producer", producerId));
+				crit.add(Restrictions.eq("producer", producerId).ignoreCase());
 			} else if (!CommonValidations.isStringEmpty(marketerId)) {
-				crit.add(Restrictions.eq("marketerUserName", marketerId));
+				crit.add(Restrictions.eq("marketerUserName", marketerId).ignoreCase());
 			}
 
 			if (!CommonValidations.isStringEmpty(status)){
@@ -462,7 +462,8 @@ public class InsuranceFormDAO {
 			}
 
 			if (!CommonValidations.isStringEmpty(businessName))
-				crit.add(Restrictions.eq("businessName", businessName));
+				crit.add(Restrictions.like("businessName", "%"+businessName+"%").ignoreCase());	
+			
 
 			if (!CommonValidations.isStringEmpty(withUs))
 				crit.add(Restrictions.eq("withUs", withUs));
