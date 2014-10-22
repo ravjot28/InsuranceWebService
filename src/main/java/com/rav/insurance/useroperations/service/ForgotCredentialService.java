@@ -69,7 +69,7 @@ public class ForgotCredentialService extends ServiceAbstract {
 						Base64Encoder encoder = new Base64Encoder(
 								bean.getUserName() + "%"
 										+ new Random().nextInt());
-						sendMailNotification(bean.getEmailAddress(),
+						sendMailNotification(bean.getEmailAddress(),bean.getUserName(),
 								bean.getFullName()
 										, encoder.get());
 						response = new CommonResponseAttributes();
@@ -129,7 +129,7 @@ public class ForgotCredentialService extends ServiceAbstract {
 
 	}
 
-	private void sendMailNotification(String emailAddress, String fullName,
+	private void sendMailNotification(String emailAddress,String userName, String fullName,
 			String code) throws NoSuchAlgorithmException,
 			NoSuchPaddingException, Exception {
 		StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
@@ -144,6 +144,10 @@ public class ForgotCredentialService extends ServiceAbstract {
 		loginEmail.setAttribute(
 				UserOperationsConstants.EMAIL_TEMPLATE_FULLNAME_PLACE_HOLDER,
 				fullName);
+		
+		loginEmail.setAttribute(
+				"userName",
+				userName);
 
 		loginEmail.setAttribute(
 				UserOperationsConstants.EMAIL_TEMPLATE_FROM_PLACE_HOLDER,

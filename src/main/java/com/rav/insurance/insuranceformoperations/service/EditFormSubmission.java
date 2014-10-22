@@ -125,7 +125,7 @@ public class EditFormSubmission extends ServiceAbstract {
 		StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
 				"welcomeloginemail group", System.getProperty("emailTemplates"));
 		StringTemplate submitFormMail = emailTemplateGroup
-				.getInstanceOf("welcomeLoginEmail");
+				.getInstanceOf("formSubmission");
 		submitFormMail.setAttribute("fullName", fullName);
 		submitFormMail.setAttribute("formId", formId);
 		submitFormMail.setAttribute("from", "UCCIG");
@@ -133,7 +133,7 @@ public class EditFormSubmission extends ServiceAbstract {
 
 		String to[] = { emailAddress };
 
-		SendMail sm = new SendMail(formId + " Form submitted", message, to);
+		SendMail sm = new SendMail(formId + " Application Edited", message, to);
 		sm.send();
 	}
 
