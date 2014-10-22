@@ -33,7 +33,7 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 				
 				@Override
 				public boolean accept(File pathname) {
-					if(pathname!=null && pathname.getAbsolutePath().endsWith(".zip")){
+					if(pathname!=null && pathname.getAbsolutePath().endsWith(".zip")||pathname.getAbsolutePath().endsWith(".7z")||pathname.getAbsolutePath().endsWith(".rar")) {
 						return true;
 					}
 					return false;
@@ -43,7 +43,7 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 			if(fi!=null){
 			a= new String[fi.length];
 			for(int i=0;i<fi.length;i++){
-				if(fi[i].getAbsolutePath().endsWith(".zip"))
+				if(fi[i].getAbsolutePath().endsWith(".zip")||fi[i].getAbsolutePath().endsWith(".7z")||fi[i].getAbsolutePath().endsWith(".rar"))
 					a[i] = fi[i].getAbsolutePath();
 			}
 			}
