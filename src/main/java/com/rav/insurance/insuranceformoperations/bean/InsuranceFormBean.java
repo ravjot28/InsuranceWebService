@@ -208,7 +208,7 @@ public class InsuranceFormBean {
 	private double signFloaterLimit;
 	private double signFloaterDeductible;
 	private String truckMan;
-	private String owner;
+	private String ownercb;
 	private double motorTruckLimit;
 	private double motorTruckDeductible;
 	private double glassLimit;
@@ -335,7 +335,7 @@ public class InsuranceFormBean {
 	private double signFloaterLimit1;
 	private double signFloaterDeductible1;
 	private String truckMan1;
-	private String owner11;
+	private String ownercb1;
 	private double motorTruckLimit1;
 	private double motorTruckDeductible1;
 	private double glassLimit1;
@@ -348,8 +348,8 @@ public class InsuranceFormBean {
 	private double earthquakeDeductible1;
 	private double profitLimit1;
 	private double profitDeductible1;
-	private String grossEarning801;
-	private String grossEarning501;
+	private String grossEarningCheckbox1;
+	
 	private double grossEarningLimit1;
 	private double grossEarningDeductible1;
 	private double rentalIncomeLimit1;
@@ -407,20 +407,34 @@ public class InsuranceFormBean {
 	private double insdSqFootage1;
 	private int noOfStories1;
 	private String basement1;
-	private String walls1;
-	private String roof1;
+	private String wallsframe1;
+	private String wallshcb1;
+	private String wallssteel1;
+	private String wallsbrick1;
+	private String roofwood1;
+	private String roofsteel1;
+	private String roofconcrete1;
 	private String roofupdated1;
-	private String floors1;
-	private String heating1;
-	private String heatingupdated1;
-	private String electrical1;
+	private String floorsconcrete1;
+	private String floorswood1;
+	private String heatinggas1;
+	private String heatingoil1;
+	private String heatingelectric1;
+	private String heatingother1;
+	private String heatingupdated1;	
+	private String electricalbreakers1;
+	private String electricalfuses1;
+	private String electricalamps1;
 	private String electricalupdated1;
-	private String plumbing1;
+	private String plumbingcopper1;
+	private String plumbingpvc1;
+	private String plumbingother1;
 	private String plumbingupdated1;
 	private String fireProtection1;
 	private String fireProtectiondistance1;
 	private String security1;
-	private String notes1;
+	private String additionalcoverage1;
+
 
 	private double buildingLimit2;
 	private double buildingDeductible2;
@@ -449,7 +463,7 @@ public class InsuranceFormBean {
 	private double signFloaterLimit2;
 	private double signFloaterDeductible2;
 	private String truckMan2;
-	private String owner12;
+	private String ownercb2;
 	private double motorTruckLimit2;
 	private double motorTruckDeductible2;
 	private double glassLimit2;
@@ -462,8 +476,8 @@ public class InsuranceFormBean {
 	private double earthquakeDeductible2;
 	private double profitLimit2;
 	private double profitDeductible2;
-	private String grossEarning802;
-	private String grossEarning502;
+	private String grossEarningCheckbox2;
+	
 	private double grossEarningLimit2;
 	private double grossEarningDeductible2;
 	private double rentalIncomeLimit2;
@@ -521,20 +535,33 @@ public class InsuranceFormBean {
 	private double insdSqFootage2;
 	private int noOfStories2;
 	private String basement2;
-	private String walls2;
-	private String roof2;
+	private String wallsframe2;
+	private String wallshcb2;
+	private String wallssteel2;
+	private String wallsbrick2;
+	private String roofwood2;
+	private String roofsteel2;
+	private String roofconcrete2;
 	private String roofupdated2;
-	private String floors2;
-	private String heating2;
-	private String heatingupdated2;
-	private String electrical2;
+	private String floorsconcrete2;
+	private String floorswood2;
+	private String heatinggas2;
+	private String heatingoil2;
+	private String heatingelectric2;
+	private String heatingother2;
+	private String heatingupdated2;	
+	private String electricalbreakers2;
+	private String electricalfuses2;
+	private String electricalamps2;
 	private String electricalupdated2;
-	private String plumbing2;
+	private String plumbingcopper2;
+	private String plumbingpvc2;
+	private String plumbingother2;
 	private String plumbingupdated2;
 	private String fireProtection2;
 	private String fireProtectiondistance2;
 	private String security2;
-	private String notes2;
+	private String additionalcoverage2;
 
 	private double buildingLimit3;
 	private double buildingDeductible3;
@@ -563,7 +590,7 @@ public class InsuranceFormBean {
 	private double signFloaterLimit3;
 	private double signFloaterDeductible3;
 	private String truckMan3;
-	private String owner13;
+	private String ownercb3;
 	private double motorTruckLimit3;
 	private double motorTruckDeductible3;
 	private double glassLimit3;
@@ -576,8 +603,8 @@ public class InsuranceFormBean {
 	private double earthquakeDeductible3;
 	private double profitLimit3;
 	private double profitDeductible3;
-	private String grossEarning803;
-	private String grossEarning503;
+	private String grossEarningCheckbox3;
+	
 	private double grossEarningLimit3;
 	private double grossEarningDeductible3;
 	private double rentalIncomeLimit3;
@@ -635,20 +662,33 @@ public class InsuranceFormBean {
 	private double insdSqFootage3;
 	private int noOfStories3;
 	private String basement3;
-	private String walls3;
-	private String roof3;
+	private String wallsframe3;
+	private String wallshcb3;
+	private String wallssteel3;
+	private String wallsbrick3;
+	private String roofwood3;
+	private String roofsteel3;
+	private String roofconcrete3;
 	private String roofupdated3;
-	private String floors3;
-	private String heating3;
-	private String heatingupdated3;
-	private String electrical3;
+	private String floorsconcrete3;
+	private String floorswood3;
+	private String heatinggas3;
+	private String heatingoil3;
+	private String heatingelectric3;
+	private String heatingother3;
+	private String heatingupdated3;	
+	private String electricalbreakers3;
+	private String electricalfuses3;
+	private String electricalamps3;
 	private String electricalupdated3;
-	private String plumbing3;
+	private String plumbingcopper3;
+	private String plumbingpvc3;
+	private String plumbingother3;
 	private String plumbingupdated3;
 	private String fireProtection3;
 	private String fireProtectiondistance3;
 	private String security3;
-	private String notes3;
+	private String additionalcoverage3;
 
 	private double buildingLimit4;
 	private double buildingDeductible4;
@@ -677,7 +717,7 @@ public class InsuranceFormBean {
 	private double signFloaterLimit4;
 	private double signFloaterDeductible4;
 	private String truckMan4;
-	private String owner14;
+	private String ownercb4;
 	private double motorTruckLimit4;
 	private double motorTruckDeductible4;
 	private double glassLimit4;
@@ -690,8 +730,8 @@ public class InsuranceFormBean {
 	private double earthquakeDeductible4;
 	private double profitLimit4;
 	private double profitDeductible4;
-	private String grossEarning804;
-	private String grossEarning504;
+	private String grossEarningCheckbox4;
+	
 	private double grossEarningLimit4;
 	private double grossEarningDeductible4;
 	private double rentalIncomeLimit4;
@@ -749,21 +789,415 @@ public class InsuranceFormBean {
 	private double insdSqFootage4;
 	private int noOfStories4;
 	private String basement4;
-	private String walls4;
-	private String roof4;
+	private String wallsframe4;
+	private String wallshcb4;
+	private String wallssteel4;
+	private String wallsbrick4;
+	private String roofwood4;
+	private String roofsteel4;
+	private String roofconcrete4;
 	private String roofupdated4;
-	private String floors4;
-	private String heating4;
-	private String heatingupdated4;
-	private String electrical4;
+	private String floorsconcrete4;
+	private String floorswood4;
+	private String heatinggas4;
+	private String heatingoil4;
+	private String heatingelectric4;
+	private String heatingother4;
+	private String heatingupdated4;	
+	private String electricalbreakers4;
+	private String electricalfuses4;
+	private String electricalamps4;
 	private String electricalupdated4;
-	private String plumbing4;
+	private String plumbingcopper4;
+	private String plumbingpvc4;
+	private String plumbingother4;
 	private String plumbingupdated4;
 	private String fireProtection4;
 	private String fireProtectiondistance4;
 	private String security4;
-	private String notes4;
+	private String additionalcoverage4;
+	
+	private double buildingLimit5;
+	private double buildingDeductible5;
+	private double contentsLimit5;
+	private double contentsDeductible5;
+	private double stockLimit5;
+	private double stockDeductible5;
+	private double officeContentLimit5;
+	private double officeContentDeductible5;
+	private double edpLimit5;
+	private double edpDeductible5;
+	private double equipmentLimit5;
+	private double equipmentDeductible5;
+	private double offPremisesLimit5;
+	private double offPremisesDeductible5;
+	private double transitLimit5;
+	private double transitDeductible5;
+	private double miscPropertyLimit5;
+	private double miscPropertyDeductible5;
+	private double contractorEquipmentLimit5;
+	private double contractorEquipmentDeductible5;
+	private double installationFloaterLimit5;
+	private double installationFloaterDeductible5;
+	private double toolFloaterLimit5;
+	private double toolFloaterDeductible5;
+	private double signFloaterLimit5;
+	private double signFloaterDeductible5;
+	private String truckMan5;
+	private String ownercb5;
+	private double motorTruckLimit5;
+	private double motorTruckDeductible5;
+	private double glassLimit5;
+	private double glassDeductible5;
+	private double sewerBackupLimit5;
+	private double sewerBackupDeductible5;
+	private double floodLimit5;
+	private double floodDeductible5;
+	private double earthquakeLimit5;
+	private double earthquakeDeductible5;
+	private double profitLimit5;
+	private double profitDeductible5;
+	private String grossEarningCheckbox5;
+	
+	private double grossEarningLimit5;
+	private double grossEarningDeductible5;
+	private double rentalIncomeLimit5;
+	private double rentalIncomeDeductible5;
+	private double extraExpenseLimit5;
+	private double extraExpenseDeductible5;
+	private double offPremisesPowerLimit5;
+	private double offPremisesPowerDeductible5;
+	private double insideOutsideLimit5;
+	private double insideOutsideDeductible5;
+	private double bfMoneyLimit5;
+	private double bfMoneyDeductible5;
+	private double deopistorForgeryLimit5;
+	private double deopistorForgeryDeductible5;
+	private double moneyOrdersLimit5;
+	private double moneyOrdersDeductible5;
+	private double employDishonestyLimit5;
+	private double employDishonestyDeductible5;
+	private double cglLimit5;
+	private double cglDeductible5;
+	private double tenantsLegalLimit5;
+	private double tenantsLegalDeductible5;
+	private double nonOwnedAutoLimit5;
+	private double nonOwnedAutoDeductible5;
+	private double sef96Limit5;
+	private double sef96Deductible5;
+	private double sef94Limit5;
+	private double sef94Deductible5;
+	private double doLimit5;
+	private double doDeductible5;
+	private double eoLimit5;
+	private double eoDeductible5;
+	private double employerLimit5;
+	private double employerDeductible5;
+	private double umbrellaLimit5;
+	private double umbrellaDeductible5;
+	private double wrapUpLimit5;
+	private double wrapUpDeductible5;
+	private double stdComprehensiveLimit5;
+	private double stdComprehensiveDeductible5;
+	private double airConditioningLimit5;
+	private double airConditioningDeductible5;
+	private double productionMachineryLimit5;
+	private double productionMachineryDeductible5;
+	private String othercoverage15;
+	private String othercoverage25;
+	private double otherCoverageLimit15;
+	private double otherCoverageDeductible15;
+	private double otherCoverageLimit25;
+	private double otherCoverageDeductible25;
 
+	private String address5;
+	private int age5;
+	private double totalSqFootage5;
+	private double insdSqFootage5;
+	private int noOfStories5;
+	private String basement5;
+	private String wallsframe5;
+	private String wallshcb5;
+	private String wallssteel5;
+	private String wallsbrick5;
+	private String roofwood5;
+	private String roofsteel5;
+	private String roofconcrete5;
+	private String roofupdated5;
+	private String floorsconcrete5;
+	private String floorswood5;
+	private String heatinggas5;
+	private String heatingoil5;
+	private String heatingelectric5;
+	private String heatingother5;
+	private String heatingupdated5;	
+	private String electricalbreakers5;
+	private String electricalfuses5;
+	private String electricalamps5;
+	private String electricalupdated5;
+	private String plumbingcopper5;
+	private String plumbingpvc5;
+	private String plumbingother5;
+	private String plumbingupdated5;
+	private String fireProtection5;
+	private String fireProtectiondistance5;
+	private String security5;
+	private String additionalcoverage5;
+	
+	private double buildingLimit6;
+	private double buildingDeductible6;
+	private double contentsLimit6;
+	private double contentsDeductible6;
+	private double stockLimit6;
+	private double stockDeductible6;
+	private double officeContentLimit6;
+	private double officeContentDeductible6;
+	private double edpLimit6;
+	private double edpDeductible6;
+	private double equipmentLimit6;
+	private double equipmentDeductible6;
+	private double offPremisesLimit6;
+	private double offPremisesDeductible6;
+	private double transitLimit6;
+	private double transitDeductible6;
+	private double miscPropertyLimit6;
+	private double miscPropertyDeductible6;
+	private double contractorEquipmentLimit6;
+	private double contractorEquipmentDeductible6;
+	private double installationFloaterLimit6;
+	private double installationFloaterDeductible6;
+	private double toolFloaterLimit6;
+	private double toolFloaterDeductible6;
+	private double signFloaterLimit6;
+	private double signFloaterDeductible6;
+	private String truckMan6;
+	private String ownercb6;
+	private double motorTruckLimit6;
+	private double motorTruckDeductible6;
+	private double glassLimit6;
+	private double glassDeductible6;
+	private double sewerBackupLimit6;
+	private double sewerBackupDeductible6;
+	private double floodLimit6;
+	private double floodDeductible6;
+	private double earthquakeLimit6;
+	private double earthquakeDeductible6;
+	private double profitLimit6;
+	private double profitDeductible6;
+	private String grossEarningCheckbox6;
+	
+	private double grossEarningLimit6;
+	private double grossEarningDeductible6;
+	private double rentalIncomeLimit6;
+	private double rentalIncomeDeductible6;
+	private double extraExpenseLimit6;
+	private double extraExpenseDeductible6;
+	private double offPremisesPowerLimit6;
+	private double offPremisesPowerDeductible6;
+	private double insideOutsideLimit6;
+	private double insideOutsideDeductible6;
+	private double bfMoneyLimit6;
+	private double bfMoneyDeductible6;
+	private double deopistorForgeryLimit6;
+	private double deopistorForgeryDeductible6;
+	private double moneyOrdersLimit6;
+	private double moneyOrdersDeductible6;
+	private double employDishonestyLimit6;
+	private double employDishonestyDeductible6;
+	private double cglLimit6;
+	private double cglDeductible6;
+	private double tenantsLegalLimit6;
+	private double tenantsLegalDeductible6;
+	private double nonOwnedAutoLimit6;
+	private double nonOwnedAutoDeductible6;
+	private double sef96Limit6;
+	private double sef96Deductible6;
+	private double sef94Limit6;
+	private double sef94Deductible6;
+	private double doLimit6;
+	private double doDeductible6;
+	private double eoLimit6;
+	private double eoDeductible6;
+	private double employerLimit6;
+	private double employerDeductible6;
+	private double umbrellaLimit6;
+	private double umbrellaDeductible6;
+	private double wrapUpLimit6;
+	private double wrapUpDeductible6;
+	private double stdComprehensiveLimit6;
+	private double stdComprehensiveDeductible6;
+	private double airConditioningLimit6;
+	private double airConditioningDeductible6;
+	private double productionMachineryLimit6;
+	private double productionMachineryDeductible6;
+	private String othercoverage16;
+	private String othercoverage26;
+	private double otherCoverageLimit16;
+	private double otherCoverageDeductible16;
+	private double otherCoverageLimit26;
+	private double otherCoverageDeductible26;
+
+	private String address6;
+	private int age6;
+	private double totalSqFootage6;
+	private double insdSqFootage6;
+	private int noOfStories6;
+	private String basement6;
+	private String wallsframe6;
+	private String wallshcb6;
+	private String wallssteel6;
+	private String wallsbrick6;
+	private String roofwood6;
+	private String roofsteel6;
+	private String roofconcrete6;
+	private String roofupdated6;
+	private String floorsconcrete6;
+	private String floorswood6;
+	private String heatinggas6;
+	private String heatingoil6;
+	private String heatingelectric6;
+	private String heatingother6;
+	private String heatingupdated6;	
+	private String electricalbreakers6;
+	private String electricalfuses6;
+	private String electricalamps6;
+	private String electricalupdated6;
+	private String plumbingcopper6;
+	private String plumbingpvc6;
+	private String plumbingother6;
+	private String plumbingupdated6;
+	private String fireProtection6;
+	private String fireProtectiondistance6;
+	private String security6;
+	private String additionalcoverage6;
+	
+	private double buildingLimit7;
+	private double buildingDeductible7;
+	private double contentsLimit7;
+	private double contentsDeductible7;
+	private double stockLimit7;
+	private double stockDeductible7;
+	private double officeContentLimit7;
+	private double officeContentDeductible7;
+	private double edpLimit7;
+	private double edpDeductible7;
+	private double equipmentLimit7;
+	private double equipmentDeductible7;
+	private double offPremisesLimit7;
+	private double offPremisesDeductible7;
+	private double transitLimit7;
+	private double transitDeductible7;
+	private double miscPropertyLimit7;
+	private double miscPropertyDeductible7;
+	private double contractorEquipmentLimit7;
+	private double contractorEquipmentDeductible7;
+	private double installationFloaterLimit7;
+	private double installationFloaterDeductible7;
+	private double toolFloaterLimit7;
+	private double toolFloaterDeductible7;
+	private double signFloaterLimit7;
+	private double signFloaterDeductible7;
+	private String truckMan7;
+	private String ownercb7;
+	private double motorTruckLimit7;
+	private double motorTruckDeductible7;
+	private double glassLimit7;
+	private double glassDeductible7;
+	private double sewerBackupLimit7;
+	private double sewerBackupDeductible7;
+	private double floodLimit7;
+	private double floodDeductible7;
+	private double earthquakeLimit7;
+	private double earthquakeDeductible7;
+	private double profitLimit7;
+	private double profitDeductible7;
+	private String grossEarningCheckbox7;
+	
+	private double grossEarningLimit7;
+	private double grossEarningDeductible7;
+	private double rentalIncomeLimit7;
+	private double rentalIncomeDeductible7;
+	private double extraExpenseLimit7;
+	private double extraExpenseDeductible7;
+	private double offPremisesPowerLimit7;
+	private double offPremisesPowerDeductible7;
+	private double insideOutsideLimit7;
+	private double insideOutsideDeductible7;
+	private double bfMoneyLimit7;
+	private double bfMoneyDeductible7;
+	private double deopistorForgeryLimit7;
+	private double deopistorForgeryDeductible7;
+	private double moneyOrdersLimit7;
+	private double moneyOrdersDeductible7;
+	private double employDishonestyLimit7;
+	private double employDishonestyDeductible7;
+	private double cglLimit7;
+	private double cglDeductible7;
+	private double tenantsLegalLimit7;
+	private double tenantsLegalDeductible7;
+	private double nonOwnedAutoLimit7;
+	private double nonOwnedAutoDeductible7;
+	private double sef96Limit7;
+	private double sef96Deductible7;
+	private double sef94Limit7;
+	private double sef94Deductible7;
+	private double doLimit7;
+	private double doDeductible7;
+	private double eoLimit7;
+	private double eoDeductible7;
+	private double employerLimit7;
+	private double employerDeductible7;
+	private double umbrellaLimit7;
+	private double umbrellaDeductible7;
+	private double wrapUpLimit7;
+	private double wrapUpDeductible7;
+	private double stdComprehensiveLimit7;
+	private double stdComprehensiveDeductible7;
+	private double airConditioningLimit7;
+	private double airConditioningDeductible7;
+	private double productionMachineryLimit7;
+	private double productionMachineryDeductible7;
+	private String othercoverage17;
+	private String othercoverage27;
+	private double otherCoverageLimit17;
+	private double otherCoverageDeductible17;
+	private double otherCoverageLimit27;
+	private double otherCoverageDeductible27;
+
+	private String address7;
+	private int age7;
+	private double totalSqFootage7;
+	private double insdSqFootage7;
+	private int noOfStories7;
+	private String basement7;
+	private String wallsframe7;
+	private String wallshcb7;
+	private String wallssteel7;
+	private String wallsbrick7;
+	private String roofwood7;
+	private String roofsteel7;
+	private String roofconcrete7;
+	private String roofupdated7;
+	private String floorsconcrete7;
+	private String floorswood7;
+	private String heatinggas7;
+	private String heatingoil7;
+	private String heatingelectric7;
+	private String heatingother7;
+	private String heatingupdated7;	
+	private String electricalbreakers7;
+	private String electricalfuses7;
+	private String electricalamps7;
+	private String electricalupdated7;
+	private String plumbingcopper7;
+	private String plumbingpvc7;
+	private String plumbingother7;
+	private String plumbingupdated7;
+	private String fireProtection7;
+	private String fireProtectiondistance7;
+	private String security7;
+	private String additionalcoverage7;
+	
 	private String currentInsurer;
 	private Date currentExpDate;
 	private double premiumTarget;
@@ -3259,12 +3693,36 @@ public class InsuranceFormBean {
 		this.truckMan = truckMan;
 	}
 
-	public String getOwner() {
-		return owner;
+	public int getYearInBusiness() {
+		return yearInBusiness;
 	}
 
-	public void setOwner(String owner) {
-		this.owner = owner;
+	public void setYearInBusiness(int yearInBusiness) {
+		this.yearInBusiness = yearInBusiness;
+	}
+
+	public String getWithUs() {
+		return withUs;
+	}
+
+	public void setWithUs(String withUs) {
+		this.withUs = withUs;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getOwnercb() {
+		return ownercb;
+	}
+
+	public void setOwnercb(String ownercb) {
+		this.ownercb = ownercb;
 	}
 
 	public String getGrossEarningCheckbox() {
@@ -3589,12 +4047,12 @@ public class InsuranceFormBean {
 		this.truckMan1 = truckMan1;
 	}
 
-	public String getOwner11() {
-		return owner11;
+	public String getOwnercb1() {
+		return ownercb1;
 	}
 
-	public void setOwner11(String owner11) {
-		this.owner11 = owner11;
+	public void setOwnercb1(String ownercb1) {
+		this.ownercb1 = ownercb1;
 	}
 
 	public double getMotorTruckLimit1() {
@@ -3693,20 +4151,12 @@ public class InsuranceFormBean {
 		this.profitDeductible1 = profitDeductible1;
 	}
 
-	public String getGrossEarning801() {
-		return grossEarning801;
+	public String getGrossEarningCheckbox1() {
+		return grossEarningCheckbox1;
 	}
 
-	public void setGrossEarning801(String grossEarning801) {
-		this.grossEarning801 = grossEarning801;
-	}
-
-	public String getGrossEarning501() {
-		return grossEarning501;
-	}
-
-	public void setGrossEarning501(String grossEarning501) {
-		this.grossEarning501 = grossEarning501;
+	public void setGrossEarningCheckbox1(String grossEarningCheckbox1) {
+		this.grossEarningCheckbox1 = grossEarningCheckbox1;
 	}
 
 	public double getGrossEarningLimit1() {
@@ -3769,8 +4219,7 @@ public class InsuranceFormBean {
 		return offPremisesPowerDeductible1;
 	}
 
-	public void setOffPremisesPowerDeductible1(
-			double offPremisesPowerDeductible1) {
+	public void setOffPremisesPowerDeductible1(double offPremisesPowerDeductible1) {
 		this.offPremisesPowerDeductible1 = offPremisesPowerDeductible1;
 	}
 
@@ -3818,8 +4267,7 @@ public class InsuranceFormBean {
 		return deopistorForgeryDeductible1;
 	}
 
-	public void setDeopistorForgeryDeductible1(
-			double deopistorForgeryDeductible1) {
+	public void setDeopistorForgeryDeductible1(double deopistorForgeryDeductible1) {
 		this.deopistorForgeryDeductible1 = deopistorForgeryDeductible1;
 	}
 
@@ -3851,8 +4299,7 @@ public class InsuranceFormBean {
 		return employDishonestyDeductible1;
 	}
 
-	public void setEmployDishonestyDeductible1(
-			double employDishonestyDeductible1) {
+	public void setEmployDishonestyDeductible1(double employDishonestyDeductible1) {
 		this.employDishonestyDeductible1 = employDishonestyDeductible1;
 	}
 
@@ -4028,8 +4475,7 @@ public class InsuranceFormBean {
 		return stdComprehensiveDeductible1;
 	}
 
-	public void setStdComprehensiveDeductible1(
-			double stdComprehensiveDeductible1) {
+	public void setStdComprehensiveDeductible1(double stdComprehensiveDeductible1) {
 		this.stdComprehensiveDeductible1 = stdComprehensiveDeductible1;
 	}
 
@@ -4162,20 +4608,60 @@ public class InsuranceFormBean {
 		this.basement1 = basement1;
 	}
 
-	public String getWalls1() {
-		return walls1;
+	public String getWallsframe1() {
+		return wallsframe1;
 	}
 
-	public void setWalls1(String walls1) {
-		this.walls1 = walls1;
+	public void setWallsframe1(String wallsframe1) {
+		this.wallsframe1 = wallsframe1;
 	}
 
-	public String getRoof1() {
-		return roof1;
+	public String getWallshcb1() {
+		return wallshcb1;
 	}
 
-	public void setRoof1(String roof1) {
-		this.roof1 = roof1;
+	public void setWallshcb1(String wallshcb1) {
+		this.wallshcb1 = wallshcb1;
+	}
+
+	public String getWallssteel1() {
+		return wallssteel1;
+	}
+
+	public void setWallssteel1(String wallssteel1) {
+		this.wallssteel1 = wallssteel1;
+	}
+
+	public String getWallsbrick1() {
+		return wallsbrick1;
+	}
+
+	public void setWallsbrick1(String wallsbrick1) {
+		this.wallsbrick1 = wallsbrick1;
+	}
+
+	public String getRoofwood1() {
+		return roofwood1;
+	}
+
+	public void setRoofwood1(String roofwood1) {
+		this.roofwood1 = roofwood1;
+	}
+
+	public String getRoofsteel1() {
+		return roofsteel1;
+	}
+
+	public void setRoofsteel1(String roofsteel1) {
+		this.roofsteel1 = roofsteel1;
+	}
+
+	public String getRoofconcrete1() {
+		return roofconcrete1;
+	}
+
+	public void setRoofconcrete1(String roofconcrete1) {
+		this.roofconcrete1 = roofconcrete1;
 	}
 
 	public String getRoofupdated1() {
@@ -4186,20 +4672,52 @@ public class InsuranceFormBean {
 		this.roofupdated1 = roofupdated1;
 	}
 
-	public String getFloors1() {
-		return floors1;
+	public String getFloorsconcrete1() {
+		return floorsconcrete1;
 	}
 
-	public void setFloors1(String floors1) {
-		this.floors1 = floors1;
+	public void setFloorsconcrete1(String floorsconcrete1) {
+		this.floorsconcrete1 = floorsconcrete1;
 	}
 
-	public String getHeating1() {
-		return heating1;
+	public String getFloorswood1() {
+		return floorswood1;
 	}
 
-	public void setHeating1(String heating1) {
-		this.heating1 = heating1;
+	public void setFloorswood1(String floorswood1) {
+		this.floorswood1 = floorswood1;
+	}
+
+	public String getHeatinggas1() {
+		return heatinggas1;
+	}
+
+	public void setHeatinggas1(String heatinggas1) {
+		this.heatinggas1 = heatinggas1;
+	}
+
+	public String getHeatingoil1() {
+		return heatingoil1;
+	}
+
+	public void setHeatingoil1(String heatingoil1) {
+		this.heatingoil1 = heatingoil1;
+	}
+
+	public String getHeatingelectric1() {
+		return heatingelectric1;
+	}
+
+	public void setHeatingelectric1(String heatingelectric1) {
+		this.heatingelectric1 = heatingelectric1;
+	}
+
+	public String getHeatingother1() {
+		return heatingother1;
+	}
+
+	public void setHeatingother1(String heatingother1) {
+		this.heatingother1 = heatingother1;
 	}
 
 	public String getHeatingupdated1() {
@@ -4210,12 +4728,28 @@ public class InsuranceFormBean {
 		this.heatingupdated1 = heatingupdated1;
 	}
 
-	public String getElectrical1() {
-		return electrical1;
+	public String getElectricalbreakers1() {
+		return electricalbreakers1;
 	}
 
-	public void setElectrical1(String electrical1) {
-		this.electrical1 = electrical1;
+	public void setElectricalbreakers1(String electricalbreakers1) {
+		this.electricalbreakers1 = electricalbreakers1;
+	}
+
+	public String getElectricalfuses1() {
+		return electricalfuses1;
+	}
+
+	public void setElectricalfuses1(String electricalfuses1) {
+		this.electricalfuses1 = electricalfuses1;
+	}
+
+	public String getElectricalamps1() {
+		return electricalamps1;
+	}
+
+	public void setElectricalamps1(String electricalamps1) {
+		this.electricalamps1 = electricalamps1;
 	}
 
 	public String getElectricalupdated1() {
@@ -4226,12 +4760,28 @@ public class InsuranceFormBean {
 		this.electricalupdated1 = electricalupdated1;
 	}
 
-	public String getPlumbing1() {
-		return plumbing1;
+	public String getPlumbingcopper1() {
+		return plumbingcopper1;
 	}
 
-	public void setPlumbing1(String plumbing1) {
-		this.plumbing1 = plumbing1;
+	public void setPlumbingcopper1(String plumbingcopper1) {
+		this.plumbingcopper1 = plumbingcopper1;
+	}
+
+	public String getPlumbingpvc1() {
+		return plumbingpvc1;
+	}
+
+	public void setPlumbingpvc1(String plumbingpvc1) {
+		this.plumbingpvc1 = plumbingpvc1;
+	}
+
+	public String getPlumbingother1() {
+		return plumbingother1;
+	}
+
+	public void setPlumbingother1(String plumbingother1) {
+		this.plumbingother1 = plumbingother1;
 	}
 
 	public String getPlumbingupdated1() {
@@ -4266,12 +4816,12 @@ public class InsuranceFormBean {
 		this.security1 = security1;
 	}
 
-	public String getNotes1() {
-		return notes1;
+	public String getAdditionalcoverage1() {
+		return additionalcoverage1;
 	}
 
-	public void setNotes1(String notes1) {
-		this.notes1 = notes1;
+	public void setAdditionalcoverage1(String additionalcoverage1) {
+		this.additionalcoverage1 = additionalcoverage1;
 	}
 
 	public double getBuildingLimit2() {
@@ -4492,12 +5042,12 @@ public class InsuranceFormBean {
 		this.truckMan2 = truckMan2;
 	}
 
-	public String getOwner12() {
-		return owner12;
+	public String getOwnercb2() {
+		return ownercb2;
 	}
 
-	public void setOwner12(String owner12) {
-		this.owner12 = owner12;
+	public void setOwnercb2(String ownercb2) {
+		this.ownercb2 = ownercb2;
 	}
 
 	public double getMotorTruckLimit2() {
@@ -4596,20 +5146,12 @@ public class InsuranceFormBean {
 		this.profitDeductible2 = profitDeductible2;
 	}
 
-	public String getGrossEarning802() {
-		return grossEarning802;
+	public String getGrossEarningCheckbox2() {
+		return grossEarningCheckbox2;
 	}
 
-	public void setGrossEarning802(String grossEarning802) {
-		this.grossEarning802 = grossEarning802;
-	}
-
-	public String getGrossEarning502() {
-		return grossEarning502;
-	}
-
-	public void setGrossEarning502(String grossEarning502) {
-		this.grossEarning502 = grossEarning502;
+	public void setGrossEarningCheckbox2(String grossEarningCheckbox2) {
+		this.grossEarningCheckbox2 = grossEarningCheckbox2;
 	}
 
 	public double getGrossEarningLimit2() {
@@ -4672,8 +5214,7 @@ public class InsuranceFormBean {
 		return offPremisesPowerDeductible2;
 	}
 
-	public void setOffPremisesPowerDeductible2(
-			double offPremisesPowerDeductible2) {
+	public void setOffPremisesPowerDeductible2(double offPremisesPowerDeductible2) {
 		this.offPremisesPowerDeductible2 = offPremisesPowerDeductible2;
 	}
 
@@ -4721,8 +5262,7 @@ public class InsuranceFormBean {
 		return deopistorForgeryDeductible2;
 	}
 
-	public void setDeopistorForgeryDeductible2(
-			double deopistorForgeryDeductible2) {
+	public void setDeopistorForgeryDeductible2(double deopistorForgeryDeductible2) {
 		this.deopistorForgeryDeductible2 = deopistorForgeryDeductible2;
 	}
 
@@ -4754,8 +5294,7 @@ public class InsuranceFormBean {
 		return employDishonestyDeductible2;
 	}
 
-	public void setEmployDishonestyDeductible2(
-			double employDishonestyDeductible2) {
+	public void setEmployDishonestyDeductible2(double employDishonestyDeductible2) {
 		this.employDishonestyDeductible2 = employDishonestyDeductible2;
 	}
 
@@ -4931,8 +5470,7 @@ public class InsuranceFormBean {
 		return stdComprehensiveDeductible2;
 	}
 
-	public void setStdComprehensiveDeductible2(
-			double stdComprehensiveDeductible2) {
+	public void setStdComprehensiveDeductible2(double stdComprehensiveDeductible2) {
 		this.stdComprehensiveDeductible2 = stdComprehensiveDeductible2;
 	}
 
@@ -5065,20 +5603,60 @@ public class InsuranceFormBean {
 		this.basement2 = basement2;
 	}
 
-	public String getWalls2() {
-		return walls2;
+	public String getWallsframe2() {
+		return wallsframe2;
 	}
 
-	public void setWalls2(String walls2) {
-		this.walls2 = walls2;
+	public void setWallsframe2(String wallsframe2) {
+		this.wallsframe2 = wallsframe2;
 	}
 
-	public String getRoof2() {
-		return roof2;
+	public String getWallshcb2() {
+		return wallshcb2;
 	}
 
-	public void setRoof2(String roof2) {
-		this.roof2 = roof2;
+	public void setWallshcb2(String wallshcb2) {
+		this.wallshcb2 = wallshcb2;
+	}
+
+	public String getWallssteel2() {
+		return wallssteel2;
+	}
+
+	public void setWallssteel2(String wallssteel2) {
+		this.wallssteel2 = wallssteel2;
+	}
+
+	public String getWallsbrick2() {
+		return wallsbrick2;
+	}
+
+	public void setWallsbrick2(String wallsbrick2) {
+		this.wallsbrick2 = wallsbrick2;
+	}
+
+	public String getRoofwood2() {
+		return roofwood2;
+	}
+
+	public void setRoofwood2(String roofwood2) {
+		this.roofwood2 = roofwood2;
+	}
+
+	public String getRoofsteel2() {
+		return roofsteel2;
+	}
+
+	public void setRoofsteel2(String roofsteel2) {
+		this.roofsteel2 = roofsteel2;
+	}
+
+	public String getRoofconcrete2() {
+		return roofconcrete2;
+	}
+
+	public void setRoofconcrete2(String roofconcrete2) {
+		this.roofconcrete2 = roofconcrete2;
 	}
 
 	public String getRoofupdated2() {
@@ -5089,20 +5667,52 @@ public class InsuranceFormBean {
 		this.roofupdated2 = roofupdated2;
 	}
 
-	public String getFloors2() {
-		return floors2;
+	public String getFloorsconcrete2() {
+		return floorsconcrete2;
 	}
 
-	public void setFloors2(String floors2) {
-		this.floors2 = floors2;
+	public void setFloorsconcrete2(String floorsconcrete2) {
+		this.floorsconcrete2 = floorsconcrete2;
 	}
 
-	public String getHeating2() {
-		return heating2;
+	public String getFloorswood2() {
+		return floorswood2;
 	}
 
-	public void setHeating2(String heating2) {
-		this.heating2 = heating2;
+	public void setFloorswood2(String floorswood2) {
+		this.floorswood2 = floorswood2;
+	}
+
+	public String getHeatinggas2() {
+		return heatinggas2;
+	}
+
+	public void setHeatinggas2(String heatinggas2) {
+		this.heatinggas2 = heatinggas2;
+	}
+
+	public String getHeatingoil2() {
+		return heatingoil2;
+	}
+
+	public void setHeatingoil2(String heatingoil2) {
+		this.heatingoil2 = heatingoil2;
+	}
+
+	public String getHeatingelectric2() {
+		return heatingelectric2;
+	}
+
+	public void setHeatingelectric2(String heatingelectric2) {
+		this.heatingelectric2 = heatingelectric2;
+	}
+
+	public String getHeatingother2() {
+		return heatingother2;
+	}
+
+	public void setHeatingother2(String heatingother2) {
+		this.heatingother2 = heatingother2;
 	}
 
 	public String getHeatingupdated2() {
@@ -5113,12 +5723,28 @@ public class InsuranceFormBean {
 		this.heatingupdated2 = heatingupdated2;
 	}
 
-	public String getElectrical2() {
-		return electrical2;
+	public String getElectricalbreakers2() {
+		return electricalbreakers2;
 	}
 
-	public void setElectrical2(String electrical2) {
-		this.electrical2 = electrical2;
+	public void setElectricalbreakers2(String electricalbreakers2) {
+		this.electricalbreakers2 = electricalbreakers2;
+	}
+
+	public String getElectricalfuses2() {
+		return electricalfuses2;
+	}
+
+	public void setElectricalfuses2(String electricalfuses2) {
+		this.electricalfuses2 = electricalfuses2;
+	}
+
+	public String getElectricalamps2() {
+		return electricalamps2;
+	}
+
+	public void setElectricalamps2(String electricalamps2) {
+		this.electricalamps2 = electricalamps2;
 	}
 
 	public String getElectricalupdated2() {
@@ -5129,12 +5755,28 @@ public class InsuranceFormBean {
 		this.electricalupdated2 = electricalupdated2;
 	}
 
-	public String getPlumbing2() {
-		return plumbing2;
+	public String getPlumbingcopper2() {
+		return plumbingcopper2;
 	}
 
-	public void setPlumbing2(String plumbing2) {
-		this.plumbing2 = plumbing2;
+	public void setPlumbingcopper2(String plumbingcopper2) {
+		this.plumbingcopper2 = plumbingcopper2;
+	}
+
+	public String getPlumbingpvc2() {
+		return plumbingpvc2;
+	}
+
+	public void setPlumbingpvc2(String plumbingpvc2) {
+		this.plumbingpvc2 = plumbingpvc2;
+	}
+
+	public String getPlumbingother2() {
+		return plumbingother2;
+	}
+
+	public void setPlumbingother2(String plumbingother2) {
+		this.plumbingother2 = plumbingother2;
 	}
 
 	public String getPlumbingupdated2() {
@@ -5169,12 +5811,12 @@ public class InsuranceFormBean {
 		this.security2 = security2;
 	}
 
-	public String getNotes2() {
-		return notes2;
+	public String getAdditionalcoverage2() {
+		return additionalcoverage2;
 	}
 
-	public void setNotes2(String notes2) {
-		this.notes2 = notes2;
+	public void setAdditionalcoverage2(String additionalcoverage2) {
+		this.additionalcoverage2 = additionalcoverage2;
 	}
 
 	public double getBuildingLimit3() {
@@ -5395,12 +6037,12 @@ public class InsuranceFormBean {
 		this.truckMan3 = truckMan3;
 	}
 
-	public String getOwner13() {
-		return owner13;
+	public String getOwnercb3() {
+		return ownercb3;
 	}
 
-	public void setOwner13(String owner13) {
-		this.owner13 = owner13;
+	public void setOwnercb3(String ownercb3) {
+		this.ownercb3 = ownercb3;
 	}
 
 	public double getMotorTruckLimit3() {
@@ -5499,20 +6141,12 @@ public class InsuranceFormBean {
 		this.profitDeductible3 = profitDeductible3;
 	}
 
-	public String getGrossEarning803() {
-		return grossEarning803;
+	public String getGrossEarningCheckbox3() {
+		return grossEarningCheckbox3;
 	}
 
-	public void setGrossEarning803(String grossEarning803) {
-		this.grossEarning803 = grossEarning803;
-	}
-
-	public String getGrossEarning503() {
-		return grossEarning503;
-	}
-
-	public void setGrossEarning503(String grossEarning503) {
-		this.grossEarning503 = grossEarning503;
+	public void setGrossEarningCheckbox3(String grossEarningCheckbox3) {
+		this.grossEarningCheckbox3 = grossEarningCheckbox3;
 	}
 
 	public double getGrossEarningLimit3() {
@@ -5575,8 +6209,7 @@ public class InsuranceFormBean {
 		return offPremisesPowerDeductible3;
 	}
 
-	public void setOffPremisesPowerDeductible3(
-			double offPremisesPowerDeductible3) {
+	public void setOffPremisesPowerDeductible3(double offPremisesPowerDeductible3) {
 		this.offPremisesPowerDeductible3 = offPremisesPowerDeductible3;
 	}
 
@@ -5624,8 +6257,7 @@ public class InsuranceFormBean {
 		return deopistorForgeryDeductible3;
 	}
 
-	public void setDeopistorForgeryDeductible3(
-			double deopistorForgeryDeductible3) {
+	public void setDeopistorForgeryDeductible3(double deopistorForgeryDeductible3) {
 		this.deopistorForgeryDeductible3 = deopistorForgeryDeductible3;
 	}
 
@@ -5657,8 +6289,7 @@ public class InsuranceFormBean {
 		return employDishonestyDeductible3;
 	}
 
-	public void setEmployDishonestyDeductible3(
-			double employDishonestyDeductible3) {
+	public void setEmployDishonestyDeductible3(double employDishonestyDeductible3) {
 		this.employDishonestyDeductible3 = employDishonestyDeductible3;
 	}
 
@@ -5834,8 +6465,7 @@ public class InsuranceFormBean {
 		return stdComprehensiveDeductible3;
 	}
 
-	public void setStdComprehensiveDeductible3(
-			double stdComprehensiveDeductible3) {
+	public void setStdComprehensiveDeductible3(double stdComprehensiveDeductible3) {
 		this.stdComprehensiveDeductible3 = stdComprehensiveDeductible3;
 	}
 
@@ -5968,20 +6598,60 @@ public class InsuranceFormBean {
 		this.basement3 = basement3;
 	}
 
-	public String getWalls3() {
-		return walls3;
+	public String getWallsframe3() {
+		return wallsframe3;
 	}
 
-	public void setWalls3(String walls3) {
-		this.walls3 = walls3;
+	public void setWallsframe3(String wallsframe3) {
+		this.wallsframe3 = wallsframe3;
 	}
 
-	public String getRoof3() {
-		return roof3;
+	public String getWallshcb3() {
+		return wallshcb3;
 	}
 
-	public void setRoof3(String roof3) {
-		this.roof3 = roof3;
+	public void setWallshcb3(String wallshcb3) {
+		this.wallshcb3 = wallshcb3;
+	}
+
+	public String getWallssteel3() {
+		return wallssteel3;
+	}
+
+	public void setWallssteel3(String wallssteel3) {
+		this.wallssteel3 = wallssteel3;
+	}
+
+	public String getWallsbrick3() {
+		return wallsbrick3;
+	}
+
+	public void setWallsbrick3(String wallsbrick3) {
+		this.wallsbrick3 = wallsbrick3;
+	}
+
+	public String getRoofwood3() {
+		return roofwood3;
+	}
+
+	public void setRoofwood3(String roofwood3) {
+		this.roofwood3 = roofwood3;
+	}
+
+	public String getRoofsteel3() {
+		return roofsteel3;
+	}
+
+	public void setRoofsteel3(String roofsteel3) {
+		this.roofsteel3 = roofsteel3;
+	}
+
+	public String getRoofconcrete3() {
+		return roofconcrete3;
+	}
+
+	public void setRoofconcrete3(String roofconcrete3) {
+		this.roofconcrete3 = roofconcrete3;
 	}
 
 	public String getRoofupdated3() {
@@ -5992,20 +6662,52 @@ public class InsuranceFormBean {
 		this.roofupdated3 = roofupdated3;
 	}
 
-	public String getFloors3() {
-		return floors3;
+	public String getFloorsconcrete3() {
+		return floorsconcrete3;
 	}
 
-	public void setFloors3(String floors3) {
-		this.floors3 = floors3;
+	public void setFloorsconcrete3(String floorsconcrete3) {
+		this.floorsconcrete3 = floorsconcrete3;
 	}
 
-	public String getHeating3() {
-		return heating3;
+	public String getFloorswood3() {
+		return floorswood3;
 	}
 
-	public void setHeating3(String heating3) {
-		this.heating3 = heating3;
+	public void setFloorswood3(String floorswood3) {
+		this.floorswood3 = floorswood3;
+	}
+
+	public String getHeatinggas3() {
+		return heatinggas3;
+	}
+
+	public void setHeatinggas3(String heatinggas3) {
+		this.heatinggas3 = heatinggas3;
+	}
+
+	public String getHeatingoil3() {
+		return heatingoil3;
+	}
+
+	public void setHeatingoil3(String heatingoil3) {
+		this.heatingoil3 = heatingoil3;
+	}
+
+	public String getHeatingelectric3() {
+		return heatingelectric3;
+	}
+
+	public void setHeatingelectric3(String heatingelectric3) {
+		this.heatingelectric3 = heatingelectric3;
+	}
+
+	public String getHeatingother3() {
+		return heatingother3;
+	}
+
+	public void setHeatingother3(String heatingother3) {
+		this.heatingother3 = heatingother3;
 	}
 
 	public String getHeatingupdated3() {
@@ -6016,12 +6718,28 @@ public class InsuranceFormBean {
 		this.heatingupdated3 = heatingupdated3;
 	}
 
-	public String getElectrical3() {
-		return electrical3;
+	public String getElectricalbreakers3() {
+		return electricalbreakers3;
 	}
 
-	public void setElectrical3(String electrical3) {
-		this.electrical3 = electrical3;
+	public void setElectricalbreakers3(String electricalbreakers3) {
+		this.electricalbreakers3 = electricalbreakers3;
+	}
+
+	public String getElectricalfuses3() {
+		return electricalfuses3;
+	}
+
+	public void setElectricalfuses3(String electricalfuses3) {
+		this.electricalfuses3 = electricalfuses3;
+	}
+
+	public String getElectricalamps3() {
+		return electricalamps3;
+	}
+
+	public void setElectricalamps3(String electricalamps3) {
+		this.electricalamps3 = electricalamps3;
 	}
 
 	public String getElectricalupdated3() {
@@ -6032,12 +6750,28 @@ public class InsuranceFormBean {
 		this.electricalupdated3 = electricalupdated3;
 	}
 
-	public String getPlumbing3() {
-		return plumbing3;
+	public String getPlumbingcopper3() {
+		return plumbingcopper3;
 	}
 
-	public void setPlumbing3(String plumbing3) {
-		this.plumbing3 = plumbing3;
+	public void setPlumbingcopper3(String plumbingcopper3) {
+		this.plumbingcopper3 = plumbingcopper3;
+	}
+
+	public String getPlumbingpvc3() {
+		return plumbingpvc3;
+	}
+
+	public void setPlumbingpvc3(String plumbingpvc3) {
+		this.plumbingpvc3 = plumbingpvc3;
+	}
+
+	public String getPlumbingother3() {
+		return plumbingother3;
+	}
+
+	public void setPlumbingother3(String plumbingother3) {
+		this.plumbingother3 = plumbingother3;
 	}
 
 	public String getPlumbingupdated3() {
@@ -6072,12 +6806,12 @@ public class InsuranceFormBean {
 		this.security3 = security3;
 	}
 
-	public String getNotes3() {
-		return notes3;
+	public String getAdditionalcoverage3() {
+		return additionalcoverage3;
 	}
 
-	public void setNotes3(String notes3) {
-		this.notes3 = notes3;
+	public void setAdditionalcoverage3(String additionalcoverage3) {
+		this.additionalcoverage3 = additionalcoverage3;
 	}
 
 	public double getBuildingLimit4() {
@@ -6298,12 +7032,12 @@ public class InsuranceFormBean {
 		this.truckMan4 = truckMan4;
 	}
 
-	public String getOwner14() {
-		return owner14;
+	public String getOwnercb4() {
+		return ownercb4;
 	}
 
-	public void setOwner14(String owner14) {
-		this.owner14 = owner14;
+	public void setOwnercb4(String ownercb4) {
+		this.ownercb4 = ownercb4;
 	}
 
 	public double getMotorTruckLimit4() {
@@ -6402,20 +7136,12 @@ public class InsuranceFormBean {
 		this.profitDeductible4 = profitDeductible4;
 	}
 
-	public String getGrossEarning804() {
-		return grossEarning804;
+	public String getGrossEarningCheckbox4() {
+		return grossEarningCheckbox4;
 	}
 
-	public void setGrossEarning804(String grossEarning804) {
-		this.grossEarning804 = grossEarning804;
-	}
-
-	public String getGrossEarning504() {
-		return grossEarning504;
-	}
-
-	public void setGrossEarning504(String grossEarning504) {
-		this.grossEarning504 = grossEarning504;
+	public void setGrossEarningCheckbox4(String grossEarningCheckbox4) {
+		this.grossEarningCheckbox4 = grossEarningCheckbox4;
 	}
 
 	public double getGrossEarningLimit4() {
@@ -6478,8 +7204,7 @@ public class InsuranceFormBean {
 		return offPremisesPowerDeductible4;
 	}
 
-	public void setOffPremisesPowerDeductible4(
-			double offPremisesPowerDeductible4) {
+	public void setOffPremisesPowerDeductible4(double offPremisesPowerDeductible4) {
 		this.offPremisesPowerDeductible4 = offPremisesPowerDeductible4;
 	}
 
@@ -6527,8 +7252,7 @@ public class InsuranceFormBean {
 		return deopistorForgeryDeductible4;
 	}
 
-	public void setDeopistorForgeryDeductible4(
-			double deopistorForgeryDeductible4) {
+	public void setDeopistorForgeryDeductible4(double deopistorForgeryDeductible4) {
 		this.deopistorForgeryDeductible4 = deopistorForgeryDeductible4;
 	}
 
@@ -6560,8 +7284,7 @@ public class InsuranceFormBean {
 		return employDishonestyDeductible4;
 	}
 
-	public void setEmployDishonestyDeductible4(
-			double employDishonestyDeductible4) {
+	public void setEmployDishonestyDeductible4(double employDishonestyDeductible4) {
 		this.employDishonestyDeductible4 = employDishonestyDeductible4;
 	}
 
@@ -6737,8 +7460,7 @@ public class InsuranceFormBean {
 		return stdComprehensiveDeductible4;
 	}
 
-	public void setStdComprehensiveDeductible4(
-			double stdComprehensiveDeductible4) {
+	public void setStdComprehensiveDeductible4(double stdComprehensiveDeductible4) {
 		this.stdComprehensiveDeductible4 = stdComprehensiveDeductible4;
 	}
 
@@ -6871,20 +7593,60 @@ public class InsuranceFormBean {
 		this.basement4 = basement4;
 	}
 
-	public String getWalls4() {
-		return walls4;
+	public String getWallsframe4() {
+		return wallsframe4;
 	}
 
-	public void setWalls4(String walls4) {
-		this.walls4 = walls4;
+	public void setWallsframe4(String wallsframe4) {
+		this.wallsframe4 = wallsframe4;
 	}
 
-	public String getRoof4() {
-		return roof4;
+	public String getWallshcb4() {
+		return wallshcb4;
 	}
 
-	public void setRoof4(String roof4) {
-		this.roof4 = roof4;
+	public void setWallshcb4(String wallshcb4) {
+		this.wallshcb4 = wallshcb4;
+	}
+
+	public String getWallssteel4() {
+		return wallssteel4;
+	}
+
+	public void setWallssteel4(String wallssteel4) {
+		this.wallssteel4 = wallssteel4;
+	}
+
+	public String getWallsbrick4() {
+		return wallsbrick4;
+	}
+
+	public void setWallsbrick4(String wallsbrick4) {
+		this.wallsbrick4 = wallsbrick4;
+	}
+
+	public String getRoofwood4() {
+		return roofwood4;
+	}
+
+	public void setRoofwood4(String roofwood4) {
+		this.roofwood4 = roofwood4;
+	}
+
+	public String getRoofsteel4() {
+		return roofsteel4;
+	}
+
+	public void setRoofsteel4(String roofsteel4) {
+		this.roofsteel4 = roofsteel4;
+	}
+
+	public String getRoofconcrete4() {
+		return roofconcrete4;
+	}
+
+	public void setRoofconcrete4(String roofconcrete4) {
+		this.roofconcrete4 = roofconcrete4;
 	}
 
 	public String getRoofupdated4() {
@@ -6895,20 +7657,52 @@ public class InsuranceFormBean {
 		this.roofupdated4 = roofupdated4;
 	}
 
-	public String getFloors4() {
-		return floors4;
+	public String getFloorsconcrete4() {
+		return floorsconcrete4;
 	}
 
-	public void setFloors4(String floors4) {
-		this.floors4 = floors4;
+	public void setFloorsconcrete4(String floorsconcrete4) {
+		this.floorsconcrete4 = floorsconcrete4;
 	}
 
-	public String getHeating4() {
-		return heating4;
+	public String getFloorswood4() {
+		return floorswood4;
 	}
 
-	public void setHeating4(String heating4) {
-		this.heating4 = heating4;
+	public void setFloorswood4(String floorswood4) {
+		this.floorswood4 = floorswood4;
+	}
+
+	public String getHeatinggas4() {
+		return heatinggas4;
+	}
+
+	public void setHeatinggas4(String heatinggas4) {
+		this.heatinggas4 = heatinggas4;
+	}
+
+	public String getHeatingoil4() {
+		return heatingoil4;
+	}
+
+	public void setHeatingoil4(String heatingoil4) {
+		this.heatingoil4 = heatingoil4;
+	}
+
+	public String getHeatingelectric4() {
+		return heatingelectric4;
+	}
+
+	public void setHeatingelectric4(String heatingelectric4) {
+		this.heatingelectric4 = heatingelectric4;
+	}
+
+	public String getHeatingother4() {
+		return heatingother4;
+	}
+
+	public void setHeatingother4(String heatingother4) {
+		this.heatingother4 = heatingother4;
 	}
 
 	public String getHeatingupdated4() {
@@ -6919,12 +7713,28 @@ public class InsuranceFormBean {
 		this.heatingupdated4 = heatingupdated4;
 	}
 
-	public String getElectrical4() {
-		return electrical4;
+	public String getElectricalbreakers4() {
+		return electricalbreakers4;
 	}
 
-	public void setElectrical4(String electrical4) {
-		this.electrical4 = electrical4;
+	public void setElectricalbreakers4(String electricalbreakers4) {
+		this.electricalbreakers4 = electricalbreakers4;
+	}
+
+	public String getElectricalfuses4() {
+		return electricalfuses4;
+	}
+
+	public void setElectricalfuses4(String electricalfuses4) {
+		this.electricalfuses4 = electricalfuses4;
+	}
+
+	public String getElectricalamps4() {
+		return electricalamps4;
+	}
+
+	public void setElectricalamps4(String electricalamps4) {
+		this.electricalamps4 = electricalamps4;
 	}
 
 	public String getElectricalupdated4() {
@@ -6935,12 +7745,28 @@ public class InsuranceFormBean {
 		this.electricalupdated4 = electricalupdated4;
 	}
 
-	public String getPlumbing4() {
-		return plumbing4;
+	public String getPlumbingcopper4() {
+		return plumbingcopper4;
 	}
 
-	public void setPlumbing4(String plumbing4) {
-		this.plumbing4 = plumbing4;
+	public void setPlumbingcopper4(String plumbingcopper4) {
+		this.plumbingcopper4 = plumbingcopper4;
+	}
+
+	public String getPlumbingpvc4() {
+		return plumbingpvc4;
+	}
+
+	public void setPlumbingpvc4(String plumbingpvc4) {
+		this.plumbingpvc4 = plumbingpvc4;
+	}
+
+	public String getPlumbingother4() {
+		return plumbingother4;
+	}
+
+	public void setPlumbingother4(String plumbingother4) {
+		this.plumbingother4 = plumbingother4;
 	}
 
 	public String getPlumbingupdated4() {
@@ -6975,36 +7801,2997 @@ public class InsuranceFormBean {
 		this.security4 = security4;
 	}
 
-	public String getNotes4() {
-		return notes4;
+	public String getAdditionalcoverage4() {
+		return additionalcoverage4;
 	}
 
-	public void setNotes4(String notes4) {
-		this.notes4 = notes4;
+	public void setAdditionalcoverage4(String additionalcoverage4) {
+		this.additionalcoverage4 = additionalcoverage4;
 	}
 
-	public int getYearInBusiness() {
-		return yearInBusiness;
+	public double getBuildingLimit5() {
+		return buildingLimit5;
 	}
 
-	public void setYearInBusiness(int yearInBusiness) {
-		this.yearInBusiness = yearInBusiness;
+	public void setBuildingLimit5(double buildingLimit5) {
+		this.buildingLimit5 = buildingLimit5;
 	}
 
-	public String getWithUs() {
-		return withUs;
+	public double getBuildingDeductible5() {
+		return buildingDeductible5;
 	}
 
-	public void setWithUs(String withUs) {
-		this.withUs = withUs;
+	public void setBuildingDeductible5(double buildingDeductible5) {
+		this.buildingDeductible5 = buildingDeductible5;
 	}
 
-	public String getType() {
-		return type;
+	public double getContentsLimit5() {
+		return contentsLimit5;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setContentsLimit5(double contentsLimit5) {
+		this.contentsLimit5 = contentsLimit5;
+	}
+
+	public double getContentsDeductible5() {
+		return contentsDeductible5;
+	}
+
+	public void setContentsDeductible5(double contentsDeductible5) {
+		this.contentsDeductible5 = contentsDeductible5;
+	}
+
+	public double getStockLimit5() {
+		return stockLimit5;
+	}
+
+	public void setStockLimit5(double stockLimit5) {
+		this.stockLimit5 = stockLimit5;
+	}
+
+	public double getStockDeductible5() {
+		return stockDeductible5;
+	}
+
+	public void setStockDeductible5(double stockDeductible5) {
+		this.stockDeductible5 = stockDeductible5;
+	}
+
+	public double getOfficeContentLimit5() {
+		return officeContentLimit5;
+	}
+
+	public void setOfficeContentLimit5(double officeContentLimit5) {
+		this.officeContentLimit5 = officeContentLimit5;
+	}
+
+	public double getOfficeContentDeductible5() {
+		return officeContentDeductible5;
+	}
+
+	public void setOfficeContentDeductible5(double officeContentDeductible5) {
+		this.officeContentDeductible5 = officeContentDeductible5;
+	}
+
+	public double getEdpLimit5() {
+		return edpLimit5;
+	}
+
+	public void setEdpLimit5(double edpLimit5) {
+		this.edpLimit5 = edpLimit5;
+	}
+
+	public double getEdpDeductible5() {
+		return edpDeductible5;
+	}
+
+	public void setEdpDeductible5(double edpDeductible5) {
+		this.edpDeductible5 = edpDeductible5;
+	}
+
+	public double getEquipmentLimit5() {
+		return equipmentLimit5;
+	}
+
+	public void setEquipmentLimit5(double equipmentLimit5) {
+		this.equipmentLimit5 = equipmentLimit5;
+	}
+
+	public double getEquipmentDeductible5() {
+		return equipmentDeductible5;
+	}
+
+	public void setEquipmentDeductible5(double equipmentDeductible5) {
+		this.equipmentDeductible5 = equipmentDeductible5;
+	}
+
+	public double getOffPremisesLimit5() {
+		return offPremisesLimit5;
+	}
+
+	public void setOffPremisesLimit5(double offPremisesLimit5) {
+		this.offPremisesLimit5 = offPremisesLimit5;
+	}
+
+	public double getOffPremisesDeductible5() {
+		return offPremisesDeductible5;
+	}
+
+	public void setOffPremisesDeductible5(double offPremisesDeductible5) {
+		this.offPremisesDeductible5 = offPremisesDeductible5;
+	}
+
+	public double getTransitLimit5() {
+		return transitLimit5;
+	}
+
+	public void setTransitLimit5(double transitLimit5) {
+		this.transitLimit5 = transitLimit5;
+	}
+
+	public double getTransitDeductible5() {
+		return transitDeductible5;
+	}
+
+	public void setTransitDeductible5(double transitDeductible5) {
+		this.transitDeductible5 = transitDeductible5;
+	}
+
+	public double getMiscPropertyLimit5() {
+		return miscPropertyLimit5;
+	}
+
+	public void setMiscPropertyLimit5(double miscPropertyLimit5) {
+		this.miscPropertyLimit5 = miscPropertyLimit5;
+	}
+
+	public double getMiscPropertyDeductible5() {
+		return miscPropertyDeductible5;
+	}
+
+	public void setMiscPropertyDeductible5(double miscPropertyDeductible5) {
+		this.miscPropertyDeductible5 = miscPropertyDeductible5;
+	}
+
+	public double getContractorEquipmentLimit5() {
+		return contractorEquipmentLimit5;
+	}
+
+	public void setContractorEquipmentLimit5(double contractorEquipmentLimit5) {
+		this.contractorEquipmentLimit5 = contractorEquipmentLimit5;
+	}
+
+	public double getContractorEquipmentDeductible5() {
+		return contractorEquipmentDeductible5;
+	}
+
+	public void setContractorEquipmentDeductible5(
+			double contractorEquipmentDeductible5) {
+		this.contractorEquipmentDeductible5 = contractorEquipmentDeductible5;
+	}
+
+	public double getInstallationFloaterLimit5() {
+		return installationFloaterLimit5;
+	}
+
+	public void setInstallationFloaterLimit5(double installationFloaterLimit5) {
+		this.installationFloaterLimit5 = installationFloaterLimit5;
+	}
+
+	public double getInstallationFloaterDeductible5() {
+		return installationFloaterDeductible5;
+	}
+
+	public void setInstallationFloaterDeductible5(
+			double installationFloaterDeductible5) {
+		this.installationFloaterDeductible5 = installationFloaterDeductible5;
+	}
+
+	public double getToolFloaterLimit5() {
+		return toolFloaterLimit5;
+	}
+
+	public void setToolFloaterLimit5(double toolFloaterLimit5) {
+		this.toolFloaterLimit5 = toolFloaterLimit5;
+	}
+
+	public double getToolFloaterDeductible5() {
+		return toolFloaterDeductible5;
+	}
+
+	public void setToolFloaterDeductible5(double toolFloaterDeductible5) {
+		this.toolFloaterDeductible5 = toolFloaterDeductible5;
+	}
+
+	public double getSignFloaterLimit5() {
+		return signFloaterLimit5;
+	}
+
+	public void setSignFloaterLimit5(double signFloaterLimit5) {
+		this.signFloaterLimit5 = signFloaterLimit5;
+	}
+
+	public double getSignFloaterDeductible5() {
+		return signFloaterDeductible5;
+	}
+
+	public void setSignFloaterDeductible5(double signFloaterDeductible5) {
+		this.signFloaterDeductible5 = signFloaterDeductible5;
+	}
+
+	public String getTruckMan5() {
+		return truckMan5;
+	}
+
+	public void setTruckMan5(String truckMan5) {
+		this.truckMan5 = truckMan5;
+	}
+
+	public String getOwnercb5() {
+		return ownercb5;
+	}
+
+	public void setOwnercb5(String ownercb5) {
+		this.ownercb5 = ownercb5;
+	}
+
+	public double getMotorTruckLimit5() {
+		return motorTruckLimit5;
+	}
+
+	public void setMotorTruckLimit5(double motorTruckLimit5) {
+		this.motorTruckLimit5 = motorTruckLimit5;
+	}
+
+	public double getMotorTruckDeductible5() {
+		return motorTruckDeductible5;
+	}
+
+	public void setMotorTruckDeductible5(double motorTruckDeductible5) {
+		this.motorTruckDeductible5 = motorTruckDeductible5;
+	}
+
+	public double getGlassLimit5() {
+		return glassLimit5;
+	}
+
+	public void setGlassLimit5(double glassLimit5) {
+		this.glassLimit5 = glassLimit5;
+	}
+
+	public double getGlassDeductible5() {
+		return glassDeductible5;
+	}
+
+	public void setGlassDeductible5(double glassDeductible5) {
+		this.glassDeductible5 = glassDeductible5;
+	}
+
+	public double getSewerBackupLimit5() {
+		return sewerBackupLimit5;
+	}
+
+	public void setSewerBackupLimit5(double sewerBackupLimit5) {
+		this.sewerBackupLimit5 = sewerBackupLimit5;
+	}
+
+	public double getSewerBackupDeductible5() {
+		return sewerBackupDeductible5;
+	}
+
+	public void setSewerBackupDeductible5(double sewerBackupDeductible5) {
+		this.sewerBackupDeductible5 = sewerBackupDeductible5;
+	}
+
+	public double getFloodLimit5() {
+		return floodLimit5;
+	}
+
+	public void setFloodLimit5(double floodLimit5) {
+		this.floodLimit5 = floodLimit5;
+	}
+
+	public double getFloodDeductible5() {
+		return floodDeductible5;
+	}
+
+	public void setFloodDeductible5(double floodDeductible5) {
+		this.floodDeductible5 = floodDeductible5;
+	}
+
+	public double getEarthquakeLimit5() {
+		return earthquakeLimit5;
+	}
+
+	public void setEarthquakeLimit5(double earthquakeLimit5) {
+		this.earthquakeLimit5 = earthquakeLimit5;
+	}
+
+	public double getEarthquakeDeductible5() {
+		return earthquakeDeductible5;
+	}
+
+	public void setEarthquakeDeductible5(double earthquakeDeductible5) {
+		this.earthquakeDeductible5 = earthquakeDeductible5;
+	}
+
+	public double getProfitLimit5() {
+		return profitLimit5;
+	}
+
+	public void setProfitLimit5(double profitLimit5) {
+		this.profitLimit5 = profitLimit5;
+	}
+
+	public double getProfitDeductible5() {
+		return profitDeductible5;
+	}
+
+	public void setProfitDeductible5(double profitDeductible5) {
+		this.profitDeductible5 = profitDeductible5;
+	}
+
+	public String getGrossEarningCheckbox5() {
+		return grossEarningCheckbox5;
+	}
+
+	public void setGrossEarningCheckbox5(String grossEarningCheckbox5) {
+		this.grossEarningCheckbox5 = grossEarningCheckbox5;
+	}
+
+	public double getGrossEarningLimit5() {
+		return grossEarningLimit5;
+	}
+
+	public void setGrossEarningLimit5(double grossEarningLimit5) {
+		this.grossEarningLimit5 = grossEarningLimit5;
+	}
+
+	public double getGrossEarningDeductible5() {
+		return grossEarningDeductible5;
+	}
+
+	public void setGrossEarningDeductible5(double grossEarningDeductible5) {
+		this.grossEarningDeductible5 = grossEarningDeductible5;
+	}
+
+	public double getRentalIncomeLimit5() {
+		return rentalIncomeLimit5;
+	}
+
+	public void setRentalIncomeLimit5(double rentalIncomeLimit5) {
+		this.rentalIncomeLimit5 = rentalIncomeLimit5;
+	}
+
+	public double getRentalIncomeDeductible5() {
+		return rentalIncomeDeductible5;
+	}
+
+	public void setRentalIncomeDeductible5(double rentalIncomeDeductible5) {
+		this.rentalIncomeDeductible5 = rentalIncomeDeductible5;
+	}
+
+	public double getExtraExpenseLimit5() {
+		return extraExpenseLimit5;
+	}
+
+	public void setExtraExpenseLimit5(double extraExpenseLimit5) {
+		this.extraExpenseLimit5 = extraExpenseLimit5;
+	}
+
+	public double getExtraExpenseDeductible5() {
+		return extraExpenseDeductible5;
+	}
+
+	public void setExtraExpenseDeductible5(double extraExpenseDeductible5) {
+		this.extraExpenseDeductible5 = extraExpenseDeductible5;
+	}
+
+	public double getOffPremisesPowerLimit5() {
+		return offPremisesPowerLimit5;
+	}
+
+	public void setOffPremisesPowerLimit5(double offPremisesPowerLimit5) {
+		this.offPremisesPowerLimit5 = offPremisesPowerLimit5;
+	}
+
+	public double getOffPremisesPowerDeductible5() {
+		return offPremisesPowerDeductible5;
+	}
+
+	public void setOffPremisesPowerDeductible5(double offPremisesPowerDeductible5) {
+		this.offPremisesPowerDeductible5 = offPremisesPowerDeductible5;
+	}
+
+	public double getInsideOutsideLimit5() {
+		return insideOutsideLimit5;
+	}
+
+	public void setInsideOutsideLimit5(double insideOutsideLimit5) {
+		this.insideOutsideLimit5 = insideOutsideLimit5;
+	}
+
+	public double getInsideOutsideDeductible5() {
+		return insideOutsideDeductible5;
+	}
+
+	public void setInsideOutsideDeductible5(double insideOutsideDeductible5) {
+		this.insideOutsideDeductible5 = insideOutsideDeductible5;
+	}
+
+	public double getBfMoneyLimit5() {
+		return bfMoneyLimit5;
+	}
+
+	public void setBfMoneyLimit5(double bfMoneyLimit5) {
+		this.bfMoneyLimit5 = bfMoneyLimit5;
+	}
+
+	public double getBfMoneyDeductible5() {
+		return bfMoneyDeductible5;
+	}
+
+	public void setBfMoneyDeductible5(double bfMoneyDeductible5) {
+		this.bfMoneyDeductible5 = bfMoneyDeductible5;
+	}
+
+	public double getDeopistorForgeryLimit5() {
+		return deopistorForgeryLimit5;
+	}
+
+	public void setDeopistorForgeryLimit5(double deopistorForgeryLimit5) {
+		this.deopistorForgeryLimit5 = deopistorForgeryLimit5;
+	}
+
+	public double getDeopistorForgeryDeductible5() {
+		return deopistorForgeryDeductible5;
+	}
+
+	public void setDeopistorForgeryDeductible5(double deopistorForgeryDeductible5) {
+		this.deopistorForgeryDeductible5 = deopistorForgeryDeductible5;
+	}
+
+	public double getMoneyOrdersLimit5() {
+		return moneyOrdersLimit5;
+	}
+
+	public void setMoneyOrdersLimit5(double moneyOrdersLimit5) {
+		this.moneyOrdersLimit5 = moneyOrdersLimit5;
+	}
+
+	public double getMoneyOrdersDeductible5() {
+		return moneyOrdersDeductible5;
+	}
+
+	public void setMoneyOrdersDeductible5(double moneyOrdersDeductible5) {
+		this.moneyOrdersDeductible5 = moneyOrdersDeductible5;
+	}
+
+	public double getEmployDishonestyLimit5() {
+		return employDishonestyLimit5;
+	}
+
+	public void setEmployDishonestyLimit5(double employDishonestyLimit5) {
+		this.employDishonestyLimit5 = employDishonestyLimit5;
+	}
+
+	public double getEmployDishonestyDeductible5() {
+		return employDishonestyDeductible5;
+	}
+
+	public void setEmployDishonestyDeductible5(double employDishonestyDeductible5) {
+		this.employDishonestyDeductible5 = employDishonestyDeductible5;
+	}
+
+	public double getCglLimit5() {
+		return cglLimit5;
+	}
+
+	public void setCglLimit5(double cglLimit5) {
+		this.cglLimit5 = cglLimit5;
+	}
+
+	public double getCglDeductible5() {
+		return cglDeductible5;
+	}
+
+	public void setCglDeductible5(double cglDeductible5) {
+		this.cglDeductible5 = cglDeductible5;
+	}
+
+	public double getTenantsLegalLimit5() {
+		return tenantsLegalLimit5;
+	}
+
+	public void setTenantsLegalLimit5(double tenantsLegalLimit5) {
+		this.tenantsLegalLimit5 = tenantsLegalLimit5;
+	}
+
+	public double getTenantsLegalDeductible5() {
+		return tenantsLegalDeductible5;
+	}
+
+	public void setTenantsLegalDeductible5(double tenantsLegalDeductible5) {
+		this.tenantsLegalDeductible5 = tenantsLegalDeductible5;
+	}
+
+	public double getNonOwnedAutoLimit5() {
+		return nonOwnedAutoLimit5;
+	}
+
+	public void setNonOwnedAutoLimit5(double nonOwnedAutoLimit5) {
+		this.nonOwnedAutoLimit5 = nonOwnedAutoLimit5;
+	}
+
+	public double getNonOwnedAutoDeductible5() {
+		return nonOwnedAutoDeductible5;
+	}
+
+	public void setNonOwnedAutoDeductible5(double nonOwnedAutoDeductible5) {
+		this.nonOwnedAutoDeductible5 = nonOwnedAutoDeductible5;
+	}
+
+	public double getSef96Limit5() {
+		return sef96Limit5;
+	}
+
+	public void setSef96Limit5(double sef96Limit5) {
+		this.sef96Limit5 = sef96Limit5;
+	}
+
+	public double getSef96Deductible5() {
+		return sef96Deductible5;
+	}
+
+	public void setSef96Deductible5(double sef96Deductible5) {
+		this.sef96Deductible5 = sef96Deductible5;
+	}
+
+	public double getSef94Limit5() {
+		return sef94Limit5;
+	}
+
+	public void setSef94Limit5(double sef94Limit5) {
+		this.sef94Limit5 = sef94Limit5;
+	}
+
+	public double getSef94Deductible5() {
+		return sef94Deductible5;
+	}
+
+	public void setSef94Deductible5(double sef94Deductible5) {
+		this.sef94Deductible5 = sef94Deductible5;
+	}
+
+	public double getDoLimit5() {
+		return doLimit5;
+	}
+
+	public void setDoLimit5(double doLimit5) {
+		this.doLimit5 = doLimit5;
+	}
+
+	public double getDoDeductible5() {
+		return doDeductible5;
+	}
+
+	public void setDoDeductible5(double doDeductible5) {
+		this.doDeductible5 = doDeductible5;
+	}
+
+	public double getEoLimit5() {
+		return eoLimit5;
+	}
+
+	public void setEoLimit5(double eoLimit5) {
+		this.eoLimit5 = eoLimit5;
+	}
+
+	public double getEoDeductible5() {
+		return eoDeductible5;
+	}
+
+	public void setEoDeductible5(double eoDeductible5) {
+		this.eoDeductible5 = eoDeductible5;
+	}
+
+	public double getEmployerLimit5() {
+		return employerLimit5;
+	}
+
+	public void setEmployerLimit5(double employerLimit5) {
+		this.employerLimit5 = employerLimit5;
+	}
+
+	public double getEmployerDeductible5() {
+		return employerDeductible5;
+	}
+
+	public void setEmployerDeductible5(double employerDeductible5) {
+		this.employerDeductible5 = employerDeductible5;
+	}
+
+	public double getUmbrellaLimit5() {
+		return umbrellaLimit5;
+	}
+
+	public void setUmbrellaLimit5(double umbrellaLimit5) {
+		this.umbrellaLimit5 = umbrellaLimit5;
+	}
+
+	public double getUmbrellaDeductible5() {
+		return umbrellaDeductible5;
+	}
+
+	public void setUmbrellaDeductible5(double umbrellaDeductible5) {
+		this.umbrellaDeductible5 = umbrellaDeductible5;
+	}
+
+	public double getWrapUpLimit5() {
+		return wrapUpLimit5;
+	}
+
+	public void setWrapUpLimit5(double wrapUpLimit5) {
+		this.wrapUpLimit5 = wrapUpLimit5;
+	}
+
+	public double getWrapUpDeductible5() {
+		return wrapUpDeductible5;
+	}
+
+	public void setWrapUpDeductible5(double wrapUpDeductible5) {
+		this.wrapUpDeductible5 = wrapUpDeductible5;
+	}
+
+	public double getStdComprehensiveLimit5() {
+		return stdComprehensiveLimit5;
+	}
+
+	public void setStdComprehensiveLimit5(double stdComprehensiveLimit5) {
+		this.stdComprehensiveLimit5 = stdComprehensiveLimit5;
+	}
+
+	public double getStdComprehensiveDeductible5() {
+		return stdComprehensiveDeductible5;
+	}
+
+	public void setStdComprehensiveDeductible5(double stdComprehensiveDeductible5) {
+		this.stdComprehensiveDeductible5 = stdComprehensiveDeductible5;
+	}
+
+	public double getAirConditioningLimit5() {
+		return airConditioningLimit5;
+	}
+
+	public void setAirConditioningLimit5(double airConditioningLimit5) {
+		this.airConditioningLimit5 = airConditioningLimit5;
+	}
+
+	public double getAirConditioningDeductible5() {
+		return airConditioningDeductible5;
+	}
+
+	public void setAirConditioningDeductible5(double airConditioningDeductible5) {
+		this.airConditioningDeductible5 = airConditioningDeductible5;
+	}
+
+	public double getProductionMachineryLimit5() {
+		return productionMachineryLimit5;
+	}
+
+	public void setProductionMachineryLimit5(double productionMachineryLimit5) {
+		this.productionMachineryLimit5 = productionMachineryLimit5;
+	}
+
+	public double getProductionMachineryDeductible5() {
+		return productionMachineryDeductible5;
+	}
+
+	public void setProductionMachineryDeductible5(
+			double productionMachineryDeductible5) {
+		this.productionMachineryDeductible5 = productionMachineryDeductible5;
+	}
+
+	public String getOthercoverage15() {
+		return othercoverage15;
+	}
+
+	public void setOthercoverage15(String othercoverage15) {
+		this.othercoverage15 = othercoverage15;
+	}
+
+	public String getOthercoverage25() {
+		return othercoverage25;
+	}
+
+	public void setOthercoverage25(String othercoverage25) {
+		this.othercoverage25 = othercoverage25;
+	}
+
+	public double getOtherCoverageLimit15() {
+		return otherCoverageLimit15;
+	}
+
+	public void setOtherCoverageLimit15(double otherCoverageLimit15) {
+		this.otherCoverageLimit15 = otherCoverageLimit15;
+	}
+
+	public double getOtherCoverageDeductible15() {
+		return otherCoverageDeductible15;
+	}
+
+	public void setOtherCoverageDeductible15(double otherCoverageDeductible15) {
+		this.otherCoverageDeductible15 = otherCoverageDeductible15;
+	}
+
+	public double getOtherCoverageLimit25() {
+		return otherCoverageLimit25;
+	}
+
+	public void setOtherCoverageLimit25(double otherCoverageLimit25) {
+		this.otherCoverageLimit25 = otherCoverageLimit25;
+	}
+
+	public double getOtherCoverageDeductible25() {
+		return otherCoverageDeductible25;
+	}
+
+	public void setOtherCoverageDeductible25(double otherCoverageDeductible25) {
+		this.otherCoverageDeductible25 = otherCoverageDeductible25;
+	}
+
+	public String getAddress5() {
+		return address5;
+	}
+
+	public void setAddress5(String address5) {
+		this.address5 = address5;
+	}
+
+	public int getAge5() {
+		return age5;
+	}
+
+	public void setAge5(int age5) {
+		this.age5 = age5;
+	}
+
+	public double getTotalSqFootage5() {
+		return totalSqFootage5;
+	}
+
+	public void setTotalSqFootage5(double totalSqFootage5) {
+		this.totalSqFootage5 = totalSqFootage5;
+	}
+
+	public double getInsdSqFootage5() {
+		return insdSqFootage5;
+	}
+
+	public void setInsdSqFootage5(double insdSqFootage5) {
+		this.insdSqFootage5 = insdSqFootage5;
+	}
+
+	public int getNoOfStories5() {
+		return noOfStories5;
+	}
+
+	public void setNoOfStories5(int noOfStories5) {
+		this.noOfStories5 = noOfStories5;
+	}
+
+	public String getBasement5() {
+		return basement5;
+	}
+
+	public void setBasement5(String basement5) {
+		this.basement5 = basement5;
+	}
+
+	public String getWallsframe5() {
+		return wallsframe5;
+	}
+
+	public void setWallsframe5(String wallsframe5) {
+		this.wallsframe5 = wallsframe5;
+	}
+
+	public String getWallshcb5() {
+		return wallshcb5;
+	}
+
+	public void setWallshcb5(String wallshcb5) {
+		this.wallshcb5 = wallshcb5;
+	}
+
+	public String getWallssteel5() {
+		return wallssteel5;
+	}
+
+	public void setWallssteel5(String wallssteel5) {
+		this.wallssteel5 = wallssteel5;
+	}
+
+	public String getWallsbrick5() {
+		return wallsbrick5;
+	}
+
+	public void setWallsbrick5(String wallsbrick5) {
+		this.wallsbrick5 = wallsbrick5;
+	}
+
+	public String getRoofwood5() {
+		return roofwood5;
+	}
+
+	public void setRoofwood5(String roofwood5) {
+		this.roofwood5 = roofwood5;
+	}
+
+	public String getRoofsteel5() {
+		return roofsteel5;
+	}
+
+	public void setRoofsteel5(String roofsteel5) {
+		this.roofsteel5 = roofsteel5;
+	}
+
+	public String getRoofconcrete5() {
+		return roofconcrete5;
+	}
+
+	public void setRoofconcrete5(String roofconcrete5) {
+		this.roofconcrete5 = roofconcrete5;
+	}
+
+	public String getRoofupdated5() {
+		return roofupdated5;
+	}
+
+	public void setRoofupdated5(String roofupdated5) {
+		this.roofupdated5 = roofupdated5;
+	}
+
+	public String getFloorsconcrete5() {
+		return floorsconcrete5;
+	}
+
+	public void setFloorsconcrete5(String floorsconcrete5) {
+		this.floorsconcrete5 = floorsconcrete5;
+	}
+
+	public String getFloorswood5() {
+		return floorswood5;
+	}
+
+	public void setFloorswood5(String floorswood5) {
+		this.floorswood5 = floorswood5;
+	}
+
+	public String getHeatinggas5() {
+		return heatinggas5;
+	}
+
+	public void setHeatinggas5(String heatinggas5) {
+		this.heatinggas5 = heatinggas5;
+	}
+
+	public String getHeatingoil5() {
+		return heatingoil5;
+	}
+
+	public void setHeatingoil5(String heatingoil5) {
+		this.heatingoil5 = heatingoil5;
+	}
+
+	public String getHeatingelectric5() {
+		return heatingelectric5;
+	}
+
+	public void setHeatingelectric5(String heatingelectric5) {
+		this.heatingelectric5 = heatingelectric5;
+	}
+
+	public String getHeatingother5() {
+		return heatingother5;
+	}
+
+	public void setHeatingother5(String heatingother5) {
+		this.heatingother5 = heatingother5;
+	}
+
+	public String getHeatingupdated5() {
+		return heatingupdated5;
+	}
+
+	public void setHeatingupdated5(String heatingupdated5) {
+		this.heatingupdated5 = heatingupdated5;
+	}
+
+	public String getElectricalbreakers5() {
+		return electricalbreakers5;
+	}
+
+	public void setElectricalbreakers5(String electricalbreakers5) {
+		this.electricalbreakers5 = electricalbreakers5;
+	}
+
+	public String getElectricalfuses5() {
+		return electricalfuses5;
+	}
+
+	public void setElectricalfuses5(String electricalfuses5) {
+		this.electricalfuses5 = electricalfuses5;
+	}
+
+	public String getElectricalamps5() {
+		return electricalamps5;
+	}
+
+	public void setElectricalamps5(String electricalamps5) {
+		this.electricalamps5 = electricalamps5;
+	}
+
+	public String getElectricalupdated5() {
+		return electricalupdated5;
+	}
+
+	public void setElectricalupdated5(String electricalupdated5) {
+		this.electricalupdated5 = electricalupdated5;
+	}
+
+	public String getPlumbingcopper5() {
+		return plumbingcopper5;
+	}
+
+	public void setPlumbingcopper5(String plumbingcopper5) {
+		this.plumbingcopper5 = plumbingcopper5;
+	}
+
+	public String getPlumbingpvc5() {
+		return plumbingpvc5;
+	}
+
+	public void setPlumbingpvc5(String plumbingpvc5) {
+		this.plumbingpvc5 = plumbingpvc5;
+	}
+
+	public String getPlumbingother5() {
+		return plumbingother5;
+	}
+
+	public void setPlumbingother5(String plumbingother5) {
+		this.plumbingother5 = plumbingother5;
+	}
+
+	public String getPlumbingupdated5() {
+		return plumbingupdated5;
+	}
+
+	public void setPlumbingupdated5(String plumbingupdated5) {
+		this.plumbingupdated5 = plumbingupdated5;
+	}
+
+	public String getFireProtection5() {
+		return fireProtection5;
+	}
+
+	public void setFireProtection5(String fireProtection5) {
+		this.fireProtection5 = fireProtection5;
+	}
+
+	public String getFireProtectiondistance5() {
+		return fireProtectiondistance5;
+	}
+
+	public void setFireProtectiondistance5(String fireProtectiondistance5) {
+		this.fireProtectiondistance5 = fireProtectiondistance5;
+	}
+
+	public String getSecurity5() {
+		return security5;
+	}
+
+	public void setSecurity5(String security5) {
+		this.security5 = security5;
+	}
+
+	public String getAdditionalcoverage5() {
+		return additionalcoverage5;
+	}
+
+	public void setAdditionalcoverage5(String additionalcoverage5) {
+		this.additionalcoverage5 = additionalcoverage5;
+	}
+
+	public double getBuildingLimit6() {
+		return buildingLimit6;
+	}
+
+	public void setBuildingLimit6(double buildingLimit6) {
+		this.buildingLimit6 = buildingLimit6;
+	}
+
+	public double getBuildingDeductible6() {
+		return buildingDeductible6;
+	}
+
+	public void setBuildingDeductible6(double buildingDeductible6) {
+		this.buildingDeductible6 = buildingDeductible6;
+	}
+
+	public double getContentsLimit6() {
+		return contentsLimit6;
+	}
+
+	public void setContentsLimit6(double contentsLimit6) {
+		this.contentsLimit6 = contentsLimit6;
+	}
+
+	public double getContentsDeductible6() {
+		return contentsDeductible6;
+	}
+
+	public void setContentsDeductible6(double contentsDeductible6) {
+		this.contentsDeductible6 = contentsDeductible6;
+	}
+
+	public double getStockLimit6() {
+		return stockLimit6;
+	}
+
+	public void setStockLimit6(double stockLimit6) {
+		this.stockLimit6 = stockLimit6;
+	}
+
+	public double getStockDeductible6() {
+		return stockDeductible6;
+	}
+
+	public void setStockDeductible6(double stockDeductible6) {
+		this.stockDeductible6 = stockDeductible6;
+	}
+
+	public double getOfficeContentLimit6() {
+		return officeContentLimit6;
+	}
+
+	public void setOfficeContentLimit6(double officeContentLimit6) {
+		this.officeContentLimit6 = officeContentLimit6;
+	}
+
+	public double getOfficeContentDeductible6() {
+		return officeContentDeductible6;
+	}
+
+	public void setOfficeContentDeductible6(double officeContentDeductible6) {
+		this.officeContentDeductible6 = officeContentDeductible6;
+	}
+
+	public double getEdpLimit6() {
+		return edpLimit6;
+	}
+
+	public void setEdpLimit6(double edpLimit6) {
+		this.edpLimit6 = edpLimit6;
+	}
+
+	public double getEdpDeductible6() {
+		return edpDeductible6;
+	}
+
+	public void setEdpDeductible6(double edpDeductible6) {
+		this.edpDeductible6 = edpDeductible6;
+	}
+
+	public double getEquipmentLimit6() {
+		return equipmentLimit6;
+	}
+
+	public void setEquipmentLimit6(double equipmentLimit6) {
+		this.equipmentLimit6 = equipmentLimit6;
+	}
+
+	public double getEquipmentDeductible6() {
+		return equipmentDeductible6;
+	}
+
+	public void setEquipmentDeductible6(double equipmentDeductible6) {
+		this.equipmentDeductible6 = equipmentDeductible6;
+	}
+
+	public double getOffPremisesLimit6() {
+		return offPremisesLimit6;
+	}
+
+	public void setOffPremisesLimit6(double offPremisesLimit6) {
+		this.offPremisesLimit6 = offPremisesLimit6;
+	}
+
+	public double getOffPremisesDeductible6() {
+		return offPremisesDeductible6;
+	}
+
+	public void setOffPremisesDeductible6(double offPremisesDeductible6) {
+		this.offPremisesDeductible6 = offPremisesDeductible6;
+	}
+
+	public double getTransitLimit6() {
+		return transitLimit6;
+	}
+
+	public void setTransitLimit6(double transitLimit6) {
+		this.transitLimit6 = transitLimit6;
+	}
+
+	public double getTransitDeductible6() {
+		return transitDeductible6;
+	}
+
+	public void setTransitDeductible6(double transitDeductible6) {
+		this.transitDeductible6 = transitDeductible6;
+	}
+
+	public double getMiscPropertyLimit6() {
+		return miscPropertyLimit6;
+	}
+
+	public void setMiscPropertyLimit6(double miscPropertyLimit6) {
+		this.miscPropertyLimit6 = miscPropertyLimit6;
+	}
+
+	public double getMiscPropertyDeductible6() {
+		return miscPropertyDeductible6;
+	}
+
+	public void setMiscPropertyDeductible6(double miscPropertyDeductible6) {
+		this.miscPropertyDeductible6 = miscPropertyDeductible6;
+	}
+
+	public double getContractorEquipmentLimit6() {
+		return contractorEquipmentLimit6;
+	}
+
+	public void setContractorEquipmentLimit6(double contractorEquipmentLimit6) {
+		this.contractorEquipmentLimit6 = contractorEquipmentLimit6;
+	}
+
+	public double getContractorEquipmentDeductible6() {
+		return contractorEquipmentDeductible6;
+	}
+
+	public void setContractorEquipmentDeductible6(
+			double contractorEquipmentDeductible6) {
+		this.contractorEquipmentDeductible6 = contractorEquipmentDeductible6;
+	}
+
+	public double getInstallationFloaterLimit6() {
+		return installationFloaterLimit6;
+	}
+
+	public void setInstallationFloaterLimit6(double installationFloaterLimit6) {
+		this.installationFloaterLimit6 = installationFloaterLimit6;
+	}
+
+	public double getInstallationFloaterDeductible6() {
+		return installationFloaterDeductible6;
+	}
+
+	public void setInstallationFloaterDeductible6(
+			double installationFloaterDeductible6) {
+		this.installationFloaterDeductible6 = installationFloaterDeductible6;
+	}
+
+	public double getToolFloaterLimit6() {
+		return toolFloaterLimit6;
+	}
+
+	public void setToolFloaterLimit6(double toolFloaterLimit6) {
+		this.toolFloaterLimit6 = toolFloaterLimit6;
+	}
+
+	public double getToolFloaterDeductible6() {
+		return toolFloaterDeductible6;
+	}
+
+	public void setToolFloaterDeductible6(double toolFloaterDeductible6) {
+		this.toolFloaterDeductible6 = toolFloaterDeductible6;
+	}
+
+	public double getSignFloaterLimit6() {
+		return signFloaterLimit6;
+	}
+
+	public void setSignFloaterLimit6(double signFloaterLimit6) {
+		this.signFloaterLimit6 = signFloaterLimit6;
+	}
+
+	public double getSignFloaterDeductible6() {
+		return signFloaterDeductible6;
+	}
+
+	public void setSignFloaterDeductible6(double signFloaterDeductible6) {
+		this.signFloaterDeductible6 = signFloaterDeductible6;
+	}
+
+	public String getTruckMan6() {
+		return truckMan6;
+	}
+
+	public void setTruckMan6(String truckMan6) {
+		this.truckMan6 = truckMan6;
+	}
+
+	public String getOwnercb6() {
+		return ownercb6;
+	}
+
+	public void setOwnercb6(String ownercb6) {
+		this.ownercb6 = ownercb6;
+	}
+
+	public double getMotorTruckLimit6() {
+		return motorTruckLimit6;
+	}
+
+	public void setMotorTruckLimit6(double motorTruckLimit6) {
+		this.motorTruckLimit6 = motorTruckLimit6;
+	}
+
+	public double getMotorTruckDeductible6() {
+		return motorTruckDeductible6;
+	}
+
+	public void setMotorTruckDeductible6(double motorTruckDeductible6) {
+		this.motorTruckDeductible6 = motorTruckDeductible6;
+	}
+
+	public double getGlassLimit6() {
+		return glassLimit6;
+	}
+
+	public void setGlassLimit6(double glassLimit6) {
+		this.glassLimit6 = glassLimit6;
+	}
+
+	public double getGlassDeductible6() {
+		return glassDeductible6;
+	}
+
+	public void setGlassDeductible6(double glassDeductible6) {
+		this.glassDeductible6 = glassDeductible6;
+	}
+
+	public double getSewerBackupLimit6() {
+		return sewerBackupLimit6;
+	}
+
+	public void setSewerBackupLimit6(double sewerBackupLimit6) {
+		this.sewerBackupLimit6 = sewerBackupLimit6;
+	}
+
+	public double getSewerBackupDeductible6() {
+		return sewerBackupDeductible6;
+	}
+
+	public void setSewerBackupDeductible6(double sewerBackupDeductible6) {
+		this.sewerBackupDeductible6 = sewerBackupDeductible6;
+	}
+
+	public double getFloodLimit6() {
+		return floodLimit6;
+	}
+
+	public void setFloodLimit6(double floodLimit6) {
+		this.floodLimit6 = floodLimit6;
+	}
+
+	public double getFloodDeductible6() {
+		return floodDeductible6;
+	}
+
+	public void setFloodDeductible6(double floodDeductible6) {
+		this.floodDeductible6 = floodDeductible6;
+	}
+
+	public double getEarthquakeLimit6() {
+		return earthquakeLimit6;
+	}
+
+	public void setEarthquakeLimit6(double earthquakeLimit6) {
+		this.earthquakeLimit6 = earthquakeLimit6;
+	}
+
+	public double getEarthquakeDeductible6() {
+		return earthquakeDeductible6;
+	}
+
+	public void setEarthquakeDeductible6(double earthquakeDeductible6) {
+		this.earthquakeDeductible6 = earthquakeDeductible6;
+	}
+
+	public double getProfitLimit6() {
+		return profitLimit6;
+	}
+
+	public void setProfitLimit6(double profitLimit6) {
+		this.profitLimit6 = profitLimit6;
+	}
+
+	public double getProfitDeductible6() {
+		return profitDeductible6;
+	}
+
+	public void setProfitDeductible6(double profitDeductible6) {
+		this.profitDeductible6 = profitDeductible6;
+	}
+
+	public String getGrossEarningCheckbox6() {
+		return grossEarningCheckbox6;
+	}
+
+	public void setGrossEarningCheckbox6(String grossEarningCheckbox6) {
+		this.grossEarningCheckbox6 = grossEarningCheckbox6;
+	}
+
+	public double getGrossEarningLimit6() {
+		return grossEarningLimit6;
+	}
+
+	public void setGrossEarningLimit6(double grossEarningLimit6) {
+		this.grossEarningLimit6 = grossEarningLimit6;
+	}
+
+	public double getGrossEarningDeductible6() {
+		return grossEarningDeductible6;
+	}
+
+	public void setGrossEarningDeductible6(double grossEarningDeductible6) {
+		this.grossEarningDeductible6 = grossEarningDeductible6;
+	}
+
+	public double getRentalIncomeLimit6() {
+		return rentalIncomeLimit6;
+	}
+
+	public void setRentalIncomeLimit6(double rentalIncomeLimit6) {
+		this.rentalIncomeLimit6 = rentalIncomeLimit6;
+	}
+
+	public double getRentalIncomeDeductible6() {
+		return rentalIncomeDeductible6;
+	}
+
+	public void setRentalIncomeDeductible6(double rentalIncomeDeductible6) {
+		this.rentalIncomeDeductible6 = rentalIncomeDeductible6;
+	}
+
+	public double getExtraExpenseLimit6() {
+		return extraExpenseLimit6;
+	}
+
+	public void setExtraExpenseLimit6(double extraExpenseLimit6) {
+		this.extraExpenseLimit6 = extraExpenseLimit6;
+	}
+
+	public double getExtraExpenseDeductible6() {
+		return extraExpenseDeductible6;
+	}
+
+	public void setExtraExpenseDeductible6(double extraExpenseDeductible6) {
+		this.extraExpenseDeductible6 = extraExpenseDeductible6;
+	}
+
+	public double getOffPremisesPowerLimit6() {
+		return offPremisesPowerLimit6;
+	}
+
+	public void setOffPremisesPowerLimit6(double offPremisesPowerLimit6) {
+		this.offPremisesPowerLimit6 = offPremisesPowerLimit6;
+	}
+
+	public double getOffPremisesPowerDeductible6() {
+		return offPremisesPowerDeductible6;
+	}
+
+	public void setOffPremisesPowerDeductible6(double offPremisesPowerDeductible6) {
+		this.offPremisesPowerDeductible6 = offPremisesPowerDeductible6;
+	}
+
+	public double getInsideOutsideLimit6() {
+		return insideOutsideLimit6;
+	}
+
+	public void setInsideOutsideLimit6(double insideOutsideLimit6) {
+		this.insideOutsideLimit6 = insideOutsideLimit6;
+	}
+
+	public double getInsideOutsideDeductible6() {
+		return insideOutsideDeductible6;
+	}
+
+	public void setInsideOutsideDeductible6(double insideOutsideDeductible6) {
+		this.insideOutsideDeductible6 = insideOutsideDeductible6;
+	}
+
+	public double getBfMoneyLimit6() {
+		return bfMoneyLimit6;
+	}
+
+	public void setBfMoneyLimit6(double bfMoneyLimit6) {
+		this.bfMoneyLimit6 = bfMoneyLimit6;
+	}
+
+	public double getBfMoneyDeductible6() {
+		return bfMoneyDeductible6;
+	}
+
+	public void setBfMoneyDeductible6(double bfMoneyDeductible6) {
+		this.bfMoneyDeductible6 = bfMoneyDeductible6;
+	}
+
+	public double getDeopistorForgeryLimit6() {
+		return deopistorForgeryLimit6;
+	}
+
+	public void setDeopistorForgeryLimit6(double deopistorForgeryLimit6) {
+		this.deopistorForgeryLimit6 = deopistorForgeryLimit6;
+	}
+
+	public double getDeopistorForgeryDeductible6() {
+		return deopistorForgeryDeductible6;
+	}
+
+	public void setDeopistorForgeryDeductible6(double deopistorForgeryDeductible6) {
+		this.deopistorForgeryDeductible6 = deopistorForgeryDeductible6;
+	}
+
+	public double getMoneyOrdersLimit6() {
+		return moneyOrdersLimit6;
+	}
+
+	public void setMoneyOrdersLimit6(double moneyOrdersLimit6) {
+		this.moneyOrdersLimit6 = moneyOrdersLimit6;
+	}
+
+	public double getMoneyOrdersDeductible6() {
+		return moneyOrdersDeductible6;
+	}
+
+	public void setMoneyOrdersDeductible6(double moneyOrdersDeductible6) {
+		this.moneyOrdersDeductible6 = moneyOrdersDeductible6;
+	}
+
+	public double getEmployDishonestyLimit6() {
+		return employDishonestyLimit6;
+	}
+
+	public void setEmployDishonestyLimit6(double employDishonestyLimit6) {
+		this.employDishonestyLimit6 = employDishonestyLimit6;
+	}
+
+	public double getEmployDishonestyDeductible6() {
+		return employDishonestyDeductible6;
+	}
+
+	public void setEmployDishonestyDeductible6(double employDishonestyDeductible6) {
+		this.employDishonestyDeductible6 = employDishonestyDeductible6;
+	}
+
+	public double getCglLimit6() {
+		return cglLimit6;
+	}
+
+	public void setCglLimit6(double cglLimit6) {
+		this.cglLimit6 = cglLimit6;
+	}
+
+	public double getCglDeductible6() {
+		return cglDeductible6;
+	}
+
+	public void setCglDeductible6(double cglDeductible6) {
+		this.cglDeductible6 = cglDeductible6;
+	}
+
+	public double getTenantsLegalLimit6() {
+		return tenantsLegalLimit6;
+	}
+
+	public void setTenantsLegalLimit6(double tenantsLegalLimit6) {
+		this.tenantsLegalLimit6 = tenantsLegalLimit6;
+	}
+
+	public double getTenantsLegalDeductible6() {
+		return tenantsLegalDeductible6;
+	}
+
+	public void setTenantsLegalDeductible6(double tenantsLegalDeductible6) {
+		this.tenantsLegalDeductible6 = tenantsLegalDeductible6;
+	}
+
+	public double getNonOwnedAutoLimit6() {
+		return nonOwnedAutoLimit6;
+	}
+
+	public void setNonOwnedAutoLimit6(double nonOwnedAutoLimit6) {
+		this.nonOwnedAutoLimit6 = nonOwnedAutoLimit6;
+	}
+
+	public double getNonOwnedAutoDeductible6() {
+		return nonOwnedAutoDeductible6;
+	}
+
+	public void setNonOwnedAutoDeductible6(double nonOwnedAutoDeductible6) {
+		this.nonOwnedAutoDeductible6 = nonOwnedAutoDeductible6;
+	}
+
+	public double getSef96Limit6() {
+		return sef96Limit6;
+	}
+
+	public void setSef96Limit6(double sef96Limit6) {
+		this.sef96Limit6 = sef96Limit6;
+	}
+
+	public double getSef96Deductible6() {
+		return sef96Deductible6;
+	}
+
+	public void setSef96Deductible6(double sef96Deductible6) {
+		this.sef96Deductible6 = sef96Deductible6;
+	}
+
+	public double getSef94Limit6() {
+		return sef94Limit6;
+	}
+
+	public void setSef94Limit6(double sef94Limit6) {
+		this.sef94Limit6 = sef94Limit6;
+	}
+
+	public double getSef94Deductible6() {
+		return sef94Deductible6;
+	}
+
+	public void setSef94Deductible6(double sef94Deductible6) {
+		this.sef94Deductible6 = sef94Deductible6;
+	}
+
+	public double getDoLimit6() {
+		return doLimit6;
+	}
+
+	public void setDoLimit6(double doLimit6) {
+		this.doLimit6 = doLimit6;
+	}
+
+	public double getDoDeductible6() {
+		return doDeductible6;
+	}
+
+	public void setDoDeductible6(double doDeductible6) {
+		this.doDeductible6 = doDeductible6;
+	}
+
+	public double getEoLimit6() {
+		return eoLimit6;
+	}
+
+	public void setEoLimit6(double eoLimit6) {
+		this.eoLimit6 = eoLimit6;
+	}
+
+	public double getEoDeductible6() {
+		return eoDeductible6;
+	}
+
+	public void setEoDeductible6(double eoDeductible6) {
+		this.eoDeductible6 = eoDeductible6;
+	}
+
+	public double getEmployerLimit6() {
+		return employerLimit6;
+	}
+
+	public void setEmployerLimit6(double employerLimit6) {
+		this.employerLimit6 = employerLimit6;
+	}
+
+	public double getEmployerDeductible6() {
+		return employerDeductible6;
+	}
+
+	public void setEmployerDeductible6(double employerDeductible6) {
+		this.employerDeductible6 = employerDeductible6;
+	}
+
+	public double getUmbrellaLimit6() {
+		return umbrellaLimit6;
+	}
+
+	public void setUmbrellaLimit6(double umbrellaLimit6) {
+		this.umbrellaLimit6 = umbrellaLimit6;
+	}
+
+	public double getUmbrellaDeductible6() {
+		return umbrellaDeductible6;
+	}
+
+	public void setUmbrellaDeductible6(double umbrellaDeductible6) {
+		this.umbrellaDeductible6 = umbrellaDeductible6;
+	}
+
+	public double getWrapUpLimit6() {
+		return wrapUpLimit6;
+	}
+
+	public void setWrapUpLimit6(double wrapUpLimit6) {
+		this.wrapUpLimit6 = wrapUpLimit6;
+	}
+
+	public double getWrapUpDeductible6() {
+		return wrapUpDeductible6;
+	}
+
+	public void setWrapUpDeductible6(double wrapUpDeductible6) {
+		this.wrapUpDeductible6 = wrapUpDeductible6;
+	}
+
+	public double getStdComprehensiveLimit6() {
+		return stdComprehensiveLimit6;
+	}
+
+	public void setStdComprehensiveLimit6(double stdComprehensiveLimit6) {
+		this.stdComprehensiveLimit6 = stdComprehensiveLimit6;
+	}
+
+	public double getStdComprehensiveDeductible6() {
+		return stdComprehensiveDeductible6;
+	}
+
+	public void setStdComprehensiveDeductible6(double stdComprehensiveDeductible6) {
+		this.stdComprehensiveDeductible6 = stdComprehensiveDeductible6;
+	}
+
+	public double getAirConditioningLimit6() {
+		return airConditioningLimit6;
+	}
+
+	public void setAirConditioningLimit6(double airConditioningLimit6) {
+		this.airConditioningLimit6 = airConditioningLimit6;
+	}
+
+	public double getAirConditioningDeductible6() {
+		return airConditioningDeductible6;
+	}
+
+	public void setAirConditioningDeductible6(double airConditioningDeductible6) {
+		this.airConditioningDeductible6 = airConditioningDeductible6;
+	}
+
+	public double getProductionMachineryLimit6() {
+		return productionMachineryLimit6;
+	}
+
+	public void setProductionMachineryLimit6(double productionMachineryLimit6) {
+		this.productionMachineryLimit6 = productionMachineryLimit6;
+	}
+
+	public double getProductionMachineryDeductible6() {
+		return productionMachineryDeductible6;
+	}
+
+	public void setProductionMachineryDeductible6(
+			double productionMachineryDeductible6) {
+		this.productionMachineryDeductible6 = productionMachineryDeductible6;
+	}
+
+	public String getOthercoverage16() {
+		return othercoverage16;
+	}
+
+	public void setOthercoverage16(String othercoverage16) {
+		this.othercoverage16 = othercoverage16;
+	}
+
+	public String getOthercoverage26() {
+		return othercoverage26;
+	}
+
+	public void setOthercoverage26(String othercoverage26) {
+		this.othercoverage26 = othercoverage26;
+	}
+
+	public double getOtherCoverageLimit16() {
+		return otherCoverageLimit16;
+	}
+
+	public void setOtherCoverageLimit16(double otherCoverageLimit16) {
+		this.otherCoverageLimit16 = otherCoverageLimit16;
+	}
+
+	public double getOtherCoverageDeductible16() {
+		return otherCoverageDeductible16;
+	}
+
+	public void setOtherCoverageDeductible16(double otherCoverageDeductible16) {
+		this.otherCoverageDeductible16 = otherCoverageDeductible16;
+	}
+
+	public double getOtherCoverageLimit26() {
+		return otherCoverageLimit26;
+	}
+
+	public void setOtherCoverageLimit26(double otherCoverageLimit26) {
+		this.otherCoverageLimit26 = otherCoverageLimit26;
+	}
+
+	public double getOtherCoverageDeductible26() {
+		return otherCoverageDeductible26;
+	}
+
+	public void setOtherCoverageDeductible26(double otherCoverageDeductible26) {
+		this.otherCoverageDeductible26 = otherCoverageDeductible26;
+	}
+
+	public String getAddress6() {
+		return address6;
+	}
+
+	public void setAddress6(String address6) {
+		this.address6 = address6;
+	}
+
+	public int getAge6() {
+		return age6;
+	}
+
+	public void setAge6(int age6) {
+		this.age6 = age6;
+	}
+
+	public double getTotalSqFootage6() {
+		return totalSqFootage6;
+	}
+
+	public void setTotalSqFootage6(double totalSqFootage6) {
+		this.totalSqFootage6 = totalSqFootage6;
+	}
+
+	public double getInsdSqFootage6() {
+		return insdSqFootage6;
+	}
+
+	public void setInsdSqFootage6(double insdSqFootage6) {
+		this.insdSqFootage6 = insdSqFootage6;
+	}
+
+	public int getNoOfStories6() {
+		return noOfStories6;
+	}
+
+	public void setNoOfStories6(int noOfStories6) {
+		this.noOfStories6 = noOfStories6;
+	}
+
+	public String getBasement6() {
+		return basement6;
+	}
+
+	public void setBasement6(String basement6) {
+		this.basement6 = basement6;
+	}
+
+	public String getWallsframe6() {
+		return wallsframe6;
+	}
+
+	public void setWallsframe6(String wallsframe6) {
+		this.wallsframe6 = wallsframe6;
+	}
+
+	public String getWallshcb6() {
+		return wallshcb6;
+	}
+
+	public void setWallshcb6(String wallshcb6) {
+		this.wallshcb6 = wallshcb6;
+	}
+
+	public String getWallssteel6() {
+		return wallssteel6;
+	}
+
+	public void setWallssteel6(String wallssteel6) {
+		this.wallssteel6 = wallssteel6;
+	}
+
+	public String getWallsbrick6() {
+		return wallsbrick6;
+	}
+
+	public void setWallsbrick6(String wallsbrick6) {
+		this.wallsbrick6 = wallsbrick6;
+	}
+
+	public String getRoofwood6() {
+		return roofwood6;
+	}
+
+	public void setRoofwood6(String roofwood6) {
+		this.roofwood6 = roofwood6;
+	}
+
+	public String getRoofsteel6() {
+		return roofsteel6;
+	}
+
+	public void setRoofsteel6(String roofsteel6) {
+		this.roofsteel6 = roofsteel6;
+	}
+
+	public String getRoofconcrete6() {
+		return roofconcrete6;
+	}
+
+	public void setRoofconcrete6(String roofconcrete6) {
+		this.roofconcrete6 = roofconcrete6;
+	}
+
+	public String getRoofupdated6() {
+		return roofupdated6;
+	}
+
+	public void setRoofupdated6(String roofupdated6) {
+		this.roofupdated6 = roofupdated6;
+	}
+
+	public String getFloorsconcrete6() {
+		return floorsconcrete6;
+	}
+
+	public void setFloorsconcrete6(String floorsconcrete6) {
+		this.floorsconcrete6 = floorsconcrete6;
+	}
+
+	public String getFloorswood6() {
+		return floorswood6;
+	}
+
+	public void setFloorswood6(String floorswood6) {
+		this.floorswood6 = floorswood6;
+	}
+
+	public String getHeatinggas6() {
+		return heatinggas6;
+	}
+
+	public void setHeatinggas6(String heatinggas6) {
+		this.heatinggas6 = heatinggas6;
+	}
+
+	public String getHeatingoil6() {
+		return heatingoil6;
+	}
+
+	public void setHeatingoil6(String heatingoil6) {
+		this.heatingoil6 = heatingoil6;
+	}
+
+	public String getHeatingelectric6() {
+		return heatingelectric6;
+	}
+
+	public void setHeatingelectric6(String heatingelectric6) {
+		this.heatingelectric6 = heatingelectric6;
+	}
+
+	public String getHeatingother6() {
+		return heatingother6;
+	}
+
+	public void setHeatingother6(String heatingother6) {
+		this.heatingother6 = heatingother6;
+	}
+
+	public String getHeatingupdated6() {
+		return heatingupdated6;
+	}
+
+	public void setHeatingupdated6(String heatingupdated6) {
+		this.heatingupdated6 = heatingupdated6;
+	}
+
+	public String getElectricalbreakers6() {
+		return electricalbreakers6;
+	}
+
+	public void setElectricalbreakers6(String electricalbreakers6) {
+		this.electricalbreakers6 = electricalbreakers6;
+	}
+
+	public String getElectricalfuses6() {
+		return electricalfuses6;
+	}
+
+	public void setElectricalfuses6(String electricalfuses6) {
+		this.electricalfuses6 = electricalfuses6;
+	}
+
+	public String getElectricalamps6() {
+		return electricalamps6;
+	}
+
+	public void setElectricalamps6(String electricalamps6) {
+		this.electricalamps6 = electricalamps6;
+	}
+
+	public String getElectricalupdated6() {
+		return electricalupdated6;
+	}
+
+	public void setElectricalupdated6(String electricalupdated6) {
+		this.electricalupdated6 = electricalupdated6;
+	}
+
+	public String getPlumbingcopper6() {
+		return plumbingcopper6;
+	}
+
+	public void setPlumbingcopper6(String plumbingcopper6) {
+		this.plumbingcopper6 = plumbingcopper6;
+	}
+
+	public String getPlumbingpvc6() {
+		return plumbingpvc6;
+	}
+
+	public void setPlumbingpvc6(String plumbingpvc6) {
+		this.plumbingpvc6 = plumbingpvc6;
+	}
+
+	public String getPlumbingother6() {
+		return plumbingother6;
+	}
+
+	public void setPlumbingother6(String plumbingother6) {
+		this.plumbingother6 = plumbingother6;
+	}
+
+	public String getPlumbingupdated6() {
+		return plumbingupdated6;
+	}
+
+	public void setPlumbingupdated6(String plumbingupdated6) {
+		this.plumbingupdated6 = plumbingupdated6;
+	}
+
+	public String getFireProtection6() {
+		return fireProtection6;
+	}
+
+	public void setFireProtection6(String fireProtection6) {
+		this.fireProtection6 = fireProtection6;
+	}
+
+	public String getFireProtectiondistance6() {
+		return fireProtectiondistance6;
+	}
+
+	public void setFireProtectiondistance6(String fireProtectiondistance6) {
+		this.fireProtectiondistance6 = fireProtectiondistance6;
+	}
+
+	public String getSecurity6() {
+		return security6;
+	}
+
+	public void setSecurity6(String security6) {
+		this.security6 = security6;
+	}
+
+	public String getAdditionalcoverage6() {
+		return additionalcoverage6;
+	}
+
+	public void setAdditionalcoverage6(String additionalcoverage6) {
+		this.additionalcoverage6 = additionalcoverage6;
+	}
+
+	public double getBuildingLimit7() {
+		return buildingLimit7;
+	}
+
+	public void setBuildingLimit7(double buildingLimit7) {
+		this.buildingLimit7 = buildingLimit7;
+	}
+
+	public double getBuildingDeductible7() {
+		return buildingDeductible7;
+	}
+
+	public void setBuildingDeductible7(double buildingDeductible7) {
+		this.buildingDeductible7 = buildingDeductible7;
+	}
+
+	public double getContentsLimit7() {
+		return contentsLimit7;
+	}
+
+	public void setContentsLimit7(double contentsLimit7) {
+		this.contentsLimit7 = contentsLimit7;
+	}
+
+	public double getContentsDeductible7() {
+		return contentsDeductible7;
+	}
+
+	public void setContentsDeductible7(double contentsDeductible7) {
+		this.contentsDeductible7 = contentsDeductible7;
+	}
+
+	public double getStockLimit7() {
+		return stockLimit7;
+	}
+
+	public void setStockLimit7(double stockLimit7) {
+		this.stockLimit7 = stockLimit7;
+	}
+
+	public double getStockDeductible7() {
+		return stockDeductible7;
+	}
+
+	public void setStockDeductible7(double stockDeductible7) {
+		this.stockDeductible7 = stockDeductible7;
+	}
+
+	public double getOfficeContentLimit7() {
+		return officeContentLimit7;
+	}
+
+	public void setOfficeContentLimit7(double officeContentLimit7) {
+		this.officeContentLimit7 = officeContentLimit7;
+	}
+
+	public double getOfficeContentDeductible7() {
+		return officeContentDeductible7;
+	}
+
+	public void setOfficeContentDeductible7(double officeContentDeductible7) {
+		this.officeContentDeductible7 = officeContentDeductible7;
+	}
+
+	public double getEdpLimit7() {
+		return edpLimit7;
+	}
+
+	public void setEdpLimit7(double edpLimit7) {
+		this.edpLimit7 = edpLimit7;
+	}
+
+	public double getEdpDeductible7() {
+		return edpDeductible7;
+	}
+
+	public void setEdpDeductible7(double edpDeductible7) {
+		this.edpDeductible7 = edpDeductible7;
+	}
+
+	public double getEquipmentLimit7() {
+		return equipmentLimit7;
+	}
+
+	public void setEquipmentLimit7(double equipmentLimit7) {
+		this.equipmentLimit7 = equipmentLimit7;
+	}
+
+	public double getEquipmentDeductible7() {
+		return equipmentDeductible7;
+	}
+
+	public void setEquipmentDeductible7(double equipmentDeductible7) {
+		this.equipmentDeductible7 = equipmentDeductible7;
+	}
+
+	public double getOffPremisesLimit7() {
+		return offPremisesLimit7;
+	}
+
+	public void setOffPremisesLimit7(double offPremisesLimit7) {
+		this.offPremisesLimit7 = offPremisesLimit7;
+	}
+
+	public double getOffPremisesDeductible7() {
+		return offPremisesDeductible7;
+	}
+
+	public void setOffPremisesDeductible7(double offPremisesDeductible7) {
+		this.offPremisesDeductible7 = offPremisesDeductible7;
+	}
+
+	public double getTransitLimit7() {
+		return transitLimit7;
+	}
+
+	public void setTransitLimit7(double transitLimit7) {
+		this.transitLimit7 = transitLimit7;
+	}
+
+	public double getTransitDeductible7() {
+		return transitDeductible7;
+	}
+
+	public void setTransitDeductible7(double transitDeductible7) {
+		this.transitDeductible7 = transitDeductible7;
+	}
+
+	public double getMiscPropertyLimit7() {
+		return miscPropertyLimit7;
+	}
+
+	public void setMiscPropertyLimit7(double miscPropertyLimit7) {
+		this.miscPropertyLimit7 = miscPropertyLimit7;
+	}
+
+	public double getMiscPropertyDeductible7() {
+		return miscPropertyDeductible7;
+	}
+
+	public void setMiscPropertyDeductible7(double miscPropertyDeductible7) {
+		this.miscPropertyDeductible7 = miscPropertyDeductible7;
+	}
+
+	public double getContractorEquipmentLimit7() {
+		return contractorEquipmentLimit7;
+	}
+
+	public void setContractorEquipmentLimit7(double contractorEquipmentLimit7) {
+		this.contractorEquipmentLimit7 = contractorEquipmentLimit7;
+	}
+
+	public double getContractorEquipmentDeductible7() {
+		return contractorEquipmentDeductible7;
+	}
+
+	public void setContractorEquipmentDeductible7(
+			double contractorEquipmentDeductible7) {
+		this.contractorEquipmentDeductible7 = contractorEquipmentDeductible7;
+	}
+
+	public double getInstallationFloaterLimit7() {
+		return installationFloaterLimit7;
+	}
+
+	public void setInstallationFloaterLimit7(double installationFloaterLimit7) {
+		this.installationFloaterLimit7 = installationFloaterLimit7;
+	}
+
+	public double getInstallationFloaterDeductible7() {
+		return installationFloaterDeductible7;
+	}
+
+	public void setInstallationFloaterDeductible7(
+			double installationFloaterDeductible7) {
+		this.installationFloaterDeductible7 = installationFloaterDeductible7;
+	}
+
+	public double getToolFloaterLimit7() {
+		return toolFloaterLimit7;
+	}
+
+	public void setToolFloaterLimit7(double toolFloaterLimit7) {
+		this.toolFloaterLimit7 = toolFloaterLimit7;
+	}
+
+	public double getToolFloaterDeductible7() {
+		return toolFloaterDeductible7;
+	}
+
+	public void setToolFloaterDeductible7(double toolFloaterDeductible7) {
+		this.toolFloaterDeductible7 = toolFloaterDeductible7;
+	}
+
+	public double getSignFloaterLimit7() {
+		return signFloaterLimit7;
+	}
+
+	public void setSignFloaterLimit7(double signFloaterLimit7) {
+		this.signFloaterLimit7 = signFloaterLimit7;
+	}
+
+	public double getSignFloaterDeductible7() {
+		return signFloaterDeductible7;
+	}
+
+	public void setSignFloaterDeductible7(double signFloaterDeductible7) {
+		this.signFloaterDeductible7 = signFloaterDeductible7;
+	}
+
+	public String getTruckMan7() {
+		return truckMan7;
+	}
+
+	public void setTruckMan7(String truckMan7) {
+		this.truckMan7 = truckMan7;
+	}
+
+	public String getOwnercb7() {
+		return ownercb7;
+	}
+
+	public void setOwnercb7(String ownercb7) {
+		this.ownercb7 = ownercb7;
+	}
+
+	public double getMotorTruckLimit7() {
+		return motorTruckLimit7;
+	}
+
+	public void setMotorTruckLimit7(double motorTruckLimit7) {
+		this.motorTruckLimit7 = motorTruckLimit7;
+	}
+
+	public double getMotorTruckDeductible7() {
+		return motorTruckDeductible7;
+	}
+
+	public void setMotorTruckDeductible7(double motorTruckDeductible7) {
+		this.motorTruckDeductible7 = motorTruckDeductible7;
+	}
+
+	public double getGlassLimit7() {
+		return glassLimit7;
+	}
+
+	public void setGlassLimit7(double glassLimit7) {
+		this.glassLimit7 = glassLimit7;
+	}
+
+	public double getGlassDeductible7() {
+		return glassDeductible7;
+	}
+
+	public void setGlassDeductible7(double glassDeductible7) {
+		this.glassDeductible7 = glassDeductible7;
+	}
+
+	public double getSewerBackupLimit7() {
+		return sewerBackupLimit7;
+	}
+
+	public void setSewerBackupLimit7(double sewerBackupLimit7) {
+		this.sewerBackupLimit7 = sewerBackupLimit7;
+	}
+
+	public double getSewerBackupDeductible7() {
+		return sewerBackupDeductible7;
+	}
+
+	public void setSewerBackupDeductible7(double sewerBackupDeductible7) {
+		this.sewerBackupDeductible7 = sewerBackupDeductible7;
+	}
+
+	public double getFloodLimit7() {
+		return floodLimit7;
+	}
+
+	public void setFloodLimit7(double floodLimit7) {
+		this.floodLimit7 = floodLimit7;
+	}
+
+	public double getFloodDeductible7() {
+		return floodDeductible7;
+	}
+
+	public void setFloodDeductible7(double floodDeductible7) {
+		this.floodDeductible7 = floodDeductible7;
+	}
+
+	public double getEarthquakeLimit7() {
+		return earthquakeLimit7;
+	}
+
+	public void setEarthquakeLimit7(double earthquakeLimit7) {
+		this.earthquakeLimit7 = earthquakeLimit7;
+	}
+
+	public double getEarthquakeDeductible7() {
+		return earthquakeDeductible7;
+	}
+
+	public void setEarthquakeDeductible7(double earthquakeDeductible7) {
+		this.earthquakeDeductible7 = earthquakeDeductible7;
+	}
+
+	public double getProfitLimit7() {
+		return profitLimit7;
+	}
+
+	public void setProfitLimit7(double profitLimit7) {
+		this.profitLimit7 = profitLimit7;
+	}
+
+	public double getProfitDeductible7() {
+		return profitDeductible7;
+	}
+
+	public void setProfitDeductible7(double profitDeductible7) {
+		this.profitDeductible7 = profitDeductible7;
+	}
+
+	public String getGrossEarningCheckbox7() {
+		return grossEarningCheckbox7;
+	}
+
+	public void setGrossEarningCheckbox7(String grossEarningCheckbox7) {
+		this.grossEarningCheckbox7 = grossEarningCheckbox7;
+	}
+
+	public double getGrossEarningLimit7() {
+		return grossEarningLimit7;
+	}
+
+	public void setGrossEarningLimit7(double grossEarningLimit7) {
+		this.grossEarningLimit7 = grossEarningLimit7;
+	}
+
+	public double getGrossEarningDeductible7() {
+		return grossEarningDeductible7;
+	}
+
+	public void setGrossEarningDeductible7(double grossEarningDeductible7) {
+		this.grossEarningDeductible7 = grossEarningDeductible7;
+	}
+
+	public double getRentalIncomeLimit7() {
+		return rentalIncomeLimit7;
+	}
+
+	public void setRentalIncomeLimit7(double rentalIncomeLimit7) {
+		this.rentalIncomeLimit7 = rentalIncomeLimit7;
+	}
+
+	public double getRentalIncomeDeductible7() {
+		return rentalIncomeDeductible7;
+	}
+
+	public void setRentalIncomeDeductible7(double rentalIncomeDeductible7) {
+		this.rentalIncomeDeductible7 = rentalIncomeDeductible7;
+	}
+
+	public double getExtraExpenseLimit7() {
+		return extraExpenseLimit7;
+	}
+
+	public void setExtraExpenseLimit7(double extraExpenseLimit7) {
+		this.extraExpenseLimit7 = extraExpenseLimit7;
+	}
+
+	public double getExtraExpenseDeductible7() {
+		return extraExpenseDeductible7;
+	}
+
+	public void setExtraExpenseDeductible7(double extraExpenseDeductible7) {
+		this.extraExpenseDeductible7 = extraExpenseDeductible7;
+	}
+
+	public double getOffPremisesPowerLimit7() {
+		return offPremisesPowerLimit7;
+	}
+
+	public void setOffPremisesPowerLimit7(double offPremisesPowerLimit7) {
+		this.offPremisesPowerLimit7 = offPremisesPowerLimit7;
+	}
+
+	public double getOffPremisesPowerDeductible7() {
+		return offPremisesPowerDeductible7;
+	}
+
+	public void setOffPremisesPowerDeductible7(double offPremisesPowerDeductible7) {
+		this.offPremisesPowerDeductible7 = offPremisesPowerDeductible7;
+	}
+
+	public double getInsideOutsideLimit7() {
+		return insideOutsideLimit7;
+	}
+
+	public void setInsideOutsideLimit7(double insideOutsideLimit7) {
+		this.insideOutsideLimit7 = insideOutsideLimit7;
+	}
+
+	public double getInsideOutsideDeductible7() {
+		return insideOutsideDeductible7;
+	}
+
+	public void setInsideOutsideDeductible7(double insideOutsideDeductible7) {
+		this.insideOutsideDeductible7 = insideOutsideDeductible7;
+	}
+
+	public double getBfMoneyLimit7() {
+		return bfMoneyLimit7;
+	}
+
+	public void setBfMoneyLimit7(double bfMoneyLimit7) {
+		this.bfMoneyLimit7 = bfMoneyLimit7;
+	}
+
+	public double getBfMoneyDeductible7() {
+		return bfMoneyDeductible7;
+	}
+
+	public void setBfMoneyDeductible7(double bfMoneyDeductible7) {
+		this.bfMoneyDeductible7 = bfMoneyDeductible7;
+	}
+
+	public double getDeopistorForgeryLimit7() {
+		return deopistorForgeryLimit7;
+	}
+
+	public void setDeopistorForgeryLimit7(double deopistorForgeryLimit7) {
+		this.deopistorForgeryLimit7 = deopistorForgeryLimit7;
+	}
+
+	public double getDeopistorForgeryDeductible7() {
+		return deopistorForgeryDeductible7;
+	}
+
+	public void setDeopistorForgeryDeductible7(double deopistorForgeryDeductible7) {
+		this.deopistorForgeryDeductible7 = deopistorForgeryDeductible7;
+	}
+
+	public double getMoneyOrdersLimit7() {
+		return moneyOrdersLimit7;
+	}
+
+	public void setMoneyOrdersLimit7(double moneyOrdersLimit7) {
+		this.moneyOrdersLimit7 = moneyOrdersLimit7;
+	}
+
+	public double getMoneyOrdersDeductible7() {
+		return moneyOrdersDeductible7;
+	}
+
+	public void setMoneyOrdersDeductible7(double moneyOrdersDeductible7) {
+		this.moneyOrdersDeductible7 = moneyOrdersDeductible7;
+	}
+
+	public double getEmployDishonestyLimit7() {
+		return employDishonestyLimit7;
+	}
+
+	public void setEmployDishonestyLimit7(double employDishonestyLimit7) {
+		this.employDishonestyLimit7 = employDishonestyLimit7;
+	}
+
+	public double getEmployDishonestyDeductible7() {
+		return employDishonestyDeductible7;
+	}
+
+	public void setEmployDishonestyDeductible7(double employDishonestyDeductible7) {
+		this.employDishonestyDeductible7 = employDishonestyDeductible7;
+	}
+
+	public double getCglLimit7() {
+		return cglLimit7;
+	}
+
+	public void setCglLimit7(double cglLimit7) {
+		this.cglLimit7 = cglLimit7;
+	}
+
+	public double getCglDeductible7() {
+		return cglDeductible7;
+	}
+
+	public void setCglDeductible7(double cglDeductible7) {
+		this.cglDeductible7 = cglDeductible7;
+	}
+
+	public double getTenantsLegalLimit7() {
+		return tenantsLegalLimit7;
+	}
+
+	public void setTenantsLegalLimit7(double tenantsLegalLimit7) {
+		this.tenantsLegalLimit7 = tenantsLegalLimit7;
+	}
+
+	public double getTenantsLegalDeductible7() {
+		return tenantsLegalDeductible7;
+	}
+
+	public void setTenantsLegalDeductible7(double tenantsLegalDeductible7) {
+		this.tenantsLegalDeductible7 = tenantsLegalDeductible7;
+	}
+
+	public double getNonOwnedAutoLimit7() {
+		return nonOwnedAutoLimit7;
+	}
+
+	public void setNonOwnedAutoLimit7(double nonOwnedAutoLimit7) {
+		this.nonOwnedAutoLimit7 = nonOwnedAutoLimit7;
+	}
+
+	public double getNonOwnedAutoDeductible7() {
+		return nonOwnedAutoDeductible7;
+	}
+
+	public void setNonOwnedAutoDeductible7(double nonOwnedAutoDeductible7) {
+		this.nonOwnedAutoDeductible7 = nonOwnedAutoDeductible7;
+	}
+
+	public double getSef96Limit7() {
+		return sef96Limit7;
+	}
+
+	public void setSef96Limit7(double sef96Limit7) {
+		this.sef96Limit7 = sef96Limit7;
+	}
+
+	public double getSef96Deductible7() {
+		return sef96Deductible7;
+	}
+
+	public void setSef96Deductible7(double sef96Deductible7) {
+		this.sef96Deductible7 = sef96Deductible7;
+	}
+
+	public double getSef94Limit7() {
+		return sef94Limit7;
+	}
+
+	public void setSef94Limit7(double sef94Limit7) {
+		this.sef94Limit7 = sef94Limit7;
+	}
+
+	public double getSef94Deductible7() {
+		return sef94Deductible7;
+	}
+
+	public void setSef94Deductible7(double sef94Deductible7) {
+		this.sef94Deductible7 = sef94Deductible7;
+	}
+
+	public double getDoLimit7() {
+		return doLimit7;
+	}
+
+	public void setDoLimit7(double doLimit7) {
+		this.doLimit7 = doLimit7;
+	}
+
+	public double getDoDeductible7() {
+		return doDeductible7;
+	}
+
+	public void setDoDeductible7(double doDeductible7) {
+		this.doDeductible7 = doDeductible7;
+	}
+
+	public double getEoLimit7() {
+		return eoLimit7;
+	}
+
+	public void setEoLimit7(double eoLimit7) {
+		this.eoLimit7 = eoLimit7;
+	}
+
+	public double getEoDeductible7() {
+		return eoDeductible7;
+	}
+
+	public void setEoDeductible7(double eoDeductible7) {
+		this.eoDeductible7 = eoDeductible7;
+	}
+
+	public double getEmployerLimit7() {
+		return employerLimit7;
+	}
+
+	public void setEmployerLimit7(double employerLimit7) {
+		this.employerLimit7 = employerLimit7;
+	}
+
+	public double getEmployerDeductible7() {
+		return employerDeductible7;
+	}
+
+	public void setEmployerDeductible7(double employerDeductible7) {
+		this.employerDeductible7 = employerDeductible7;
+	}
+
+	public double getUmbrellaLimit7() {
+		return umbrellaLimit7;
+	}
+
+	public void setUmbrellaLimit7(double umbrellaLimit7) {
+		this.umbrellaLimit7 = umbrellaLimit7;
+	}
+
+	public double getUmbrellaDeductible7() {
+		return umbrellaDeductible7;
+	}
+
+	public void setUmbrellaDeductible7(double umbrellaDeductible7) {
+		this.umbrellaDeductible7 = umbrellaDeductible7;
+	}
+
+	public double getWrapUpLimit7() {
+		return wrapUpLimit7;
+	}
+
+	public void setWrapUpLimit7(double wrapUpLimit7) {
+		this.wrapUpLimit7 = wrapUpLimit7;
+	}
+
+	public double getWrapUpDeductible7() {
+		return wrapUpDeductible7;
+	}
+
+	public void setWrapUpDeductible7(double wrapUpDeductible7) {
+		this.wrapUpDeductible7 = wrapUpDeductible7;
+	}
+
+	public double getStdComprehensiveLimit7() {
+		return stdComprehensiveLimit7;
+	}
+
+	public void setStdComprehensiveLimit7(double stdComprehensiveLimit7) {
+		this.stdComprehensiveLimit7 = stdComprehensiveLimit7;
+	}
+
+	public double getStdComprehensiveDeductible7() {
+		return stdComprehensiveDeductible7;
+	}
+
+	public void setStdComprehensiveDeductible7(double stdComprehensiveDeductible7) {
+		this.stdComprehensiveDeductible7 = stdComprehensiveDeductible7;
+	}
+
+	public double getAirConditioningLimit7() {
+		return airConditioningLimit7;
+	}
+
+	public void setAirConditioningLimit7(double airConditioningLimit7) {
+		this.airConditioningLimit7 = airConditioningLimit7;
+	}
+
+	public double getAirConditioningDeductible7() {
+		return airConditioningDeductible7;
+	}
+
+	public void setAirConditioningDeductible7(double airConditioningDeductible7) {
+		this.airConditioningDeductible7 = airConditioningDeductible7;
+	}
+
+	public double getProductionMachineryLimit7() {
+		return productionMachineryLimit7;
+	}
+
+	public void setProductionMachineryLimit7(double productionMachineryLimit7) {
+		this.productionMachineryLimit7 = productionMachineryLimit7;
+	}
+
+	public double getProductionMachineryDeductible7() {
+		return productionMachineryDeductible7;
+	}
+
+	public void setProductionMachineryDeductible7(
+			double productionMachineryDeductible7) {
+		this.productionMachineryDeductible7 = productionMachineryDeductible7;
+	}
+
+	public String getOthercoverage17() {
+		return othercoverage17;
+	}
+
+	public void setOthercoverage17(String othercoverage17) {
+		this.othercoverage17 = othercoverage17;
+	}
+
+	public String getOthercoverage27() {
+		return othercoverage27;
+	}
+
+	public void setOthercoverage27(String othercoverage27) {
+		this.othercoverage27 = othercoverage27;
+	}
+
+	public double getOtherCoverageLimit17() {
+		return otherCoverageLimit17;
+	}
+
+	public void setOtherCoverageLimit17(double otherCoverageLimit17) {
+		this.otherCoverageLimit17 = otherCoverageLimit17;
+	}
+
+	public double getOtherCoverageDeductible17() {
+		return otherCoverageDeductible17;
+	}
+
+	public void setOtherCoverageDeductible17(double otherCoverageDeductible17) {
+		this.otherCoverageDeductible17 = otherCoverageDeductible17;
+	}
+
+	public double getOtherCoverageLimit27() {
+		return otherCoverageLimit27;
+	}
+
+	public void setOtherCoverageLimit27(double otherCoverageLimit27) {
+		this.otherCoverageLimit27 = otherCoverageLimit27;
+	}
+
+	public double getOtherCoverageDeductible27() {
+		return otherCoverageDeductible27;
+	}
+
+	public void setOtherCoverageDeductible27(double otherCoverageDeductible27) {
+		this.otherCoverageDeductible27 = otherCoverageDeductible27;
+	}
+
+	public String getAddress7() {
+		return address7;
+	}
+
+	public void setAddress7(String address7) {
+		this.address7 = address7;
+	}
+
+	public int getAge7() {
+		return age7;
+	}
+
+	public void setAge7(int age7) {
+		this.age7 = age7;
+	}
+
+	public double getTotalSqFootage7() {
+		return totalSqFootage7;
+	}
+
+	public void setTotalSqFootage7(double totalSqFootage7) {
+		this.totalSqFootage7 = totalSqFootage7;
+	}
+
+	public double getInsdSqFootage7() {
+		return insdSqFootage7;
+	}
+
+	public void setInsdSqFootage7(double insdSqFootage7) {
+		this.insdSqFootage7 = insdSqFootage7;
+	}
+
+	public int getNoOfStories7() {
+		return noOfStories7;
+	}
+
+	public void setNoOfStories7(int noOfStories7) {
+		this.noOfStories7 = noOfStories7;
+	}
+
+	public String getBasement7() {
+		return basement7;
+	}
+
+	public void setBasement7(String basement7) {
+		this.basement7 = basement7;
+	}
+
+	public String getWallsframe7() {
+		return wallsframe7;
+	}
+
+	public void setWallsframe7(String wallsframe7) {
+		this.wallsframe7 = wallsframe7;
+	}
+
+	public String getWallshcb7() {
+		return wallshcb7;
+	}
+
+	public void setWallshcb7(String wallshcb7) {
+		this.wallshcb7 = wallshcb7;
+	}
+
+	public String getWallssteel7() {
+		return wallssteel7;
+	}
+
+	public void setWallssteel7(String wallssteel7) {
+		this.wallssteel7 = wallssteel7;
+	}
+
+	public String getWallsbrick7() {
+		return wallsbrick7;
+	}
+
+	public void setWallsbrick7(String wallsbrick7) {
+		this.wallsbrick7 = wallsbrick7;
+	}
+
+	public String getRoofwood7() {
+		return roofwood7;
+	}
+
+	public void setRoofwood7(String roofwood7) {
+		this.roofwood7 = roofwood7;
+	}
+
+	public String getRoofsteel7() {
+		return roofsteel7;
+	}
+
+	public void setRoofsteel7(String roofsteel7) {
+		this.roofsteel7 = roofsteel7;
+	}
+
+	public String getRoofconcrete7() {
+		return roofconcrete7;
+	}
+
+	public void setRoofconcrete7(String roofconcrete7) {
+		this.roofconcrete7 = roofconcrete7;
+	}
+
+	public String getRoofupdated7() {
+		return roofupdated7;
+	}
+
+	public void setRoofupdated7(String roofupdated7) {
+		this.roofupdated7 = roofupdated7;
+	}
+
+	public String getFloorsconcrete7() {
+		return floorsconcrete7;
+	}
+
+	public void setFloorsconcrete7(String floorsconcrete7) {
+		this.floorsconcrete7 = floorsconcrete7;
+	}
+
+	public String getFloorswood7() {
+		return floorswood7;
+	}
+
+	public void setFloorswood7(String floorswood7) {
+		this.floorswood7 = floorswood7;
+	}
+
+	public String getHeatinggas7() {
+		return heatinggas7;
+	}
+
+	public void setHeatinggas7(String heatinggas7) {
+		this.heatinggas7 = heatinggas7;
+	}
+
+	public String getHeatingoil7() {
+		return heatingoil7;
+	}
+
+	public void setHeatingoil7(String heatingoil7) {
+		this.heatingoil7 = heatingoil7;
+	}
+
+	public String getHeatingelectric7() {
+		return heatingelectric7;
+	}
+
+	public void setHeatingelectric7(String heatingelectric7) {
+		this.heatingelectric7 = heatingelectric7;
+	}
+
+	public String getHeatingother7() {
+		return heatingother7;
+	}
+
+	public void setHeatingother7(String heatingother7) {
+		this.heatingother7 = heatingother7;
+	}
+
+	public String getHeatingupdated7() {
+		return heatingupdated7;
+	}
+
+	public void setHeatingupdated7(String heatingupdated7) {
+		this.heatingupdated7 = heatingupdated7;
+	}
+
+	public String getElectricalbreakers7() {
+		return electricalbreakers7;
+	}
+
+	public void setElectricalbreakers7(String electricalbreakers7) {
+		this.electricalbreakers7 = electricalbreakers7;
+	}
+
+	public String getElectricalfuses7() {
+		return electricalfuses7;
+	}
+
+	public void setElectricalfuses7(String electricalfuses7) {
+		this.electricalfuses7 = electricalfuses7;
+	}
+
+	public String getElectricalamps7() {
+		return electricalamps7;
+	}
+
+	public void setElectricalamps7(String electricalamps7) {
+		this.electricalamps7 = electricalamps7;
+	}
+
+	public String getElectricalupdated7() {
+		return electricalupdated7;
+	}
+
+	public void setElectricalupdated7(String electricalupdated7) {
+		this.electricalupdated7 = electricalupdated7;
+	}
+
+	public String getPlumbingcopper7() {
+		return plumbingcopper7;
+	}
+
+	public void setPlumbingcopper7(String plumbingcopper7) {
+		this.plumbingcopper7 = plumbingcopper7;
+	}
+
+	public String getPlumbingpvc7() {
+		return plumbingpvc7;
+	}
+
+	public void setPlumbingpvc7(String plumbingpvc7) {
+		this.plumbingpvc7 = plumbingpvc7;
+	}
+
+	public String getPlumbingother7() {
+		return plumbingother7;
+	}
+
+	public void setPlumbingother7(String plumbingother7) {
+		this.plumbingother7 = plumbingother7;
+	}
+
+	public String getPlumbingupdated7() {
+		return plumbingupdated7;
+	}
+
+	public void setPlumbingupdated7(String plumbingupdated7) {
+		this.plumbingupdated7 = plumbingupdated7;
+	}
+
+	public String getFireProtection7() {
+		return fireProtection7;
+	}
+
+	public void setFireProtection7(String fireProtection7) {
+		this.fireProtection7 = fireProtection7;
+	}
+
+	public String getFireProtectiondistance7() {
+		return fireProtectiondistance7;
+	}
+
+	public void setFireProtectiondistance7(String fireProtectiondistance7) {
+		this.fireProtectiondistance7 = fireProtectiondistance7;
+	}
+
+	public String getSecurity7() {
+		return security7;
+	}
+
+	public void setSecurity7(String security7) {
+		this.security7 = security7;
+	}
+
+	public String getAdditionalcoverage7() {
+		return additionalcoverage7;
+	}
+
+	public void setAdditionalcoverage7(String additionalcoverage7) {
+		this.additionalcoverage7 = additionalcoverage7;
 	}
 
 }
