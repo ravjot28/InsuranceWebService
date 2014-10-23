@@ -10,6 +10,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import com.rav.insurance.insuranceformoperations.bean.CloseFormBean;
@@ -462,8 +463,10 @@ public class InsuranceFormDAO {
 			}
 
 			if (!CommonValidations.isStringEmpty(businessName))
+			{
+				System.out.println(businessName);
 				crit.add(Restrictions.like("businessName", "%"+businessName+"%").ignoreCase());	
-			
+			}
 
 			if (!CommonValidations.isStringEmpty(withUs))
 				crit.add(Restrictions.eq("withUs", withUs));
@@ -481,7 +484,7 @@ public class InsuranceFormDAO {
 
 			if (creationDate != null)
 				crit.add(Restrictions.ge("creationDate", creationDate));
-
+			crit.addOrder(Order.desc("id"));
 			List<InsuranceFormBean> list = (List<InsuranceFormBean>) crit
 					.list();
 			if (list != null && list.size() > 0) {
@@ -567,11 +570,21 @@ public class InsuranceFormDAO {
 							Integer.parseInt(model.getFormId().replaceAll(
 									"UCCIG", "")));
 			System.out.println("gvghvhg "+model.getFormId());
+			String status = "NEW";
+			String marketerUserName = null;
+			if(bean.getMarketerUserName()!=null){
+				marketerUserName = bean.getMarketerUserName();
+			}
+			if(bean.getStatus()!=null){
+				status = bean.getStatus();
+			}
 			DozerBeanMapper mapper = new DozerBeanMapper();
 			mapper.map(model, bean);
 			bean.setId(Integer.parseInt(model.getFormId().replaceAll(
 									"UCCIG", "")));
-			bean.setStatus("NEW");
+			
+			bean.setStatus(status);
+			bean.setMarketerUserName(marketerUserName);
 
 			session.save(bean);
 			session.getTransaction().commit();

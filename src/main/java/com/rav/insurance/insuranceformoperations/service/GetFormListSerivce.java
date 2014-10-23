@@ -27,6 +27,7 @@ public class GetFormListSerivce extends ServiceAbstract {
 			String status = ((GetInsuranceFormListRequest) model).getStatus();
 			String businessName = ((GetInsuranceFormListRequest) model)
 					.getBusinessName();
+			System.out.println("Value of businessname"+businessName);
 			int formId = ((GetInsuranceFormListRequest) model).getFormId();
 			int month = ((GetInsuranceFormListRequest) model).getMonth();
 			String withUs = ((GetInsuranceFormListRequest) model).getWithUs();
