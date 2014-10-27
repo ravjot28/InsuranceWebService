@@ -28,11 +28,7 @@ public class QuoteDetailsService extends ServiceAbstract {
 			bean.setFormId(request.getFormId());
 			InsuranceFormDAO dao = new InsuranceFormDAO();
 			dao.insertQuoteDetails(bean);
-			response = new CommonResponseAttributes();
-			response.setStatus(CommonConstants.SUCCESS);
-			
 		} catch (Exception e) {
-			e.printStackTrace();
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();
 			String theTrace = "";

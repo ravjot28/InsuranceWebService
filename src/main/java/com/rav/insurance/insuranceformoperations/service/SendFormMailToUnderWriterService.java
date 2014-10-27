@@ -2,7 +2,6 @@ package com.rav.insurance.insuranceformoperations.service;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,25 +27,9 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 		FormMailToUnderWriterRequest request = (FormMailToUnderWriterRequest) model;
 		CommonResponseAttributes response = null;
 		try {
-			File file = new File(request.getFormId());
-			File[] fi = file.listFiles(new FileFilter() {
-				
-				@Override
-				public boolean accept(File pathname) {
-					if(pathname!=null && pathname.getAbsolutePath().endsWith(".zip")||pathname.getAbsolutePath().endsWith(".7z")||pathname.getAbsolutePath().endsWith(".rar")) {
-						return true;
-					}
-					return false;
-				}
-			});
-			String[] a  = null;
-			if(fi!=null){
-			a= new String[fi.length];
-			for(int i=0;i<fi.length;i++){
-				if(fi[i].getAbsolutePath().endsWith(".zip")||fi[i].getAbsolutePath().endsWith(".7z")||fi[i].getAbsolutePath().endsWith(".rar"))
-					a[i] = fi[i].getAbsolutePath();
-			}
-			}
+			String[] a = { request.getFormId() + "\\" + request.getFormId()
+					+ ".zip" };
+
 			String[] to = request.getRecpients().split(",");
 			File dir = new File("Mails");
 			if (!dir.exists())
@@ -65,7 +48,6 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 			new InsuranceFormDAO().insertMailRepo(request.getFormId(), request.getRecpients());
 			
 			} catch (Exception e) {
-				e.printStackTrace();
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();
 			String theTrace = "";

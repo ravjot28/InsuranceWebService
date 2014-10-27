@@ -12,7 +12,6 @@ public class AbstractFormInfo {
 	private String businessName;
 	private String branch;
 	private String withUs;
-	private String insuranceType;
 
 	public String getFormId() {
 		return formId;
@@ -20,14 +19,6 @@ public class AbstractFormInfo {
 
 	public void setFormId(String formId) {
 		this.formId = formId;
-	}
-	
-	public String getInsuranceType() {
-		return insuranceType;
-	}
-
-	public void setInsuranceType(String insuranceType) {
-		this.insuranceType = insuranceType;
 	}
 
 	public String getProducerId() {

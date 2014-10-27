@@ -41,7 +41,6 @@ public class GetFormService extends ServiceAbstract {
 					File[] files = f.listFiles();
 					int i = 0;
 					for (File file : files) {
-						System.out.println(file.getAbsolutePath());
 						byte[] bytes = WriteByteArray.getByteFromFile(file);
 						switch (i) {
 						case 0:
@@ -85,8 +84,6 @@ public class GetFormService extends ServiceAbstract {
 							response.setFile10Name(file.getName());
 							break;
 						}
-						i++;
-						
 					}
 
 				}
