@@ -27,8 +27,15 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 		FormMailToUnderWriterRequest request = (FormMailToUnderWriterRequest) model;
 		CommonResponseAttributes response = null;
 		try {
-			String[] a = { request.getFormId() + "\\" + request.getFormId()
-					+ ".zip" };
+			String[] a;
+			if(new File(request.getFormId() + "\\" + request.getFormId()
+					+ ".zip").exists()){
+				a = new String[1];
+				a[0] = request.getFormId() + "\\" + request.getFormId()+ ".zip" ;
+			}else{
+				a = new String[1];
+				a[0] = request.getFormId() + "\\" + "Clientprofile.html" ;
+			}
 
 			String[] to = request.getRecpients().split(",");
 			File dir = new File("Mails");
