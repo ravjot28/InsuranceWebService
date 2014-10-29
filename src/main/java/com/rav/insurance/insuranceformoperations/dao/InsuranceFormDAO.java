@@ -9,8 +9,6 @@ import org.dozer.DozerBeanMapper;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.criterion.LogicalExpression;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import com.rav.insurance.insuranceformoperations.bean.CloseFormBean;
@@ -218,7 +216,6 @@ public class InsuranceFormDAO {
 			bean.setMarketerUserName(marketerUserName);
 			bean.setStatus("ASSIGNED");
 			session.getTransaction().commit();
-			result=true;
 		} catch (Exception e) {
 			throw e;
 		}
@@ -447,26 +444,16 @@ public class InsuranceFormDAO {
 			Criteria crit = session.createCriteria(InsuranceFormBean.class);
 
 			if (!CommonValidations.isStringEmpty(producerId)) {
-				crit.add(Restrictions.eq("producer", producerId).ignoreCase());
+				crit.add(Restrictions.eq("producerUserName", producerId));
 			} else if (!CommonValidations.isStringEmpty(marketerId)) {
-				crit.add(Restrictions.eq("marketerUserName", marketerId).ignoreCase());
+				crit.add(Restrictions.eq("marketerUserName", marketerId));
 			}
 
-			if (!CommonValidations.isStringEmpty(status)){
-				String[] s = status.split(",");
-				if(s.length ==2)
-					crit.add(Restrictions.or(Restrictions.eq("status", s[0]),
-							Restrictions.eq("status", s[1])));
-				if(s.length==1)
-					crit.add(Restrictions.eq("status", s[0]));
-				
-			}
+			if (!CommonValidations.isStringEmpty(status))
+				crit.add(Restrictions.eq("status", status));
 
 			if (!CommonValidations.isStringEmpty(businessName))
-			{
-				System.out.println(businessName);
-				crit.add(Restrictions.like("businessName", "%"+businessName+"%").ignoreCase());	
-			}
+				crit.add(Restrictions.eq("businessName", businessName));
 
 			if (!CommonValidations.isStringEmpty(withUs))
 				crit.add(Restrictions.eq("withUs", withUs));
@@ -484,7 +471,7 @@ public class InsuranceFormDAO {
 
 			if (creationDate != null)
 				crit.add(Restrictions.ge("creationDate", creationDate));
-			crit.addOrder(Order.desc("id"));
+
 			List<InsuranceFormBean> list = (List<InsuranceFormBean>) crit
 					.list();
 			if (list != null && list.size() > 0) {
@@ -494,14 +481,13 @@ public class InsuranceFormDAO {
 					AbstractFormInfo formInfo = new AbstractFormInfo();
 					formInfo.setFormId("" + form.getId());
 					formInfo.setMarketerId(form.getMarketerUserName());
-					formInfo.setProducerId(form.getProducer());
+					formInfo.setProducerId(form.getProducerUserName());
 					formInfo.setStatus(form.getStatus());
 					formInfo.setBranch(form.getBranch());
 					formInfo.setBusinessName(form.getBusinessName());
 					formInfo.setCreationDate(form.getCreationDate());
 					formInfo.setSeverity(form.getSeverity());
 					formInfo.setWithUs(form.getWithUs());
-					formInfo.setInsuranceType(form.getType());
 					finalList.add(formInfo);
 				}
 			}
@@ -563,28 +549,14 @@ public class InsuranceFormDAO {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
-			System.out.println("gvghvhg "+model.getFormId());
-			
+
 			InsuranceFormBean bean = (InsuranceFormBean) session
 					.get(InsuranceFormBean.class,
 							Integer.parseInt(model.getFormId().replaceAll(
 									"UCCIG", "")));
-			System.out.println("gvghvhg "+model.getFormId());
-			String status = "NEW";
-			String marketerUserName = null;
-			if(bean.getMarketerUserName()!=null){
-				marketerUserName = bean.getMarketerUserName();
-			}
-			if(bean.getStatus()!=null){
-				status = bean.getStatus();
-			}
 			DozerBeanMapper mapper = new DozerBeanMapper();
 			mapper.map(model, bean);
-			bean.setId(Integer.parseInt(model.getFormId().replaceAll(
-									"UCCIG", "")));
-			
-			bean.setStatus(status);
-			bean.setMarketerUserName(marketerUserName);
+			bean.setStatus("NEW");
 
 			session.save(bean);
 			session.getTransaction().commit();
@@ -602,8 +574,8 @@ public class InsuranceFormDAO {
 
 			session.beginTransaction();
 			Query queryObject = session
-					.createQuery("from MessageInfo where subject like '%'||'"
-							+ formId + "'||'%'");
+					.createQuery("from MessageInfo where subject like '%'||"
+							+ formId + "||'%'");
 			list = (List<MessageInfo>) queryObject.list();
 			session.getTransaction().commit();
 		} catch (Exception e) {

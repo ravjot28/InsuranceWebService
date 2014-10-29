@@ -39,7 +39,6 @@
 		<mapping class="com.rav.insurance.insuranceformoperations.bean.MessageInfo" />
 		<mapping class="com.rav.insurance.insuranceformoperations.bean.QuoteDetailsBean" />
 		<mapping class="com.rav.insurance.log.bean.RequestResponseLoggingBean"/>
-		<mapping class="com.rav.insurance.insuranceformoperations.bean.MailRepoBean"/>
 	</session-factory>
 </hibernate-configuration>
 

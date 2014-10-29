@@ -25,7 +25,6 @@ public class GetCloseFormNQuoteDetailsService extends ServiceAbstract {
 					.getFormId());
 			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {
-			e.printStackTrace();
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();
 			String theTrace = "";

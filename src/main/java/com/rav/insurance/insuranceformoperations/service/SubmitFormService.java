@@ -1,6 +1,5 @@
 package com.rav.insurance.insuranceformoperations.service;
 
-import java.io.File;
 import java.util.Calendar;
 
 import javax.xml.ws.WebServiceContext;
@@ -33,12 +32,7 @@ public class SubmitFormService extends ServiceAbstract {
 				throw new Exception("Error in inserting the form");
 
 			InsuranceFormSubmitRequest obj = (InsuranceFormSubmitRequest) model;
-			File ff = new File("UCCIG" + formId);
-			if(!ff.exists())
-				ff.mkdir();
 			if (!CommonValidations.isStringEmpty(obj.getFile1Name())) {
-				
-				
 				WriteByteArray.writeByteArray(
 						"UCCIG" + formId + "/" + obj.getFile1Name(),
 						obj.getFile1());
@@ -135,7 +129,7 @@ public class SubmitFormService extends ServiceAbstract {
 		StringTemplateGroup emailTemplateGroup = new StringTemplateGroup(
 				"welcomeloginemail group", System.getProperty("emailTemplates"));
 		StringTemplate submitFormMail = emailTemplateGroup
-				.getInstanceOf("formSubmission");
+				.getInstanceOf("welcomeLoginEmail");
 		submitFormMail.setAttribute("fullName", fullName);
 		submitFormMail.setAttribute("formId", formId);
 		submitFormMail.setAttribute("from", "UCCIG");
