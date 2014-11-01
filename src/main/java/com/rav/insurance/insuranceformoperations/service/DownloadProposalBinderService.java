@@ -18,13 +18,25 @@ public class DownloadProposalBinderService extends ServiceAbstract {
 		DownloadProposalBinderResponse response = new DownloadProposalBinderResponse();
 		try {
 			if (request.isBinder()) {
-				response.setBinder(WriteByteArray.getByteFromFile(new File(
-						"Binder" + "/" + request.getFormId() + ".docx")));
-			}
-
+				if(new File("Binder" + "/" + request.getFormId() + ".docx").exists())
+				{
+					response.setBinder(WriteByteArray.getByteFromFile(new File("Binder" + "/" + request.getFormId() + ".docx")));
+				}
+				else if (new File("Binder" + "/" + request.getFormId() + ".doc").exists())
+				{
+					response.setBinder(WriteByteArray.getByteFromFile(new File("Binder" + "/" + request.getFormId() + ".doc")));
+					}
+				}
 			if (request.isProposal()) {
-				response.setBinder(WriteByteArray.getByteFromFile(new File(
-						"Proposal" + "/" + request.getFormId() + ".docx")));
+				if(new File("Proposal" + "/" + request.getFormId() + ".docx").exists())
+				{
+					response.setProposal(WriteByteArray.getByteFromFile(new File("Proposal" + "/" + request.getFormId() + ".docx")));
+				}
+				else if (new File(
+						"Proposal" + "/" + request.getFormId() + ".doc").exists())
+				{
+					response.setProposal(WriteByteArray.getByteFromFile(new File("Proposal" + "/" + request.getFormId() + ".doc")));
+				}
 			}
 			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {

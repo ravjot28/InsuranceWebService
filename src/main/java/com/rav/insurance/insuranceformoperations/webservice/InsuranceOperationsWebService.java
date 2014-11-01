@@ -104,6 +104,7 @@ public class InsuranceOperationsWebService implements InsuranceOperationsWS {
 	public CommonResponseAttributes sendMailToUnderWriter(
 			FormMailToUnderWriterRequest request) throws Exception {
 		service = new SendFormMailToUnderWriterService();
+		System.out.println("Printed:  "+request.getFrom());
 		return (CommonResponseAttributes) service.processRequest(request,
 				wsContext);
 	}
