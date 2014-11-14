@@ -6,7 +6,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.xml.ws.WebServiceContext;
 
@@ -33,11 +35,24 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 				a = new String[1];
 				a[0] = request.getFormId() + "\\" + request.getFormId()+ ".zip" ;
 			}else{
+				List<String> list = new ArrayList<String>();
 				if(new File(request.getFormId() + "\\" + "Clientprofile.html" ).exists()){
-					a = new String[1];
-					a[0] = request.getFormId() + "\\" + "Clientprofile.html" ;
+					list.add(request.getFormId() + "\\" + "Clientprofile.html" );
+				}
+				int fileNumber =1;
+				while(true){
+					if(new File(request.getFormId() + "\\" + "Clientprofile"+fileNumber+".html" ).exists()){
+						list.add(request.getFormId() + "\\" + "Clientprofile"+fileNumber+".html") ;
+					}else{
+						break;
+					}
+					fileNumber++;
+				}
+				if(new File(request.getFormId() + "\\" + "Autoprofile.html" ).exists()){
+					list.add(request.getFormId() + "\\" + "Autoprofile.html" );
 				}
 				
+				a = (String[]) list.toArray();
 			}
 
 			String[] to = request.getRecpients().split(",");
