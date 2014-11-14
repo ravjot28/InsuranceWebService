@@ -82,7 +82,7 @@ public class InsuranceFormDAO {
 
 			Criteria crit = session.createCriteria(QuoteDetailsBean.class);
 
-			crit.add(Restrictions.ge("formId", formId));
+			crit.add(Restrictions.eq("formId", formId));
 
 			List<QuoteDetailsBean> list = (List<QuoteDetailsBean>) crit.list();
 			if (list != null && list.size() > 0) {
@@ -123,7 +123,7 @@ public class InsuranceFormDAO {
 
 			crit = session.createCriteria(CloseFormBean.class);
 
-			crit.add(Restrictions.ge("formId", formId));
+			crit.add(Restrictions.eq("formId", formId));
 
 			List<CloseFormBean> list1 = (List<CloseFormBean>) crit.list();
 			if (list1 != null && list1.size() > 0) {
@@ -154,6 +154,7 @@ public class InsuranceFormDAO {
 					InsuranceFormBean.class,
 					Integer.parseInt(bean.getFormId().replaceAll("UCCIG", "")));
 			b.setStatus("CLOSE");
+			b.setWithUs(bean.getBusinessWithUs());
 			session.getTransaction().commit();
 
 		} catch (Exception e) {

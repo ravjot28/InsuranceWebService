@@ -44,7 +44,7 @@ public class GetCloseFormNQuoteDetailsService extends ServiceAbstract {
 			response.setStatus(CommonConstants.ERROR);
 			response.setErrorMessage(e.getMessage());
 		}
-		return null;
+		return response;
 	}
 
 	@Override
