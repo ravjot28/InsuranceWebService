@@ -39,7 +39,7 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 				if(new File(request.getFormId() + "\\" + "Clientprofile.html" ).exists()){
 					list.add(request.getFormId() + "\\" + "Clientprofile.html" );
 				}
-				int fileNumber =1;
+				/*int fileNumber =1;
 				while(true){
 					if(new File(request.getFormId() + "\\" + "Clientprofile"+fileNumber+".html" ).exists()){
 						list.add(request.getFormId() + "\\" + "Clientprofile"+fileNumber+".html") ;
@@ -48,11 +48,26 @@ public class SendFormMailToUnderWriterService extends ServiceAbstract {
 					}
 					fileNumber++;
 				}
-				if(new File(request.getFormId() + "\\" + "Autoprofile.html" ).exists()){
-					list.add(request.getFormId() + "\\" + "Autoprofile.html" );
+				*/
+				if(new File(request.getFormId() + "\\" + "Autoprofile.docx" ).exists()){
+					list.add(request.getFormId() + "\\" + "Autoprofile.docx" );
+				}
+				if(new File(request.getFormId() + "\\" + "Coverage.docx" ).exists()){
+					list.add(request.getFormId() + "\\" + "Coverage.docx" );
+				}
+				if(new File(request.getFormId() + "\\" + "DriverSchedule.xls" ).exists()){
+					list.add(request.getFormId() + "\\" + "DriverSchedule.xls" );
+				}
+				if(new File(request.getFormId() + "\\" + "VehicleSchedule.xls" ).exists()){
+					list.add(request.getFormId() + "\\" + "VehicleSchedule.xls" );
+				}
+				if(new File(request.getFormId() + "\\" + "Contractors.doc" ).exists()){
+					list.add(request.getFormId() + "\\" + "Contractors.doc" );
 				}
 				
-				a = (String[]) list.toArray();
+				a = new String[list.size()];
+				for(int i =0;i<list.size();i++)
+					a[i] = list.get(i);
 			}
 
 			String[] to = request.getRecpients().split(",");

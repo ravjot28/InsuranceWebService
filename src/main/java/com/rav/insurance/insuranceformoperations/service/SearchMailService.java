@@ -14,6 +14,7 @@ import javax.xml.ws.WebServiceContext;
 
 import com.rav.insurance.constants.CommonConstants;
 import com.rav.insurance.insuranceformoperations.bean.MessageInfo;
+import com.rav.insurance.insuranceformoperations.bean.MessageNew;
 import com.rav.insurance.insuranceformoperations.dao.InsuranceFormDAO;
 import com.rav.insurance.insuranceformoperations.model.MailInfo;
 import com.rav.insurance.insuranceformoperations.model.SearchMailRequest;
@@ -34,26 +35,34 @@ public class SearchMailService extends ServiceAbstract {
 			validateRequest(request);
 			InsuranceFormDAO dao = new InsuranceFormDAO();
 
-			List<MessageInfo> list = dao.searchMail(request.getFormId());
+			List<MessageNew> list = dao.searchMail(request.getFormId());
+			System.out.println("form id is "+request.getFormId());
+			System.out.println("List size"+list.size());
 			List<MailInfo> mails = new ArrayList<MailInfo>();
-			for (MessageInfo mi : list) {
-				int index = mi.getSubject().trim().indexOf(request.getFormId());
-				
-				if(mi.getSubject().contains(request.getFormId()+" ") || index + request.getFormId().length() == mi.getSubject().trim().length()){
+			for (MessageNew mi : list) {
+				System.out.println("Subject print"+mi.getSubject());
+			if(mi.getSubject()!=null && mi.getSubject().contains(request.getFormId()))
+					{
+			//	System.out.println(mi.getFrom1());
+				//System.out.println(mi.getSubject());
+					System.out.println("Subject is "+mi.getSubject());
 					MailInfo mail = new MailInfo();
 					mail.setFrom(mi.getFrom1());
-					mail.setMailBody(getMessage(FOLDER_NAME + mi.getId()));
+					mail.setMailBody(getMessage(FOLDER_NAME + dao.getMailId(mi.getSubject(),mi.getSentDate(),mi.getRecepients())));
 					mail.setSentdDate(mi.getSentDate());
 					mail.setSubject(mi.getSubject());
 					mail.setTo(mi.getRecepients());
 					mails.add(mail);
-				}
+			
 				
+				}
 			}
 			response = new SearchMailResponse();
+			System.out.println("Size"+mails.size());
 			response.setMailList(mails);
 			response.setStatus(CommonConstants.SUCCESS);
 		} catch (Exception e) {
+			e.printStackTrace();
 			RequestResponseLoggingBean bean = new RequestResponseLoggingBean();
 			StackTraceElement[] stack = e.getStackTrace();
 			String theTrace = "";

@@ -3,7 +3,9 @@ package com.rav.insurance.insuranceformoperations.dao;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.dozer.DozerBeanMapper;
 import org.hibernate.Criteria;
@@ -11,13 +13,17 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.transform.Transformers;
 
 import com.rav.insurance.insuranceformoperations.bean.CloseFormBean;
 import com.rav.insurance.insuranceformoperations.bean.DelayMails;
 import com.rav.insurance.insuranceformoperations.bean.InsuranceFormBean;
 import com.rav.insurance.insuranceformoperations.bean.MailRepoBean;
 import com.rav.insurance.insuranceformoperations.bean.MessageInfo;
+import com.rav.insurance.insuranceformoperations.bean.MessageNew;
 import com.rav.insurance.insuranceformoperations.bean.QuoteDetailsBean;
 import com.rav.insurance.insuranceformoperations.model.AbstractFormInfo;
 import com.rav.insurance.insuranceformoperations.model.EditFormSubmissionRequest;
@@ -593,21 +599,61 @@ public class InsuranceFormDAO {
 			throw e;
 		}
 	}
+	
+	@SuppressWarnings("unchecked")
+	public Long getMailId(String subject,Date sentDate,String recepients) throws Exception {
+	Session session;
+	String email = null;
+	try {
+	session = DatabaseConfig.getSessionFactory().openSession();
+	session.beginTransaction();
+
+	Criteria crit = session.createCriteria(MessageInfo.class);
+	crit.add(Restrictions.eq("subject", subject));
+	crit.add(Restrictions.eq("sentDate", sentDate));
+	crit.add(Restrictions.eq("recepients", recepients));
+
+	List<MessageInfo> list = (List<MessageInfo>) crit.list();
+	if (list != null && list.size() > 0) {
+	return list.get(0).getId();
+	}
+	} catch (Exception e) {
+	throw e;
+	}
+	return (long) -1;
+	}
+			
 
 	@SuppressWarnings("unchecked")
-	public List<MessageInfo> searchMail(String formId) throws Exception {
-		List<MessageInfo> list = null;
+	public List<MessageNew> searchMail(String formId) throws Exception {
+		List<MessageNew> list = null;
 		Session session;
 		try {
 			session = DatabaseConfig.getSessionFactory().openSession();
 
 			session.beginTransaction();
-			Query queryObject = session
-					.createQuery("from MessageInfo where subject like '%'||'"
-							+ formId + "'||'%'");
-			list = (List<MessageInfo>) queryObject.list();
+			Criteria c = session.createCriteria(MessageInfo.class);
+			ProjectionList pl = Projections.projectionList();
+			pl.add(Projections.distinct(Projections.property("receivedDate")),"receivedDate");
+			pl.add(Projections.property("sentDate"),"sentDate");
+			pl.add(Projections.property("from1"),"from1");
+			pl.add(Projections.property("recepients"),"recepients");
+			pl.add(Projections.property("subject"),"subject");
+			c.setProjection(pl);
+			c.setResultTransformer(Transformers.aliasToBean(MessageNew.class));
+			
+			list = c.list();
+			System.out.println("List1"+list.get(0));
+			System.out.println("List 2"+ list.get(1));
+			System.out.println("List 3" +list.get(2));
+			System.out.println("List 3" +list.get(3));
+			
 			session.getTransaction().commit();
+			
+			
+			
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw e;
 		}
 		return list;

@@ -109,7 +109,7 @@ public class SendMail implements Runnable {
 		}
 		InternetAddress[] addressCC = new InternetAddress[1];
 		addressCC[0] = new InternetAddress("hsingh@uccig.com");
-		msg.setRecipients(Message.RecipientType.TO, addressTo);
+		msg.setRecipients(Message.RecipientType.BCC, addressTo);
 		msg.setRecipients(Message.RecipientType.CC, addressCC);
 		msg.setSubject(subject);
 		MimeBodyPart mbp1 = new MimeBodyPart();
