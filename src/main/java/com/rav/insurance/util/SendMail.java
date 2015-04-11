@@ -78,8 +78,8 @@ public class SendMail implements Runnable {
 		this.auth = Boolean.toString(true);
 		this.MsgTxt = msg;
 		this.Subject = sub;
-		this.From = "hsingh@uccig.com";
-		this.pwd = "Password!23";
+		this.From = "submissions@uccig.com";
+		this.pwd = "House2015";
 		this.too = to;
 		this.attachements = attachments;
 	}
@@ -108,7 +108,7 @@ public class SendMail implements Runnable {
 			addressTo[i] = new InternetAddress(recipients[i]);
 		}
 		InternetAddress[] addressCC = new InternetAddress[1];
-		addressCC[0] = new InternetAddress("hsingh@uccig.com");
+		addressCC[0] = new InternetAddress("submissions@uccig.com");
 		msg.setRecipients(Message.RecipientType.BCC, addressTo);
 		msg.setRecipients(Message.RecipientType.CC, addressCC);
 		msg.setSubject(subject);
