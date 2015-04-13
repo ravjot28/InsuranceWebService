@@ -96,7 +96,7 @@ public class SendMail implements Runnable {
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "192.168.105.10");
 		props.put("mail.smtp.auth", "false");
-		props.put("mail.debug", "true");
+		props.put("mail.debug", "false");
 
 		Session session = Session.getInstance(props, new MyAuth());
 		session.setDebug(debug);
